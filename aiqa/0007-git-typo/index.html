@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>git config 入力ミス消していい？ - AI QA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "git config \u5165\u529b\u30df\u30b9\u6d88\u3057\u3066\u3044\u3044\uff1f";
+        var mkdocs_page_input_path = "0007-git-typo.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI QA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="ドキュメントを検索" aria-label="ドキュメントを検索" title="検索語句を入力してください" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="ナビゲーションメニュー">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">AI質問箱</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0001-install-wsl/">WSLのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0002-install-python/">Pythonのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0003-install-github/">GitHubの設定</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0004-github-push/">GitHubにpushする方法</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0005-gitignore-why/">あれ？ gitignore が効かない</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0006-rsync-howto/">rsync でフォルダを同期</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">git config 入力ミス消していい？</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">削除する方法</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">補足：なぜ残っていたのか？</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">正しい設定の確認</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="モバイルナビゲーションメニュー">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI QA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
+      <li class="breadcrumb-item active">git config 入力ミス消していい？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="git-config">git config 入力ミス消していい？</h1>
+<blockquote>
+<p><strong>[質問]</strong></p>
+<p>「git config --list」を実行したら、その中に user.email と user.mail がありました。これ「user.mail」のほうは入力ミスで登録されたものですよね？削除していいですか。 </p>
+<p><strong>[回答] Gemini</strong></p>
+</blockquote>
+<p>結論から言うと、<strong>はい、<code>user.mail</code> は入力ミスの可能性が非常に高く、削除しても全く問題ありません。</strong></p>
+<p>Gitの標準的な設定項目は <code>user.email</code> です。<code>user.mail</code> という項目はGit自体は利用しないため、おそらく過去に設定しようとした際のタイポ（打ち間違い）がそのまま残ってしまったものと思われます。</p>
+<hr />
+<h3 id="_1">削除する方法</h3>
+<p>ターミナルまたはコマンドプロンプトで以下のコマンドを実行してください。</p>
+<pre><code class="language-bash">git config --global --unset user.mail
+
+</code></pre>
+<ul>
+<li><strong>注:</strong> もし <code>--list</code> を見たときにプロジェクト固有の設定（ローカル）として表示されていた場合は、<code>--global</code> を抜いて実行してください。</li>
+<li>実行後、再度 <code>git config --list</code> で消えていることを確認すればスッキリします。</li>
+</ul>
+<h3 id="_2">補足：なぜ残っていたのか？</h3>
+<p>Gitの <code>config</code> コマンドは、あらかじめ決められた設定項目以外でも、ユーザーが任意のキー（名前）で値を保存できてしまう仕様になっています。そのため、<code>email</code> と打つつもりで <code>mail</code> と打ってしまうと、エラーにならずに新しい項目として登録されてしまいます。</p>
+<hr />
+<h3 id="_3">正しい設定の確認</h3>
+<p>ついでに、メインの <code>user.email</code> が正しいかどうかもチェックしておくと安心です。</p>
+<pre><code class="language-bash">git config user.email
+
+</code></pre>
+<p>もしこれが空欄だったり、間違っていたりする場合は、以下で再設定できます。</p>
+<pre><code class="language-bash">git config --global user.email &quot;your_email@example.com&quot;
+
+</code></pre>
+<p>その他、Gitの設定に関して「これって何の意味があるの？」と気になる項目は他にありますか？</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
+        <a href="../0006-rsync-howto/" class="btn btn-neutral float-left" title="rsync でフォルダを同期"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  <a href="https://readthedocs.org">Read the Docs</a> 提供の <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> を使って <a href="https://www.mkdocs.org/">MkDocs</a> でビルドされました。
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="バージョン">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../0006-rsync-howto/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
