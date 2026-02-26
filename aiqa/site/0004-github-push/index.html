@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>GitHubにpushする方法 - AI QA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GitHub\u306bpush\u3059\u308b\u65b9\u6cd5";
+        var mkdocs_page_input_path = "0004-github-push.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI QA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="ドキュメントを検索" aria-label="ドキュメントを検索" title="検索語句を入力してください" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="ナビゲーションメニュー">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">AI質問箱</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0001-install-wsl/">WSLのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0002-install-python/">Pythonのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0003-install-github/">GitHubの設定</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">GitHubにpushする方法</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-github">1. GitHub上でリポジトリを作成する</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-wslpush">2. WSL（ローカル）からPushする</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-git2">3. Gitの基本フロー（2回目以降）</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">便利な確認コマンド</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0005-gitignore-why/">あれ？ gitignore が効かない</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0006-rsync-howto/">rsync でフォルダを同期</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="モバイルナビゲーションメニュー">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI QA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
+      <li class="breadcrumb-item active">GitHubにpushする方法</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="githubpush">GitHubにpushする方法</h1>
+<blockquote>
+<p><strong>[質問]</strong></p>
+<p><a href="../0003-install-github/">&lt;&lt;前の質問から続き</a></p>
+<p>ローカルリポジトリをGitHubにpushする方法 </p>
+<p><strong>[回答] Gemini</strong></p>
+</blockquote>
+<p>これまでのステップでSSHの設定が終わっていれば、あとはコマンドをいくつか叩くだけでローカルのコードをGitHubへ送る（pushする）ことができます。</p>
+<p>大きく分けて、<strong>「GitHub上に空のリポジトリを作る」</strong>作業と、<strong>「WSLから接続して送る」</strong>作業の2段階です。</p>
+<hr />
+<h2 id="1-github">1. GitHub上でリポジトリを作成する</h2>
+<p>まず、受け皿となるリポジトリをブラウザで作ります。</p>
+<ol>
+<li><a href="https://github.com/">GitHub</a> にログインし、右上の「＋」アイコンから <strong>「New repository」</strong> を選択。</li>
+<li><strong>Repository name</strong> を入力（例: <code>my-python-app</code>）。</li>
+<li><strong>Public</strong> または <strong>Private</strong> を選択。</li>
+<li><strong>「Create repository」</strong> をクリック。</li>
+<li>次の画面で表示される <strong>「SSH」</strong> タブをクリックし、<code>git@github.com:ユーザー名/リポジトリ名.git</code> というURLをコピーしておきます。</li>
+</ol>
+<hr />
+<h2 id="2-wslpush">2. WSL（ローカル）からPushする</h2>
+<p>次に、WSLのターミナルで自分のプロジェクトフォルダに移動し、以下の5つのコマンドを順番に実行します。</p>
+<pre><code class="language-bash"># 1. Gitの初期化（そのフォルダをGit管理下におく）
+git init
+
+# 2. すべてのファイルを「ステージ（準備エリア）」に追加
+git add .
+
+# 3. 変更を記録（メッセージは自由に変えてOK）
+git commit -m &quot;初めてのコミット&quot;
+
+# 4. GitHub上のリポジトリを「origin」という名前で登録
+# [URL] の部分は先ほどコピーしたものに書き換えてください
+git remote add origin git@github.com:ユーザー名/リポジトリ名.git
+
+# 5. メインブランチにアップロード
+git push -u origin main
+
+</code></pre>
+<blockquote>
+<p><strong>注意:</strong> もしエラーが出る場合は、現在のブランチ名が <code>master</code> になっている可能性があります。その場合は <code>git branch -M main</code> を実行してから push してください。</p>
+</blockquote>
+<hr />
+<h2 id="3-git2">3. Gitの基本フロー（2回目以降）</h2>
+<p>一度設定してしまえば、次からは以下の3ステップだけで更新できます。</p>
+<ol>
+<li><strong><code>git add .</code></strong> （変更を準備）</li>
+<li><strong><code>git commit -m "修正内容"</code></strong> （記録）</li>
+<li><strong><code>git push</code></strong> （GitHubへ送信）</li>
+</ol>
+<hr />
+<h3 id="_1">便利な確認コマンド</h3>
+<ul>
+<li><strong><code>git status</code></strong>: 今どのファイルが変更されているか、準備ができているかを確認。</li>
+<li><strong><code>git log</code></strong>: これまでのコミット履歴を表示。</li>
+</ul>
+<p>これであなたのコードが世界（あるいは自分だけの非公開領域）に公開されました！</p>
+<p><strong>次に知っておくと便利なこと</strong>はありますか？
+例えば、<strong>「間違えてPushしたファイルを取り消す方法」</strong>や、<strong>「チーム開発で必須の『ブランチ（枝分かれ）』の作り方」</strong>など、気になることがあれば教えてください。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
+        <a href="../0003-install-github/" class="btn btn-neutral float-left" title="GitHubの設定"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
+        <a href="../0005-gitignore-why/" class="btn btn-neutral float-right" title="あれ？ gitignore が効かない">次へ <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  <a href="https://readthedocs.org">Read the Docs</a> 提供の <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> を使って <a href="https://www.mkdocs.org/">MkDocs</a> でビルドされました。
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="バージョン">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../0003-install-github/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+    
+    
+      <span><a href="../0005-gitignore-why/" style="color: #fcfcfc">次へ &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

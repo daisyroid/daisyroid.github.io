@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Pythonのインストール - AI QA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Python\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb";
+        var mkdocs_page_input_path = "0002-install-python.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI QA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="ドキュメントを検索" aria-label="ドキュメントを検索" title="検索語句を入力してください" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="ナビゲーションメニュー">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">AI質問箱</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0001-install-wsl/">WSLのインストール</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Pythonのインストール</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. パッケージリストの更新</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-python">2. Pythonとツールのインストール</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-vs-code">3. VS Codeとの連携（最重要）</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-venv">4. 仮想環境（venv）の作成と実行</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5">5. サンプルコードの作成と実行</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">次のステップへのヒント</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0003-install-github/">GitHubの設定</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0004-github-push/">GitHubにpushする方法</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0005-gitignore-why/">あれ？ gitignore が効かない</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0006-rsync-howto/">rsync でフォルダを同期</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="モバイルナビゲーションメニュー">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI QA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
+      <li class="breadcrumb-item active">Pythonのインストール</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="python">Pythonのインストール</h1>
+<blockquote>
+<p><strong>[質問]</strong></p>
+<p><a href="../0001-install-wsl/">&lt;&lt;前の質問から続き</a></p>
+<p>WSL上でPythonの開発環境を作る方法 </p>
+<p><strong>[回答] Gemini</strong></p>
+</blockquote>
+<p>WSLのインストール、お疲れ様でした！ここからは、WSL上のUbuntuを「最強のPython開発環境」に変えていきましょう。</p>
+<p>WSLで開発する場合、<strong>「WSLの中でコードを実行し、Windows上のVS Codeで編集する」</strong>というスタイルが一般的で、最も快適です。</p>
+<hr />
+<h2 id="1">1. パッケージリストの更新</h2>
+<p>まずは、Ubuntu内のツールを最新状態にします。</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
+
+</code></pre>
+<h2 id="2-python">2. Pythonとツールのインストール</h2>
+<p>Ubuntuには最初からPythonがインストールされていますが、開発に必要な「pip（ライブラリ管理ツール）」や「仮想環境作成ツール」を追加します。</p>
+<pre><code class="language-bash">sudo apt install -y python3-pip python3-venv
+
+</code></pre>
+<hr />
+<h2 id="3-vs-code">3. VS Codeとの連携（最重要）</h2>
+<p>Windows側のVS CodeからWSLの中を直接操作できるようにします。これができると、Windowsのソフトを使っている感覚でLinux上のコードを快適に書けます。</p>
+<ol>
+<li><strong>Windows側でVS Codeを起動</strong>します。</li>
+<li>左側の「拡張機能」アイコン（四角いマーク）をクリックし、<strong>「WSL」</strong>と検索してインストールします（Microsoft公式のもの）。</li>
+<li>インストール後、左下の「青いマーク（&gt;&lt;）」をクリックし、<strong>「Connect to WSL」</strong>を選択します。</li>
+<li>これで、VS Codeのウィンドウが「WSL: Ubuntu」モードに切り替わります。</li>
+</ol>
+<hr />
+<h2 id="4-venv">4. 仮想環境（venv）の作成と実行</h2>
+<p>プロジェクトごとにライブラリを分けるために「仮想環境」を作るのがPython開発の鉄則です。</p>
+<ol>
+<li><strong>プロジェクトフォルダを作成して移動</strong></li>
+</ol>
+<pre><code class="language-bash">mkdir my-python-app
+cd my-python-app
+
+</code></pre>
+<ol>
+<li><strong>仮想環境を作成（名前を <code>.venv</code> にする場合）</strong></li>
+</ol>
+<pre><code class="language-bash">python3 -m venv .venv
+
+</code></pre>
+<ol>
+<li><strong>仮想環境を起動（アクティベート）</strong></li>
+</ol>
+<pre><code class="language-bash">source .venv/bin/activate
+
+</code></pre>
+<ul>
+<li>ターミナルの左端に <code>(.venv)</code> と表示されれば成功です！</li>
+</ul>
+<hr />
+<h2 id="5">5. サンプルコードの作成と実行</h2>
+<p>VS Codeのターミナル（<code>Ctrl + @</code>）で以下を入力して、エディタでファイルを開きます。</p>
+<pre><code class="language-bash">code hello.py
+
+</code></pre>
+<p>開いたファイルに以下のコードを書き、保存してください。</p>
+<pre><code class="language-python">print(&quot;Hello from WSL!&quot;)
+
+</code></pre>
+<p>最後に、ターミナルで実行します。</p>
+<pre><code class="language-bash">python3 hello.py
+
+</code></pre>
+<hr />
+<h3 id="_1">次のステップへのヒント</h3>
+<p>WSLでは、Windows側のファイル（Cドライブなど）にもアクセスできますが、<strong>パフォーマンス向上のため、コードは必ずWSL側のホームディレクトリ（<code>~/</code>）の中に置く</strong>ようにしてください。</p>
+<p>次は、<strong>「機械学習向けのライブラリ（PandasやPyTorchなど）のインストール方法」</strong>や、<strong>「GitHubとの連携設定」</strong>について詳しく説明しましょうか？</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
+        <a href="../0001-install-wsl/" class="btn btn-neutral float-left" title="WSLのインストール"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
+        <a href="../0003-install-github/" class="btn btn-neutral float-right" title="GitHubの設定">次へ <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  <a href="https://readthedocs.org">Read the Docs</a> 提供の <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> を使って <a href="https://www.mkdocs.org/">MkDocs</a> でビルドされました。
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="バージョン">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../0001-install-wsl/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+    
+    
+      <span><a href="../0003-install-github/" style="color: #fcfcfc">次へ &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

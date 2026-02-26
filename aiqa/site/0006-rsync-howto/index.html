@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>rsync でフォルダを同期 - AI QA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "rsync \u3067\u30d5\u30a9\u30eb\u30c0\u3092\u540c\u671f";
+        var mkdocs_page_input_path = "0006-rsync-howto.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI QA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="ドキュメントを検索" aria-label="ドキュメントを検索" title="検索語句を入力してください" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="ナビゲーションメニュー">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">AI質問箱</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0001-install-wsl/">WSLのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0002-install-python/">Pythonのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0003-install-github/">GitHubの設定</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0004-github-push/">GitHubにpushする方法</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0005-gitignore-why/">あれ？ gitignore が効かない</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">rsync でフォルダを同期</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 推奨されるコマンド</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">オプションの解説</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. もっと便利に使いこなすテクニック</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-delete">削除されたファイルも同期させる (--delete)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-dry-run">実行前に「何がコピーされるか」確認する (--dry-run)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-cp-rsync">3. なぜ cp ではなく rsync なのか？</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4">4. 応用：特定のファイルを除外してコピー</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="モバイルナビゲーションメニュー">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI QA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
+      <li class="breadcrumb-item active">rsync でフォルダを同期</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="rsync">rsync でフォルダを同期</h1>
+<blockquote>
+<p><strong>[質問]</strong></p>
+<p>WSLでフォルダをコピーするとき、新しく作られたファイルと、更新されたファイルだけコピーする方法はありますか。 </p>
+<p><strong>[回答] Gemini</strong></p>
+</blockquote>
+<p>WSL（Linux）で「差分だけをコピーする」なら、<code>cp</code> よりも圧倒的に <strong><code>rsync</code></strong> というコマンドが便利で強力です。</p>
+<p><code>rsync</code> は、コピー元とコピー先を比較して、<strong>新しく作られたファイル</strong>や<strong>内容が更新されたファイル</strong>だけを賢く判別して転送してくれます。</p>
+<hr />
+<h2 id="1">1. 推奨されるコマンド</h2>
+<p>以下のコマンドを使えば、目的の「差分コピー」が実現できます。</p>
+<pre><code class="language-bash">rsync -av --update /path/to/foo/ ~/bar/
+
+</code></pre>
+<h3 id="_1">オプションの解説</h3>
+<ul>
+<li><strong><code>-a</code> (archive):</strong> ディレクトリ構造、権限（パーミッション）、タイムスタンプをそのまま維持します（これ一つで <code>-r</code> など複数の役割を兼ねます）。</li>
+<li><strong><code>-v</code> (verbose):</strong> どのファイルがコピーされているかを表示します。</li>
+<li><strong><code>--update</code> (-u):</strong> <strong>これが重要です。</strong> コピー先の方が新しいファイルがある場合、それを上書きせずにスキップします。</li>
+<li><strong>パス末尾の <code>/</code> (スラッシュ):</strong></li>
+<li><code>foo/</code>（末尾あり）: fooの中身をコピー。</li>
+<li><code>foo</code> （末尾なし）: fooディレクトリ自体をコピー。</li>
+</ul>
+<hr />
+<h2 id="2">2. もっと便利に使いこなすテクニック</h2>
+<h3 id="-delete">削除されたファイルも同期させる (<code>--delete</code>)</h3>
+<p>コピー元で削除されたファイルを、コピー先からも消して「完全に中身を一致させたい」場合はこのオプションを付けます。</p>
+<pre><code class="language-bash">rsync -av --delete /path/to/foo/ ~/bar/
+
+</code></pre>
+<h3 id="-dry-run">実行前に「何がコピーされるか」確認する (<code>--dry-run</code>)</h3>
+<p>大事なデータを扱うとき、いきなり実行するのが怖い場合は、このオプションを付けると<strong>「実際にはコピーせず、何が行われるかだけ」</strong>を表示してくれます。</p>
+<pre><code class="language-bash">rsync -av --update --dry-run /path/to/foo/ ~/bar/
+
+</code></pre>
+<hr />
+<h2 id="3-cp-rsync">3. なぜ <code>cp</code> ではなく <code>rsync</code> なのか？</h2>
+<p>一応 <code>cp</code> にも <code>-u</code> オプションがありますが、<code>rsync</code> が選ばれるのには理由があります。</p>
+<table>
+<thead>
+<tr>
+<th>機能</th>
+<th><code>cp -u</code></th>
+<th><code>rsync -au</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>差分検知</strong></td>
+<td>タイムスタンプのみ</td>
+<td>サイズや内容(チェックサム)も可能</td>
+</tr>
+<tr>
+<td><strong>転送効率</strong></td>
+<td>ファイルを丸ごと上書き</td>
+<td>ファイル内の変更箇所だけ送ることも可能</td>
+</tr>
+<tr>
+<td><strong>ネットワーク</strong></td>
+<td>ローカルのみ</td>
+<td>リモートサーバー間でも使用可能</td>
+</tr>
+<tr>
+<td><strong>詳細設定</strong></td>
+<td>少ない</td>
+<td>非常に豊富（特定のファイル除外など）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 応用：特定のファイルを除外してコピー</h2>
+<p>例えば、<code>.git</code> フォルダや <code>__pycache__</code> などの不要なデータを除外して差分コピーしたい場合はこう書きます。</p>
+<pre><code class="language-bash">rsync -av --update --exclude='.git' --exclude='__pycache__' /path/to/foo/ ~/bar/
+
+</code></pre>
+<p>これで、バックアップや環境の同期が劇的に速くなります！</p>
+<p><strong>次は、「rsyncを使って定期的に自動バックアップを取る方法」や、「特定の拡張子（.pyなど）だけを抽出してコピーする方法」などについてお伝えしましょうか？</strong></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
+        <a href="../0005-gitignore-why/" class="btn btn-neutral float-left" title="あれ？ gitignore が効かない"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  <a href="https://readthedocs.org">Read the Docs</a> 提供の <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> を使って <a href="https://www.mkdocs.org/">MkDocs</a> でビルドされました。
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="バージョン">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../0005-gitignore-why/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
