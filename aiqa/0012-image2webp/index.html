@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>画像ファイルをWebp形式に変換 - AI QA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u753b\u50cf\u30d5\u30a1\u30a4\u30eb\u3092Webp\u5f62\u5f0f\u306b\u5909\u63db";
+        var mkdocs_page_input_path = "0012-image2webp.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI QA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="ドキュメントを検索" aria-label="ドキュメントを検索" title="検索語句を入力してください" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="ナビゲーションメニュー">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">AI質問箱</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0001-install-wsl/">WSLのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0002-install-python/">Pythonのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0003-install-github/">GitHubの設定</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0004-github-push/">GitHubにpushする方法</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0005-gitignore-why/">あれ？ gitignore が効かない</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0006-rsync-howto/">rsync でフォルダを同期</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0007-git-typo/">git config 入力ミス消していい？</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0008-github-cli/">WSL でも GitHub CLI</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0009-tech-blog/">おすすめの技術系ブログ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0010-english-talker/">Windowsに英語でしゃべらせる</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0011-winsize/">Pythonでウィンドウ位置指定</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">画像ファイルをWebp形式に変換</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">使い方例</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">主な特徴・対応状況</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="モバイルナビゲーションメニュー">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI QA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
+      <li class="breadcrumb-item active">画像ファイルをWebp形式に変換</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="webp">画像ファイルをWebp形式に変換</h1>
+<blockquote>
+<p><strong>[質問]</strong></p>
+<p>Pythonで、画像ファイルを読み込んで、拡張子が".webp"でなければWEBP形式に変換し、拡張子を".webp"に変えた名前で保存してください。Animated GIF や Animated PNG にも対応してください。CLIで「python image2webp.py ファイルパス1 ...」と、複数のファイルが指定できます。ファイル名はワイルドカードでも指定できます。</p>
+<p><strong>[回答] Grok</strong></p>
+</blockquote>
+<p>以下は、要求された仕様を満たすPythonスクリプトの例です。</p>
+<pre><code class="language-python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+&quot;&quot;&quot;
+image2webp.py
+
+使用方法:
+    python image2webp.py image1.jpg image2.png *.png anim.gif
+    python image2webp.py &quot;写真フォルダ/*.jpg&quot;
+
+・ .webp で終わっているファイルはスキップ
+・ それ以外の画像をWebPに変換
+・ アニメーションGIF / APNG にも対応（透過・アニメーションを保持）
+・ 元ファイルと同じ場所に「元ファイル名.webp」で保存
+&quot;&quot;&quot;
+
+import glob
+import os
+import sys
+from pathlib import Path
+
+from PIL import Image, ImageSequence
+
+
+def convert_to_webp(filepath: str) -&gt; bool:
+    &quot;&quot;&quot;
+    1つのファイルをWebPに変換
+    成功したらTrue、失敗したらFalseを返す
+    &quot;&quot;&quot;
+    path = Path(filepath)
+
+    # 既にwebpならスキップ
+    if path.suffix.lower() == '.webp':
+        print(f&quot;スキップ（既にwebp）: {path}&quot;)
+        return True
+
+    output_path = path.with_suffix('.webp')
+
+    try:
+        with Image.open(path) as im:
+            # アニメーションかどうかを判定
+            is_animated = getattr(im, &quot;is_animated&quot;, False)
+
+            if is_animated:
+                # アニメーションGIF / APNG の場合
+                frames = []
+                durations = []
+                loop = 0
+
+                for frame in ImageSequence.Iterator(im):
+                    frames.append(frame.convert(&quot;RGBA&quot;))
+                    # 各フレームの表示時間（ミリ秒）
+                    durations.append(frame.info.get(&quot;duration&quot;, 100))
+
+                # APNGや一部GIFにあるループ回数
+                loop = im.info.get(&quot;loop&quot;, 0)
+
+                frames[0].save(
+                    output_path,
+                    format=&quot;WEBP&quot;,
+                    save_all=True,
+                    append_images=frames[1:],
+                    duration=durations,
+                    loop=loop,
+                    quality=90,           # 画質（0-100）
+                    method=4,             # 圧縮レベル（0=最速〜6=最高圧縮）
+                    lossless=False
+                )
+            else:
+                # 通常の静止画
+                # RGBA → RGB に変換する場合もあるが、ここでは透過を保持
+                im = im.convert(&quot;RGBA&quot;)
+                im.save(
+                    output_path,
+                    format=&quot;WEBP&quot;,
+                    quality=90,
+                    method=4,
+                    lossless=False
+                )
+
+            print(f&quot;変換完了: {path} → {output_path}&quot;)
+            return True
+
+    except Exception as e:
+        print(f&quot;エラー: {path} → {e}&quot;)
+        return False
+
+
+def main():
+    if len(sys.argv) &lt; 2:
+        myname = os.path.basename(__file__)
+        print(&quot;Webp以外の画像ファイルをWebp形式に変換します&quot;)
+        print(f&quot;Usage: python {myname} ファイルまたはワイルドカード...&quot;)
+        print(&quot;例:    python image2webp.py *.jpg *.png anim.gif&quot;)
+        exit(0)
+
+    args = []
+    for arg in sys.argv[1:]:
+        args.extend(glob.glob(arg) or [arg])
+
+    success_count = 0
+    fail_count = 0
+    skip_count = 0
+
+    # コマンドライン引数を順に処理
+    for arg in args:
+        path = Path(arg)
+
+        if path.is_file():
+            if convert_to_webp(path):
+                success_count += 1
+            else:
+                fail_count += 1
+        elif path.is_dir():
+            print(f&quot;ディレクトリはスキップ: {path}&quot;)
+        else:
+            # ワイルドカードがシェルで展開されなかった場合（稀）
+            print(f&quot;見つかりません: {arg}&quot;)
+            fail_count += 1
+
+    print(&quot;\n&quot; + &quot;=&quot;*50)
+    print(f&quot;完了！  成功: {success_count}  失敗: {fail_count}  スキップ: {skip_count}&quot;)
+    print(&quot;=&quot;*50)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="_1">使い方例</h3>
+<pre><code class="language-bash"># 現在のフォルダ内のjpg,pngを全部変換
+python image2webp.py *.jpg *.png
+
+# 特定のファイルだけ
+python image2webp.py photo.jpg meme.gif sticker.apng
+
+# サブフォルダも含めたい場合はシェルで
+find . -type f \( -iname &quot;*.jpg&quot; -o -iname &quot;*.png&quot; -o -iname &quot;*.gif&quot; \) -exec python image2webp.py {} +
+</code></pre>
+<h3 id="_2">主な特徴・対応状況</h3>
+<ul>
+<li>静止画（jpg, png, bmpなど）→ WebP（透過保持）</li>
+<li>アニメーションGIF → アニメーションWebP</li>
+<li>APNG（アニメーションPNG）→ アニメーションWebP</li>
+<li>既存の<code>.webp</code>ファイルはスキップ</li>
+<li>エラー処理あり（壊れた画像などはエラーメッセージ表示）</li>
+</ul>
+<p>必要に応じて以下の値を調整してください：</p>
+<ul>
+<li><code>quality=90</code> → 画質（80〜95くらいがバランス良い）</li>
+<li><code>method=4</code> → 圧縮努力度（6にするとさらに小さくなるが遅い）</li>
+<li><code>lossless=True</code> → ロスレス（ファイルサイズはかなり大きくなる）</li>
+</ul>
+<p>楽しんで使ってください！</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
+        <a href="../0011-winsize/" class="btn btn-neutral float-left" title="Pythonでウィンドウ位置指定"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  <a href="https://readthedocs.org">Read the Docs</a> 提供の <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> を使って <a href="https://www.mkdocs.org/">MkDocs</a> でビルドされました。
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="バージョン">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../0011-winsize/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
