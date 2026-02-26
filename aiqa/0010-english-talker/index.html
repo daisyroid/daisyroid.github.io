@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>WSL でも GitHub CLI - AI QA</title>
+    <title>Windowsに英語でしゃべらせる - AI QA</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "WSL \u3067\u3082 GitHub CLI";
-        var mkdocs_page_input_path = "0008-github-cli.md";
+        var mkdocs_page_name = "Windows\u306b\u82f1\u8a9e\u3067\u3057\u3083\u3079\u3089\u305b\u308b";
+        var mkdocs_page_input_path = "0010-english-talker.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -72,24 +72,24 @@
                 <li class="toctree-l1"><a class="reference internal" href="../0007-git-typo/">git config 入力ミス消していい？</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">WSL でも GitHub CLI</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-ubuntudebian">1. インストール手順（Ubuntu/Debian系の場合）</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2">2. 認証（ログイン）</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#wsl">WSLで使う際のポイント</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0008-github-cli/">WSL でも GitHub CLI</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../0009-tech-blog/">おすすめの技術系ブログ</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../0010-english-talker/">Windowsに英語でしゃべらせる</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Windowsに英語でしゃべらせる</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">英語音声を動的に選択する方法</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">解説とポイント</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#windows-1011">補足：Windows 10/11 の設定</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -106,7 +106,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
-      <li class="breadcrumb-item active">WSL でも GitHub CLI</li>
+      <li class="breadcrumb-item active">Windowsに英語でしゃべらせる</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -115,52 +115,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="wsl-github-cli">WSL でも GitHub CLI</h1>
+                <h1 id="windows">Windowsに英語でしゃべらせる</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>WindowsでGitHub CLIを愛用しています。これWSLにもインストールできますか。 </p>
+<p>PowerShellで、SpeechSynthesizer を利用して、合成音声をしゃべらせています。デフォルトでは日本語音声がしゃべるのですが、これを英語音声に変えられますか。なお、当方の環境には"Zira" が入っているので、SelectVoice("Microsoft Zira Desktop")とすれば問題ありませんが、環境依存ですよね？ どんな環境でも、日本語音声ではなく英語音声がしゃべってほしいのです。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>はい、もちろん可能です！WSL（UbuntuなどのLinux環境）はWindows側とは独立したファイルシステムを持っているため、WSL側でも改めてインストールする必要があります。</p>
-<p>WSLでGitHub CLI（<code>gh</code>コマンド）を導入し、快適に使うための手順をまとめました。</p>
-<hr />
-<h2 id="1-ubuntudebian">1. インストール手順（Ubuntu/Debian系の場合）</h2>
-<p>WSLのターミナルを開き、公式のリポジトリを追加してインストールします。以下のコマンドを順番に実行（または一括で貼り付け）してください。</p>
-<pre><code class="language-bash"># 1. 必要なツールのインストールとキーの登録
-(type -p wget &gt;/dev/null || (sudo apt update &amp;&amp; sudo apt install wget -y)) \
-&amp;&amp; sudo mkdir -p -m 755 /etc/apt/keyrings \
-&amp;&amp; out=$(mktemp) &amp;&amp; wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-&amp;&amp; cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg &gt; /dev/null \
-&amp;&amp; sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-&amp;&amp; echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&quot; | sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null \
-&amp;&amp; sudo apt update \
-&amp;&amp; sudo apt install gh -y
+<p>ご指摘の通り、<code>SelectVoice</code> で特定の名前を直接指定すると、その音声がインストールされていない環境ではエラーになってしまいます。</p>
+<p>「どんな環境でも（英語音声が入っていれば）確実に英語で喋らせる」ためには、音声の名前ではなく、<strong>音声の属性（Culture/言語設定）</strong>でフィルタリングして選択するのがスマートで確実な方法です。</p>
+<h3 id="_1">英語音声を動的に選択する方法</h3>
+<p><code>GetInstalledVoices()</code> メソッドでシステム内の音声一覧を取得し、その中から <code>Culture</code> が <code>en-US</code>（または <code>en</code> から始まるもの）を探して選択するスクリプトがこちらです。</p>
+<pre><code class="language-powershell">Add-Type -AssemblyName System.Speech
+$say = New-Object System.Speech.Synthesis.SpeechSynthesizer
+
+# インストールされている音声の中から、言語が英語(&quot;en&quot;)のものを探す
+$englishVoice = $say.GetInstalledVoices() | Where-Object { 
+    $_.VoiceInfo.Culture.Name.StartsWith(&quot;en&quot;) -and $_.Enabled 
+} | Select-Object -First 1
+
+if ($englishVoice) {
+    $say.SelectVoice($englishVoice.VoiceInfo.Name)
+    $say.Speak(&quot;Hello, this is an English voice selected dynamically.&quot;)
+} else {
+    Write-Warning &quot;英語の音声エンジンが見つかりませんでした。&quot;
+    $say.Speak(&quot;英語の音声が見つかりません。&quot;)
+}
 
 </code></pre>
-<h2 id="2">2. 認証（ログイン）</h2>
-<p>インストールが終わったら、ログインが必要です。</p>
-<pre><code class="language-bash">gh auth login
-
-</code></pre>
-<p>ここで<strong>「ブラウザで認証（Login with a web browser）」</strong>を選択すると、WSLからWindows側のブラウザが立ち上がり、スムーズに認証を完了できます。</p>
-<blockquote>
-<p>[!TIP]
-もしブラウザがうまく開かない場合は、<code>wslu</code> というパッケージをインストールすると、WSLからWindowsのブラウザを呼び出す機能が強化されます。
-<code>sudo apt install wslu</code></p>
-</blockquote>
 <hr />
-<h2 id="wsl">WSLで使う際のポイント</h2>
-<ul>
-<li><strong>Windows側との使い分け</strong>: WSL側にインストールした <code>gh</code> は、WSL内のディレクトリにあるリポジトリを操作する際に使います。Windows側（PowerShellなど）でインストールしたものとは別物として動作しますが、同じGitHubアカウントでログインすれば操作感は全く同じです。</li>
-<li><strong>Gitの設定も忘れずに</strong>: WSL側で初めてGitを使う場合は、<code>git config --global user.name "名前"</code> と <code>user.email "メールアドレス"</code> の設定もしておきましょう。</li>
-</ul>
-<p>次は、WSL上のGitとGitHub CLIを連携させて、パスワード入力を省略する設定（<code>gh auth setup-git</code>）をお手伝いしましょうか？</p>
+<h3 id="_2">解説とポイント</h3>
+<ol>
+<li><strong><code>GetInstalledVoices()</code> の活用</strong>:
+環境に依存する「名前」ではなく、OSに登録されている音声リストをプログラム側で一度スキャンします。</li>
+<li><strong><code>Culture</code> プロパティでの判定</strong>:
+<code>$_.VoiceInfo.Culture.Name</code> を見ることで、その音声が日本語(<code>ja-JP</code>)か英語(<code>en-US</code> / <code>en-GB</code>)かを判別できます。<code>.StartsWith("en")</code> とすることで、アメリカ英語やイギリス英語など、広く英語系音声をヒットさせることができます。</li>
+<li><strong>フォールバック（予備動作）</strong>:
+万が一、英語音声が一つもインストールされていない環境でもスクリプトがクラッシュしないよう、<code>if ($englishVoice)</code> でチェックを入れるのがお作法として安心です。</li>
+</ol>
+<h3 id="windows-1011">補足：Windows 10/11 の設定</h3>
+<p>このスクリプトは、Windowsの「設定」→「時刻と言語」→「音声認識」にある「音声管理」で追加されている音声を利用します。標準的なWindows環境であれば大抵 <code>Zira</code> や <code>David</code> が入っていますが、もしヒットしない場合はOS側に英語の音声パックが追加されているかを確認してください。</p>
+<p>次は、この英語音声を使って<strong>テキストファイルの内容を読み上げる</strong>ようなスクリプトの作成をお手伝いしましょうか？</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
-        <a href="../0007-git-typo/" class="btn btn-neutral float-left" title="git config 入力ミス消していい？"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
-        <a href="../0009-tech-blog/" class="btn btn-neutral float-right" title="おすすめの技術系ブログ">次へ <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../0009-tech-blog/" class="btn btn-neutral float-left" title="おすすめの技術系ブログ"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
     </div>
 
   <hr/>
@@ -183,10 +182,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../0007-git-typo/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+      <span><a href="../0009-tech-blog/" style="color: #fcfcfc">&laquo; 前へ</a></span>
     
-    
-      <span><a href="../0009-tech-blog/" style="color: #fcfcfc">次へ &raquo;</a></span>
     
   </span>
 </div>
