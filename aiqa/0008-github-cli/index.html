@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>git config 入力ミス消していい？ - AI QA</title>
+    <title>WSL でも GitHub CLI - AI QA</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "git config \u5165\u529b\u30df\u30b9\u6d88\u3057\u3066\u3044\u3044\uff1f";
-        var mkdocs_page_input_path = "0007-git-typo.md";
+        var mkdocs_page_name = "WSL \u3067\u3082 GitHub CLI";
+        var mkdocs_page_input_path = "0008-github-cli.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -68,20 +68,20 @@
                 <li class="toctree-l1"><a class="reference internal" href="../0006-rsync-howto/">rsync でフォルダを同期</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">git config 入力ミス消していい？</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">削除する方法</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">補足：なぜ残っていたのか？</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">正しい設定の確認</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0007-git-typo/">git config 入力ミス消していい？</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../0008-github-cli/">WSL でも GitHub CLI</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">WSL でも GitHub CLI</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-ubuntudebian">1. インストール手順（Ubuntu/Debian系の場合）</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. 認証（ログイン）</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wsl">WSLで使う際のポイント</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -98,7 +98,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
-      <li class="breadcrumb-item active">git config 入力ミス消していい？</li>
+      <li class="breadcrumb-item active">WSL でも GitHub CLI</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -107,43 +107,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="git-config">git config 入力ミス消していい？</h1>
+                <h1 id="wsl-github-cli">WSL でも GitHub CLI</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>「git config --list」を実行したら、その中に user.email と user.mail がありました。これ「user.mail」のほうは入力ミスで登録されたものですよね？削除していいですか。 </p>
+<p>WindowsでGitHub CLIを愛用しています。これWSLにもインストールできますか。 </p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>結論から言うと、<strong>はい、<code>user.mail</code> は入力ミスの可能性が非常に高く、削除しても全く問題ありません。</strong></p>
-<p>Gitの標準的な設定項目は <code>user.email</code> です。<code>user.mail</code> という項目はGit自体は利用しないため、おそらく過去に設定しようとした際のタイポ（打ち間違い）がそのまま残ってしまったものと思われます。</p>
+<p>はい、もちろん可能です！WSL（UbuntuなどのLinux環境）はWindows側とは独立したファイルシステムを持っているため、WSL側でも改めてインストールする必要があります。</p>
+<p>WSLでGitHub CLI（<code>gh</code>コマンド）を導入し、快適に使うための手順をまとめました。</p>
 <hr />
-<h3 id="_1">削除する方法</h3>
-<p>ターミナルまたはコマンドプロンプトで以下のコマンドを実行してください。</p>
-<pre><code class="language-bash">git config --global --unset user.mail
+<h2 id="1-ubuntudebian">1. インストール手順（Ubuntu/Debian系の場合）</h2>
+<p>WSLのターミナルを開き、公式のリポジトリを追加してインストールします。以下のコマンドを順番に実行（または一括で貼り付け）してください。</p>
+<pre><code class="language-bash"># 1. 必要なツールのインストールとキーの登録
+(type -p wget &gt;/dev/null || (sudo apt update &amp;&amp; sudo apt install wget -y)) \
+&amp;&amp; sudo mkdir -p -m 755 /etc/apt/keyrings \
+&amp;&amp; out=$(mktemp) &amp;&amp; wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+&amp;&amp; cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg &gt; /dev/null \
+&amp;&amp; sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+&amp;&amp; echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&quot; | sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null \
+&amp;&amp; sudo apt update \
+&amp;&amp; sudo apt install gh -y
 
 </code></pre>
+<h2 id="2">2. 認証（ログイン）</h2>
+<p>インストールが終わったら、ログインが必要です。</p>
+<pre><code class="language-bash">gh auth login
+
+</code></pre>
+<p>ここで<strong>「ブラウザで認証（Login with a web browser）」</strong>を選択すると、WSLからWindows側のブラウザが立ち上がり、スムーズに認証を完了できます。</p>
+<blockquote>
+<p>[!TIP]
+もしブラウザがうまく開かない場合は、<code>wslu</code> というパッケージをインストールすると、WSLからWindowsのブラウザを呼び出す機能が強化されます。
+<code>sudo apt install wslu</code></p>
+</blockquote>
+<hr />
+<h2 id="wsl">WSLで使う際のポイント</h2>
 <ul>
-<li><strong>注:</strong> もし <code>--list</code> を見たときにプロジェクト固有の設定（ローカル）として表示されていた場合は、<code>--global</code> を抜いて実行してください。</li>
-<li>実行後、再度 <code>git config --list</code> で消えていることを確認すればスッキリします。</li>
+<li><strong>Windows側との使い分け</strong>: WSL側にインストールした <code>gh</code> は、WSL内のディレクトリにあるリポジトリを操作する際に使います。Windows側（PowerShellなど）でインストールしたものとは別物として動作しますが、同じGitHubアカウントでログインすれば操作感は全く同じです。</li>
+<li><strong>Gitの設定も忘れずに</strong>: WSL側で初めてGitを使う場合は、<code>git config --global user.name "名前"</code> と <code>user.email "メールアドレス"</code> の設定もしておきましょう。</li>
 </ul>
-<h3 id="_2">補足：なぜ残っていたのか？</h3>
-<p>Gitの <code>config</code> コマンドは、あらかじめ決められた設定項目以外でも、ユーザーが任意のキー（名前）で値を保存できてしまう仕様になっています。そのため、<code>email</code> と打つつもりで <code>mail</code> と打ってしまうと、エラーにならずに新しい項目として登録されてしまいます。</p>
-<hr />
-<h3 id="_3">正しい設定の確認</h3>
-<p>ついでに、メインの <code>user.email</code> が正しいかどうかもチェックしておくと安心です。</p>
-<pre><code class="language-bash">git config user.email
-
-</code></pre>
-<p>もしこれが空欄だったり、間違っていたりする場合は、以下で再設定できます。</p>
-<pre><code class="language-bash">git config --global user.email &quot;your_email@example.com&quot;
-
-</code></pre>
-<p>その他、Gitの設定に関して「これって何の意味があるの？」と気になる項目は他にありますか？</p>
+<p>次は、WSL上のGitとGitHub CLIを連携させて、パスワード入力を省略する設定（<code>gh auth setup-git</code>）をお手伝いしましょうか？</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
-        <a href="../0006-rsync-howto/" class="btn btn-neutral float-left" title="rsync でフォルダを同期"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
-        <a href="../0008-github-cli/" class="btn btn-neutral float-right" title="WSL でも GitHub CLI">次へ <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../0007-git-typo/" class="btn btn-neutral float-left" title="git config 入力ミス消していい？"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
     </div>
 
   <hr/>
@@ -166,10 +174,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../0006-rsync-howto/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+      <span><a href="../0007-git-typo/" style="color: #fcfcfc">&laquo; 前へ</a></span>
     
-    
-      <span><a href="../0008-github-cli/" style="color: #fcfcfc">次へ &raquo;</a></span>
     
   </span>
 </div>
