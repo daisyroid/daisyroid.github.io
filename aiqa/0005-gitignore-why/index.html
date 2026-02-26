@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>あれ？ .gitignoreが効かない - AI QA</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u3042\u308c\uff1f .gitignore\u304c\u52b9\u304b\u306a\u3044";
+        var mkdocs_page_input_path = "0005-gitignore-why.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> AI QA
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="ドキュメントを検索" aria-label="ドキュメントを検索" title="検索語句を入力してください" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="ナビゲーションメニュー">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">AI質問箱</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0001-install-wsl/">WSLのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0002-install-python/">Pythonのインストール</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0003-install-github/">GitHubの設定</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../0004-github-push/">GitHubにpushする方法</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">あれ？ .gitignoreが効かない</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">原因：インデックスにキャッシュが残っている</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">解決策：キャッシュを削除する（インデックスから外す）</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1">1. 特定のファイルだけ無視したい場合</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-gitignore">2. .gitignore の設定をすべて反映し直したい場合（推奨）</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">その他のチェックポイント</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">次に役立つヒント</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="モバイルナビゲーションメニュー">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">AI QA</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="ドキュメント"></a></li>
+      <li class="breadcrumb-item active">あれ？ .gitignoreが効かない</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gitignore">あれ？ .gitignoreが効かない</h1>
+<blockquote>
+<p><strong>[質問]</strong></p>
+<p>WSLで、ローカルリポジトリに ".gitignore" を作りましたが、そこで指定したファイルが無視されないのは、なにが原因ですか </p>
+<p><strong>[回答] Gemini</strong></p>
+</blockquote>
+<p>それは非常に「Gitあるある」な現象ですね！原因はほぼ間違いなく、<strong>.gitignore を作成する前に、そのファイルを一度 Git の管理下（インデックス）に入れてしまったこと</strong>にあります。</p>
+<p>Gitのルールとして、<strong>「すでに追跡（track）されているファイルは、後から .gitignore に書いても無視されない」</strong>という性質があります。</p>
+<hr />
+<h2 id="_1">原因：インデックスにキャッシュが残っている</h2>
+<p><code>.gitignore</code> は「これから新しく追加されるファイル」には効きますが、すでに <code>git add</code> されてリポジトリに記録されているファイルに対しては、手動で追跡を解除してあげる必要があります。</p>
+<hr />
+<h2 id="_2">解決策：キャッシュを削除する（インデックスから外す）</h2>
+<p>ファイル自体を削除せずに、Gitの管理対象からだけ外すコマンドを実行します。</p>
+<h3 id="1">1. 特定のファイルだけ無視したい場合</h3>
+<p>例えば <code>config.json</code> を無視したいなら：</p>
+<pre><code class="language-bash">git rm --cached config.json
+
+</code></pre>
+<h3 id="2-gitignore">2. .gitignore の設定をすべて反映し直したい場合（推奨）</h3>
+<p>一度すべてのキャッシュをクリアして、<code>.gitignore</code> に基づいて登録し直すのが一番確実です。</p>
+<ol>
+<li><strong>現在の変更をすべてコミットしておく</strong>（念のため）</li>
+</ol>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Save work before re-indexing&quot;
+
+</code></pre>
+<ol>
+<li><strong>インデックス（キャッシュ）をすべて削除</strong></li>
+</ol>
+<pre><code class="language-bash">git rm -r --cached .
+
+</code></pre>
+<blockquote>
+<p>※ <code>--cached</code> を付け忘れると実ファイルが消えるので注意してください！</p>
+</blockquote>
+<ol>
+<li><strong>改めてすべて追加し直す</strong></li>
+</ol>
+<pre><code class="language-bash">git add .
+
+</code></pre>
+<ol>
+<li><strong>反映をコミットする</strong></li>
+</ol>
+<pre><code class="language-bash">git commit -m &quot;Fix: Apply .gitignore rules&quot;
+
+</code></pre>
+<hr />
+<h2 id="_3">その他のチェックポイント</h2>
+<p>もし上記でも直らない場合は、以下の2点を確認してみてください。</p>
+<ul>
+<li><strong>ファイル名が正しいか:</strong> <code>.gitignore</code> のスペルが間違っていないか（先頭のドット <code>.</code> を忘れがちです）。</li>
+<li><strong>記述ルール:</strong> 例えば <code>dist/</code> と書くとフォルダごと無視されますが、<code>/dist</code> だとルート直下のフォルダのみに限定されます。</li>
+</ul>
+<hr />
+<h3 id="_4">次に役立つヒント</h3>
+<p>「何が原因で無視されていないのか」を確認するには、以下のコマンドが便利です。</p>
+<pre><code class="language-bash">git check-ignore -v &lt;ファイル名&gt;
+
+</code></pre>
+<p>これを使うと、<strong>「どの設定ファイルの、どの行が原因で無視（あるいは追跡）されているか」</strong>をピンポイントで教えてくれます。</p>
+<p>この後、<strong>「GitHubに間違えて上げてしまった機密情報（パスワードなど）を完全に消し去る方法」</strong>などについて詳しく知りたいですか？</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="フッターナビゲーション">
+        <a href="../0004-github-push/" class="btn btn-neutral float-left" title="GitHubにpushする方法"><span class="icon icon-circle-arrow-left"></span> 前へ</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  <a href="https://readthedocs.org">Read the Docs</a> 提供の <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> を使って <a href="https://www.mkdocs.org/">MkDocs</a> でビルドされました。
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="バージョン">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../0004-github-push/" style="color: #fcfcfc">&laquo; 前へ</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
