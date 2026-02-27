@@ -91,9 +91,7 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">画像ファイルをWebp形式に変換</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">使い方例</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">主な特徴・対応状況</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">主な特徴・対応状況</a>
     </li>
     </ul>
                 </li>
@@ -144,11 +142,9 @@ image2webp.py
 ・ 元ファイルと同じ場所に「元ファイル名.webp」で保存
 &quot;&quot;&quot;
 
-import glob
-import os
 import sys
+import os
 from pathlib import Path
-
 from PIL import Image, ImageSequence
 
 
@@ -218,22 +214,16 @@ def convert_to_webp(filepath: str) -&gt; bool:
 
 def main():
     if len(sys.argv) &lt; 2:
-        myname = os.path.basename(__file__)
-        print(&quot;Webp以外の画像ファイルをWebp形式に変換します&quot;)
-        print(f&quot;Usage: python {myname} ファイルまたはワイルドカード...&quot;)
-        print(&quot;例:    python image2webp.py *.jpg *.png anim.gif&quot;)
-        exit(0)
-
-    args = []
-    for arg in sys.argv[1:]:
-        args.extend(glob.glob(arg) or [arg])
+        print(&quot;使い方: python image2webp.py ファイルまたはワイルドカード...&quot;)
+        print(&quot;例:   python image2webp.py *.jpg *.png anim.gif&quot;)
+        sys.exit(1)
 
     success_count = 0
     fail_count = 0
     skip_count = 0
 
-    # コマンドライン引数を順に処理
-    for arg in args:
+    # コマンドライン引数を順に処理（シェルで展開されたパスが来る）
+    for arg in sys.argv[1:]:
         path = Path(arg)
 
         if path.is_file():
@@ -254,10 +244,12 @@ def main():
 
 
 if __name__ == &quot;__main__&quot;:
-    main()
-</code></pre>
-<h3 id="_1">使い方例</h3>
-<pre><code class="language-bash"># 現在のフォルダ内のjpg,pngを全部変換
+    main()```
+
+### 使い方例
+
+```bash
+# 現在のフォルダ内のjpg,pngを全部変換
 python image2webp.py *.jpg *.png
 
 # 特定のファイルだけ
@@ -266,7 +258,7 @@ python image2webp.py photo.jpg meme.gif sticker.apng
 # サブフォルダも含めたい場合はシェルで
 find . -type f \( -iname &quot;*.jpg&quot; -o -iname &quot;*.png&quot; -o -iname &quot;*.gif&quot; \) -exec python image2webp.py {} +
 </code></pre>
-<h3 id="_2">主な特徴・対応状況</h3>
+<h3 id="_1">主な特徴・対応状況</h3>
 <ul>
 <li>静止画（jpg, png, bmpなど）→ WebP（透過保持）</li>
 <li>アニメーションGIF → アニメーションWebP</li>
