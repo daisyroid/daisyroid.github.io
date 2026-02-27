@@ -23,7 +23,7 @@
     
     
       
-        <title>あれ？ gitignore が効かない - AI QA</title>
+        <title>あれ？ gitignore が効かない - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -831,39 +831,38 @@
 <p>ファイル自体を削除せずに、Gitの管理対象からだけ外すコマンドを実行します。</p>
 <h3 id="1">1. 特定のファイルだけ無視したい場合</h3>
 <p>例えば <code>config.json</code> を無視したいなら：</p>
-<pre><code class="language-bash">git rm --cached config.json
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>config.json
+</span></code></pre></div>
 <h3 id="2-gitignore">2. .gitignore の設定をすべて反映し直したい場合（推奨）</h3>
 <p>一度すべてのキャッシュをクリアして、<code>.gitignore</code> に基づいて登録し直すのが一番確実です。</p>
 <ol>
-<li><strong>現在の変更をすべてコミットしておく</strong>（念のため）</li>
+<li>
+<p><strong>現在の変更をすべてコミットしておく</strong>（念のため）
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Save work before re-indexing&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>インデックス（キャッシュ）をすべて削除</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>--cached<span class="w"> </span>.
+</span></code></pre></div></p>
+</li>
 </ol>
-<pre><code class="language-bash">git add .
-git commit -m &quot;Save work before re-indexing&quot;
-
-</code></pre>
-<ol>
-<li><strong>インデックス（キャッシュ）をすべて削除</strong></li>
-</ol>
-<pre><code class="language-bash">git rm -r --cached .
-
-</code></pre>
 <blockquote>
 <p>※ <code>--cached</code> を付け忘れると実ファイルが消えるので注意してください！</p>
 </blockquote>
 <ol>
-<li><strong>改めてすべて追加し直す</strong></li>
+<li>
+<p><strong>改めてすべて追加し直す</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>反映をコミットする</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix: Apply .gitignore rules&quot;</span>
+</span></code></pre></div></p>
+</li>
 </ol>
-<pre><code class="language-bash">git add .
-
-</code></pre>
-<ol>
-<li><strong>反映をコミットする</strong></li>
-</ol>
-<pre><code class="language-bash">git commit -m &quot;Fix: Apply .gitignore rules&quot;
-
-</code></pre>
 <hr />
 <h2 id="_3">その他のチェックポイント</h2>
 <p>もし上記でも直らない場合は、以下の2点を確認してみてください。</p>
@@ -874,9 +873,8 @@ git commit -m &quot;Save work before re-indexing&quot;
 <hr />
 <h3 id="_4">次に役立つヒント</h3>
 <p>「何が原因で無視されていないのか」を確認するには、以下のコマンドが便利です。</p>
-<pre><code class="language-bash">git check-ignore -v &lt;ファイル名&gt;
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>check-ignore<span class="w"> </span>-v<span class="w"> </span>&lt;ファイル名&gt;
+</span></code></pre></div>
 <p>これを使うと、<strong>「どの設定ファイルの、どの行が原因で無視（あるいは追跡）されているか」</strong>をピンポイントで教えてくれます。</p>
 <p>この後、<strong>「GitHubに間違えて上げてしまった機密情報（パスワードなど）を完全に消し去る方法」</strong>などについて詳しく知りたいですか？</p>
 

@@ -23,7 +23,7 @@
     
     
       
-        <title>git config 入力ミス消していい？ - AI QA</title>
+        <title>git config 入力ミス消していい？ - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -736,9 +736,8 @@
 <hr />
 <h3 id="_1">削除する方法</h3>
 <p>ターミナルまたはコマンドプロンプトで以下のコマンドを実行してください。</p>
-<pre><code class="language-bash">git config --global --unset user.mail
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>--unset<span class="w"> </span>user.mail
+</span></code></pre></div>
 <ul>
 <li><strong>注:</strong> もし <code>--list</code> を見たときにプロジェクト固有の設定（ローカル）として表示されていた場合は、<code>--global</code> を抜いて実行してください。</li>
 <li>実行後、再度 <code>git config --list</code> で消えていることを確認すればスッキリします。</li>
@@ -748,13 +747,11 @@
 <hr />
 <h3 id="_3">正しい設定の確認</h3>
 <p>ついでに、メインの <code>user.email</code> が正しいかどうかもチェックしておくと安心です。</p>
-<pre><code class="language-bash">git config user.email
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>config<span class="w"> </span>user.email
+</span></code></pre></div>
 <p>もしこれが空欄だったり、間違っていたりする場合は、以下で再設定できます。</p>
-<pre><code class="language-bash">git config --global user.email &quot;your_email@example.com&quot;
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</span></code></pre></div>
 <p>その他、Gitの設定に関して「これって何の意味があるの？」と気になる項目は他にありますか？</p>
 
 

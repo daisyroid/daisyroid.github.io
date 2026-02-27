@@ -23,7 +23,7 @@
     
     
       
-        <title>Pythonのインストール - AI QA</title>
+        <title>Pythonのインストール - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -815,14 +815,12 @@
 <hr />
 <h2 id="1">1. パッケージリストの更新</h2>
 <p>まずは、Ubuntu内のツールを最新状態にします。</p>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt upgrade -y
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</span></code></pre></div>
 <h2 id="2-python">2. Pythonとツールのインストール</h2>
 <p>Ubuntuには最初からPythonがインストールされていますが、開発に必要な「pip（ライブラリ管理ツール）」や「仮想環境作成ツール」を追加します。</p>
-<pre><code class="language-bash">sudo apt install -y python3-pip python3-venv
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
+</span></code></pre></div>
 <hr />
 <h2 id="3-vs-code">3. VS Codeとの連携（最重要）</h2>
 <p>Windows側のVS CodeからWSLの中を直接操作できるようにします。これができると、Windowsのソフトを使っている感覚でLinux上のコードを快適に書けます。</p>
@@ -836,41 +834,37 @@
 <h2 id="4-venv">4. 仮想環境（venv）の作成と実行</h2>
 <p>プロジェクトごとにライブラリを分けるために「仮想環境」を作るのがPython開発の鉄則です。</p>
 <ol>
-<li><strong>プロジェクトフォルダを作成して移動</strong></li>
+<li>
+<p><strong>プロジェクトフォルダを作成して移動</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>my-python-app
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>my-python-app
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>仮想環境を作成（名前を <code>.venv</code> にする場合）</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>仮想環境を起動（アクティベート）</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span></code></pre></div></p>
+</li>
+<li>
+<p>ターミナルの左端に <code>(.venv)</code> と表示されれば成功です！</p>
+</li>
 </ol>
-<pre><code class="language-bash">mkdir my-python-app
-cd my-python-app
-
-</code></pre>
-<ol>
-<li><strong>仮想環境を作成（名前を <code>.venv</code> にする場合）</strong></li>
-</ol>
-<pre><code class="language-bash">python3 -m venv .venv
-
-</code></pre>
-<ol>
-<li><strong>仮想環境を起動（アクティベート）</strong></li>
-</ol>
-<pre><code class="language-bash">source .venv/bin/activate
-
-</code></pre>
-<ul>
-<li>ターミナルの左端に <code>(.venv)</code> と表示されれば成功です！</li>
-</ul>
 <hr />
 <h2 id="5">5. サンプルコードの作成と実行</h2>
 <p>VS Codeのターミナル（<code>Ctrl + @</code>）で以下を入力して、エディタでファイルを開きます。</p>
-<pre><code class="language-bash">code hello.py
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>code<span class="w"> </span>hello.py
+</span></code></pre></div>
 <p>開いたファイルに以下のコードを書き、保存してください。</p>
-<pre><code class="language-python">print(&quot;Hello from WSL!&quot;)
-
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from WSL!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <p>最後に、ターミナルで実行します。</p>
-<pre><code class="language-bash">python3 hello.py
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3<span class="w"> </span>hello.py
+</span></code></pre></div>
 <hr />
 <h3 id="_1">次のステップへのヒント</h3>
 <p>WSLでは、Windows側のファイル（Cドライブなど）にもアクセスできますが、<strong>パフォーマンス向上のため、コードは必ずWSL側のホームディレクトリ（<code>~/</code>）の中に置く</strong>ようにしてください。</p>

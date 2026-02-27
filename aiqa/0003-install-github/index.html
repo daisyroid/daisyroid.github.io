@@ -23,7 +23,7 @@
     
     
       
-        <title>GitHubの設定 - AI QA</title>
+        <title>GitHubの設定 - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -815,22 +815,19 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
 <hr />
 <h2 id="1-wslgit">1. WSL側のGitにユーザー情報を登録</h2>
 <p>まず、コミット時に記録される名前とメールアドレスを設定します（GitHubのアカウント情報と一致させてください）。</p>
-<pre><code class="language-bash">git config --global user.name &quot;Your Name&quot;
-git config --global user.email &quot;your_email@example.com&quot;
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</span></code></pre></div>
 <h2 id="2-ssh">2. SSHキーの作成（認証設定）</h2>
 <p>パスワードを毎回入力するのは面倒なので、<strong>SSH公開鍵認証</strong>を使います。</p>
 <p>1. <strong>鍵ペアを作成する</strong>
-以下のコマンドを入力し、すべてそのまま <code>Enter</code> を押して進めます。</p>
-<pre><code class="language-bash">ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
-
-</code></pre>
+以下のコマンドを入力し、すべてそのまま <code>Enter</code> を押して進めます。
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</span></code></pre></div></p>
 <p>2. <strong>公開鍵の中身をコピーする</strong>
-作成された鍵の内容を表示させ、表示された文字列（<code>ssh-ed25519 ...</code> で始まる行）をすべてコピーします。</p>
-<pre><code class="language-bash">cat ~/.ssh/id_ed25519.pub
-
-</code></pre>
+作成された鍵の内容を表示させ、表示された文字列（<code>ssh-ed25519 ...</code> で始まる行）をすべてコピーします。
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</span></code></pre></div></p>
 <h2 id="3-github">3. GitHubに公開鍵を登録</h2>
 <ol>
 <li>ブラウザで <a href="https://github.com/settings/keys">GitHubのSettings</a> を開きます。</li>
@@ -841,25 +838,23 @@ git config --global user.email &quot;your_email@example.com&quot;
 </ol>
 <h2 id="4">4. 接続テスト</h2>
 <p>以下のコマンドでGitHubに正しく接続できるか確認します。</p>
-<pre><code class="language-bash">ssh -T git@github.com
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</span></code></pre></div>
 <p><code>Hi [ユーザー名]! You've successfully authenticated...</code> と表示されれば成功です！</p>
 <hr />
 <h2 id="5">5. 実際にリポジトリをアップロードする手順</h2>
 <p>作成した <code>my-python-app</code> フォルダをGitHubにアップする流れは以下の通りです。</p>
 <ol>
 <li><strong>GitHub上で新しいリポジトリを作成</strong>し、表示される「SSH」のURL（<code>git@github.com:user/repo.git</code>）をコピーします。</li>
-<li><strong>WSLのターミナルで実行:</strong></li>
+<li><strong>WSLのターミナルで実行:</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>init
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>コピーしたURL<span class="o">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</span></code></pre></div></li>
 </ol>
-<pre><code class="language-bash">git init
-git add .
-git commit -m &quot;Initial commit&quot;
-git branch -M main
-git remote add origin [コピーしたURL]
-git push -u origin main
-
-</code></pre>
 <hr />
 <h3 id="tipsvs-codegui">便利なTips：VS CodeのGUIを使う</h3>
 <p>VS Codeの左側にある<strong>「ソース管理」アイコン</strong>（枝分かれしたようなマーク）を使えば、コマンドを打たなくてもボタン操作だけで <code>Add</code> や <code>Commit</code>、<code>Push</code> が可能です。WSL環境でもシームレスに動作します。</p>

@@ -23,7 +23,7 @@
     
     
       
-        <title>Pythonでウィンドウ位置指定 - AI QA</title>
+        <title>Pythonでウィンドウ位置指定 - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -757,74 +757,70 @@
 <p>ご要望の動作をするスクリプトを作成しました。</p>
 <h3 id="1">1. 事前準備</h3>
 <p>まず、Win32 APIを叩くためのライブラリをインストールしてください。</p>
-<pre><code class="language-bash">pip install pywin32
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pywin32
+</span></code></pre></div>
 <h3 id="2-winsizepy">2. プログラム本体 (<code>winsize.py</code>)</h3>
-<pre><code class="language-python">import sys
-import re
-import win32gui
-import win32con
-
-def set_window_size(regex_pattern, x, y, width, height):
-    # コンパイルした正規表現
-    pattern = re.compile(regex_pattern)
-    target_hwnd = None
-
-    # 全ウィンドウを列挙してタイトルをチェックするコールバック関数
-    def callback(hwnd, extra):
-        nonlocal target_hwnd
-        if target_hwnd is not None:
-            return  # すでに見つかっていればスキップ
-
-        if win32gui.IsWindowVisible(hwnd):
-            title = win32gui.GetWindowText(hwnd)
-            if pattern.search(title):
-                target_hwnd = hwnd
-
-    win32gui.EnumWindows(callback, None)
-
-    if target_hwnd:
-        print(f&quot;Found window: '{win32gui.GetWindowText(target_hwnd)}' (HWND: {target_hwnd})&quot;)
-
-        # SWP_NOZORDER: 現在のZオーダー（重なり順）を維持
-        # SWP_SHOWWINDOW: ウィンドウを表示する
-        win32gui.SetWindowPos(target_hwnd, win32con.HWND_TOP, x, y, width, height, win32con.SWP_NOZORDER | win32con.SWP_SHOWWINDOW)
-        print(f&quot;Moved to ({x}, {y}) with size {width}x{height}&quot;)
-    else:
-        print(f&quot;No window found matching pattern: {regex_pattern}&quot;)
-
-if __name__ == &quot;__main__&quot;:
-    if len(sys.argv) != 6:
-        print(&quot;Usage: python winsize.py &lt;Regex&gt; &lt;X&gt; &lt;Y&gt; &lt;Width&gt; &lt;Height&gt;&quot;)
-        sys.exit(1)
-
-    try:
-        reg = sys.argv[1]
-        nx = int(sys.argv[2])
-        ny = int(sys.argv[3])
-        nw = int(sys.argv[4])
-        nh = int(sys.argv[5])
-
-        set_window_size(reg, nx, ny, nw, nh)
-    except ValueError:
-        print(&quot;Error: X, Y, Width, and Height must be integers.&quot;)
-
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">win32gui</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">win32con</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_window_size</span><span class="p">(</span><span class="n">regex_pattern</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="c1"># コンパイルした正規表現</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">regex_pattern</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">target_hwnd</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="c1"># 全ウィンドウを列挙してタイトルをチェックするコールバック関数</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">hwnd</span><span class="p">,</span> <span class="n">extra</span><span class="p">):</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">nonlocal</span> <span class="n">target_hwnd</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="k">if</span> <span class="n">target_hwnd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            <span class="k">return</span>  <span class="c1"># すでに見つかっていればスキップ</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="k">if</span> <span class="n">win32gui</span><span class="o">.</span><span class="n">IsWindowVisible</span><span class="p">(</span><span class="n">hwnd</span><span class="p">):</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>            <span class="n">title</span> <span class="o">=</span> <span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">hwnd</span><span class="p">)</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>            <span class="k">if</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>                <span class="n">target_hwnd</span> <span class="o">=</span> <span class="n">hwnd</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="n">win32gui</span><span class="o">.</span><span class="n">EnumWindows</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="k">if</span> <span class="n">target_hwnd</span><span class="p">:</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found window: &#39;</span><span class="si">{</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">target_hwnd</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; (HWND: </span><span class="si">{</span><span class="n">target_hwnd</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="c1"># SWP_NOZORDER: 現在のZオーダー（重なり順）を維持</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        <span class="c1"># SWP_SHOWWINDOW: ウィンドウを表示する</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        <span class="n">win32gui</span><span class="o">.</span><span class="n">SetWindowPos</span><span class="p">(</span><span class="n">target_hwnd</span><span class="p">,</span> <span class="n">win32con</span><span class="o">.</span><span class="n">HWND_TOP</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">win32con</span><span class="o">.</span><span class="n">SWP_NOZORDER</span> <span class="o">|</span> <span class="n">win32con</span><span class="o">.</span><span class="n">SWP_SHOWWINDOW</span><span class="p">)</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Moved to (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">) with size </span><span class="si">{</span><span class="n">width</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No window found matching pattern: </span><span class="si">{</span><span class="n">regex_pattern</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: python winsize.py &lt;Regex&gt; &lt;X&gt; &lt;Y&gt; &lt;Width&gt; &lt;Height&gt;&quot;</span><span class="p">)</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="n">reg</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        <span class="n">nx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="n">ny</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="n">nw</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="n">nh</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>        <span class="n">set_window_size</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nw</span><span class="p">,</span> <span class="n">nh</span><span class="p">)</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: X, Y, Width, and Height must be integers.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <hr />
 <h3 id="3">3. 実行方法</h3>
 <p>コマンドプロンプトやPowerShellから、以下のように実行します。</p>
 <ul>
-<li><strong>例：メモ帳（Notepad）を画面左上に 800x600 で配置する場合</strong></li>
+<li><strong>例：メモ帳（Notepad）を画面左上に 800x600 で配置する場合</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>winsize.py<span class="w"> </span><span class="s2">&quot;.*メモ帳.*&quot;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">800</span><span class="w"> </span><span class="m">600</span>
+</span></code></pre></div></li>
 </ul>
-<pre><code class="language-bash">python winsize.py &quot;.*メモ帳.*&quot; 0 0 800 600
-
-</code></pre>
 <p>※英語環境なら <code>".*Notepad.*"</code> としてください。
-* <strong>例：Chromeを (100, 100) の位置に 1200x800 で配置する場合</strong></p>
-<pre><code class="language-bash">python winsize.py &quot;Google Chrome&quot; 100 100 1200 800
-
-</code></pre>
+* <strong>例：Chromeを (100, 100) の位置に 1200x800 で配置する場合</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>winsize.py<span class="w"> </span><span class="s2">&quot;Google Chrome&quot;</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">1200</span><span class="w"> </span><span class="m">800</span>
+</span></code></pre></div></p>
 <h3 id="_1">注意点</h3>
 <ul>
 <li><strong>管理者権限:</strong> 操作したいアプリが管理者権限で実行されている場合、このスクリプトも管理者権限で実行する必要があります。</li>

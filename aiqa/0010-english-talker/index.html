@@ -23,7 +23,7 @@
     
     
       
-        <title>Windowsに英語でしゃべらせる - AI QA</title>
+        <title>Windowsに英語でしゃべらせる - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -735,23 +735,22 @@
 <p>「どんな環境でも（英語音声が入っていれば）確実に英語で喋らせる」ためには、音声の名前ではなく、<strong>音声の属性（Culture/言語設定）</strong>でフィルタリングして選択するのがスマートで確実な方法です。</p>
 <h3 id="_1">英語音声を動的に選択する方法</h3>
 <p><code>GetInstalledVoices()</code> メソッドでシステム内の音声一覧を取得し、その中から <code>Culture</code> が <code>en-US</code>（または <code>en</code> から始まるもの）を探して選択するスクリプトがこちらです。</p>
-<pre><code class="language-powershell">Add-Type -AssemblyName System.Speech
-$say = New-Object System.Speech.Synthesis.SpeechSynthesizer
-
-# インストールされている音声の中から、言語が英語(&quot;en&quot;)のものを探す
-$englishVoice = $say.GetInstalledVoices() | Where-Object { 
-    $_.VoiceInfo.Culture.Name.StartsWith(&quot;en&quot;) -and $_.Enabled 
-} | Select-Object -First 1
-
-if ($englishVoice) {
-    $say.SelectVoice($englishVoice.VoiceInfo.Name)
-    $say.Speak(&quot;Hello, this is an English voice selected dynamically.&quot;)
-} else {
-    Write-Warning &quot;英語の音声エンジンが見つかりませんでした。&quot;
-    $say.Speak(&quot;英語の音声が見つかりません。&quot;)
-}
-
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">Speech</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$say</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Speech</span><span class="p">.</span><span class="n">Synthesis</span><span class="p">.</span><span class="n">SpeechSynthesizer</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># インストールされている音声の中から、言語が英語(&quot;en&quot;)のものを探す</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$englishVoice</span> <span class="p">=</span> <span class="nv">$say</span><span class="p">.</span><span class="n">GetInstalledVoices</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nv">$_</span><span class="p">.</span><span class="n">VoiceInfo</span><span class="p">.</span><span class="n">Culture</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">StartsWith</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Enabled</span> 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$englishVoice</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="nv">$say</span><span class="p">.</span><span class="n">SelectVoice</span><span class="p">(</span><span class="nv">$englishVoice</span><span class="p">.</span><span class="n">VoiceInfo</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nv">$say</span><span class="p">.</span><span class="n">Speak</span><span class="p">(</span><span class="s2">&quot;Hello, this is an English voice selected dynamically.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;英語の音声エンジンが見つかりませんでした。&quot;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="nv">$say</span><span class="p">.</span><span class="n">Speak</span><span class="p">(</span><span class="s2">&quot;英語の音声が見つかりません。&quot;</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr />
 <h3 id="_2">解説とポイント</h3>
 <ol>

@@ -23,7 +23,7 @@
     
     
       
-        <title>rsync でフォルダを同期 - AI QA</title>
+        <title>rsync でフォルダを同期 - AI質問箱</title>
       
     
     
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="AI QA" class="md-header__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-header__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -96,7 +96,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AI QA
+            AI質問箱
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI QA" class="md-nav__button md-logo" aria-label="AI QA" data-md-component="logo">
+    <a href=".." title="AI質問箱" class="md-nav__button md-logo" aria-label="AI質問箱" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    AI QA
+    AI質問箱
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -205,7 +205,7 @@
   <span class="md-ellipsis">
     
   
-    AI質問箱
+    AI質問箱トップページ
   
 
     
@@ -848,9 +848,8 @@
 <hr />
 <h2 id="1">1. 推奨されるコマンド</h2>
 <p>以下のコマンドを使えば、目的の「差分コピー」が実現できます。</p>
-<pre><code class="language-bash">rsync -av --update /path/to/foo/ ~/bar/
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--update<span class="w"> </span>/path/to/foo/<span class="w"> </span>~/bar/
+</span></code></pre></div>
 <h3 id="_1">オプションの解説</h3>
 <ul>
 <li><strong><code>-a</code> (archive):</strong> ディレクトリ構造、権限（パーミッション）、タイムスタンプをそのまま維持します（これ一つで <code>-r</code> など複数の役割を兼ねます）。</li>
@@ -864,14 +863,12 @@
 <h2 id="2">2. もっと便利に使いこなすテクニック</h2>
 <h3 id="-delete">削除されたファイルも同期させる (<code>--delete</code>)</h3>
 <p>コピー元で削除されたファイルを、コピー先からも消して「完全に中身を一致させたい」場合はこのオプションを付けます。</p>
-<pre><code class="language-bash">rsync -av --delete /path/to/foo/ ~/bar/
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--delete<span class="w"> </span>/path/to/foo/<span class="w"> </span>~/bar/
+</span></code></pre></div>
 <h3 id="-dry-run">実行前に「何がコピーされるか」確認する (<code>--dry-run</code>)</h3>
 <p>大事なデータを扱うとき、いきなり実行するのが怖い場合は、このオプションを付けると<strong>「実際にはコピーせず、何が行われるかだけ」</strong>を表示してくれます。</p>
-<pre><code class="language-bash">rsync -av --update --dry-run /path/to/foo/ ~/bar/
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--update<span class="w"> </span>--dry-run<span class="w"> </span>/path/to/foo/<span class="w"> </span>~/bar/
+</span></code></pre></div>
 <hr />
 <h2 id="3-cp-rsync">3. なぜ <code>cp</code> ではなく <code>rsync</code> なのか？</h2>
 <p>一応 <code>cp</code> にも <code>-u</code> オプションがありますが、<code>rsync</code> が選ばれるのには理由があります。</p>
@@ -909,9 +906,8 @@
 <hr />
 <h2 id="4">4. 応用：特定のファイルを除外してコピー</h2>
 <p>例えば、<code>.git</code> フォルダや <code>__pycache__</code> などの不要なデータを除外して差分コピーしたい場合はこう書きます。</p>
-<pre><code class="language-bash">rsync -av --update --exclude='.git' --exclude='__pycache__' /path/to/foo/ ~/bar/
-
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--update<span class="w"> </span>--exclude<span class="o">=</span><span class="s1">&#39;.git&#39;</span><span class="w"> </span>--exclude<span class="o">=</span><span class="s1">&#39;__pycache__&#39;</span><span class="w"> </span>/path/to/foo/<span class="w"> </span>~/bar/
+</span></code></pre></div>
 <p>これで、バックアップや環境の同期が劇的に速くなります！</p>
 <p><strong>次は、「rsyncを使って定期的に自動バックアップを取る方法」や、「特定の拡張子（.pyなど）だけを抽出してコピーする方法」などについてお伝えしましょうか？</strong></p>
 
