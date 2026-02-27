@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../0011-winsize/">
+        <link rel="prev" href="../0012-image2webp/">
       
-      
-        <link rel="next" href="../0013-mkdocs-material/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>画像ファイルをWebp形式に変換 - AI QA</title>
+        <title>テーマMaterialがMkDocsで使えなくなる？ - AI QA</title>
       
     
     
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#webp" class="md-skip">
+        <a href="#materialmkdocs" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              画像ファイルをWebp形式に変換
+              テーマMaterialがMkDocsで使えなくなる？
             
           </span>
         </div>
@@ -519,6 +517,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../0012-image2webp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    画像ファイルをWebp形式に変換
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -538,7 +563,7 @@
   <span class="md-ellipsis">
     
   
-    画像ファイルをWebp形式に変換
+    テーマMaterialがMkDocsで使えなくなる？
   
 
     
@@ -556,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    画像ファイルをWebp形式に変換
+    テーマMaterialがMkDocsで使えなくなる？
   
 
     
@@ -582,10 +607,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#20262" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現在の状況（2026年2月時点）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        主な特徴・対応状況
+        おすすめの対応（優先順）
       
     </span>
   </a>
@@ -596,7 +632,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        [修正版]
+        将来の見通し
       
     </span>
   </a>
@@ -607,33 +643,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../0013-mkdocs-material/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    テーマMaterialがMkDocsで使えなくなる？
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -665,10 +674,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#20262" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現在の状況（2026年2月時点）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        主な特徴・対応状況
+        おすすめの対応（優先順）
       
     </span>
   </a>
@@ -679,7 +699,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        [修正版]
+        将来の見通し
       
     </span>
   </a>
@@ -703,166 +723,77 @@
 
 
 
-<h1 id="webp">画像ファイルをWebp形式に変換</h1>
+<h1 id="materialmkdocs">テーマMaterialがMkDocsで使えなくなる？</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>Pythonで、画像ファイルを読み込んで、拡張子が".webp"でなければWEBP形式に変換し、拡張子を".webp"に変えた名前で保存してください。Animated GIF や Animated PNG にも対応してください。CLIで「python image2webp.py ファイルパス1 ...」と、複数のファイルが指定できます。ファイル名はワイルドカードでも指定できます。</p>
+<p>Material for MkDocs を使おうとすると、MkDocsは古いので別のジェネレーターに変えてくださいと警告がでますが、MkDocsのままでもよいですか。</p>
 <p><strong>[回答] Grok</strong></p>
 </blockquote>
-<p>以下は、要求された仕様を満たすPythonスクリプトの例です。</p>
-<pre><code class="language-python">#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-&quot;&quot;&quot;
-image2webp.py
-
-使用方法:
-    python image2webp.py image1.jpg image2.png *.png anim.gif
-    python image2webp.py &quot;写真フォルダ/*.jpg&quot;
-
-・ .webp で終わっているファイルはスキップ
-・ それ以外の画像をWebPに変換
-・ アニメーションGIF / APNG にも対応（透過・アニメーションを保持）
-・ 元ファイルと同じ場所に「元ファイル名.webp」で保存
-&quot;&quot;&quot;
-
-import sys
-import os
-from pathlib import Path
-from PIL import Image, ImageSequence
-
-
-def convert_to_webp(filepath: str) -&gt; bool:
-    &quot;&quot;&quot;
-    1つのファイルをWebPに変換
-    成功したらTrue、失敗したらFalseを返す
-    &quot;&quot;&quot;
-    path = Path(filepath)
-
-    # 既にwebpならスキップ
-    if path.suffix.lower() == '.webp':
-        print(f&quot;スキップ（既にwebp）: {path}&quot;)
-        return True
-
-    output_path = path.with_suffix('.webp')
-
-    try:
-        with Image.open(path) as im:
-            # アニメーションかどうかを判定
-            is_animated = getattr(im, &quot;is_animated&quot;, False)
-
-            if is_animated:
-                # アニメーションGIF / APNG の場合
-                frames = []
-                durations = []
-                loop = 0
-
-                for frame in ImageSequence.Iterator(im):
-                    frames.append(frame.convert(&quot;RGBA&quot;))
-                    # 各フレームの表示時間（ミリ秒）
-                    durations.append(frame.info.get(&quot;duration&quot;, 100))
-
-                # APNGや一部GIFにあるループ回数
-                loop = im.info.get(&quot;loop&quot;, 0)
-
-                frames[0].save(
-                    output_path,
-                    format=&quot;WEBP&quot;,
-                    save_all=True,
-                    append_images=frames[1:],
-                    duration=durations,
-                    loop=loop,
-                    quality=90,           # 画質（0-100）
-                    method=4,             # 圧縮レベル（0=最速〜6=最高圧縮）
-                    lossless=False
-                )
-            else:
-                # 通常の静止画
-                # RGBA → RGB に変換する場合もあるが、ここでは透過を保持
-                im = im.convert(&quot;RGBA&quot;)
-                im.save(
-                    output_path,
-                    format=&quot;WEBP&quot;,
-                    quality=90,
-                    method=4,
-                    lossless=False
-                )
-
-            print(f&quot;変換完了: {path} → {output_path}&quot;)
-            return True
-
-    except Exception as e:
-        print(f&quot;エラー: {path} → {e}&quot;)
-        return False
-
-
-def main():
-    if len(sys.argv) &lt; 2:
-        print(&quot;使い方: python image2webp.py ファイルまたはワイルドカード...&quot;)
-        print(&quot;例:   python image2webp.py *.jpg *.png anim.gif&quot;)
-        sys.exit(1)
-
-    success_count = 0
-    fail_count = 0
-    skip_count = 0
-
-    # コマンドライン引数を順に処理（シェルで展開されたパスが来る）
-    for arg in sys.argv[1:]:
-        path = Path(arg)
-
-        if path.is_file():
-            if convert_to_webp(path):
-                success_count += 1
-            else:
-                fail_count += 1
-        elif path.is_dir():
-            print(f&quot;ディレクトリはスキップ: {path}&quot;)
-        else:
-            # ワイルドカードがシェルで展開されなかった場合（稀）
-            print(f&quot;見つかりません: {arg}&quot;)
-            fail_count += 1
-
-    print(&quot;\n&quot; + &quot;=&quot;*50)
-    print(f&quot;完了！  成功: {success_count}  失敗: {fail_count}  スキップ: {skip_count}&quot;)
-    print(&quot;=&quot;*50)
-
-
-if __name__ == &quot;__main__&quot;:
-    main()```
-
-### 使い方例
-
-```bash
-# 現在のフォルダ内のjpg,pngを全部変換
-python image2webp.py *.jpg *.png
-
-# 特定のファイルだけ
-python image2webp.py photo.jpg meme.gif sticker.apng
-
-# サブフォルダも含めたい場合はシェルで
-find . -type f \( -iname &quot;*.jpg&quot; -o -iname &quot;*.png&quot; -o -iname &quot;*.gif&quot; \) -exec python image2webp.py {} +
+<p>はい、<strong>MkDocsのままでも基本的に問題なく使えます</strong>が、状況によっては<strong>すぐにMkDocsをアップデートする</strong>か、<strong>警告を無視して使い続ける</strong>かの判断が必要です。あなたの見ている警告は、Material for MkDocsの最新版（9.7.x系列）が<strong>MkDocs 2.0（プレリリース/開発中）</strong>への非互換性を検知して出しているものです。</p>
+<h3 id="20262">現在の状況（2026年2月時点）</h3>
+<ul>
+<li>Material for MkDocsの最新バージョン（9.7.2〜9.7.3あたり）は、<strong>MkDocs 1.x系</strong>（特に1.6.xなど）で完全に動作します。</li>
+<li>MkDocs 2.0はまだ正式リリースされておらず、プレリリース段階です。</li>
+<li>Material for MkDocsの開発元（squidfunk）は、MkDocs 2.0の互換性が取れていないため、<strong>mkdocs build/serve時に警告</strong>を表示するようにしています。</li>
+<li>この警告は「MkDocsが古い」ではなく、「<strong>将来のMkDocs 2.0でこのMaterialは動かなくなる可能性が高い</strong>」という意味のものです。</li>
+<li>実際にはMkDocs 1.xを使っている限り、<strong>警告が出てもビルド・サイト生成は普通に成功</strong>します。</li>
+</ul>
+<p>つまり：
+- 今MkDocs 1.5〜1.6系を使っている → <strong>警告が出ても実質無害</strong>。普通に使えます。
+- MkDocsを意図的に古いまま（例: 1.4.x以下）にしている → 警告が出る可能性が高いですが、Material 9.xの機能の多くはまだ動くことが多いです。</p>
+<h3 id="_1">おすすめの対応（優先順）</h3>
+<table>
+<thead>
+<tr>
+<th>優先度</th>
+<th>対応方法</th>
+<th>メリット</th>
+<th>デメリット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★★★★★</td>
+<td>MkDocsを最新の1.x系にアップデート<br><code>pip install --upgrade mkdocs</code></td>
+<td>警告が消える<br>セキュリティ・バグ修正が入る<br>Materialの全機能が安定</td>
+<td>ほぼなし（1.x内なら破壊的変更少ない）</td>
+</tr>
+<tr>
+<td>★★★★☆</td>
+<td>MkDocsのバージョンを明示的に固定<br>例: <code>mkdocs&gt;=1.6,&lt;2</code></td>
+<td>警告を抑えつつ将来の2.0を防ぐ</td>
+<td>手動管理が必要</td>
+</tr>
+<tr>
+<td>★★★☆☆</td>
+<td>警告を無視して使い続ける</td>
+<td>何も変えなくて済む</td>
+<td>将来MkDocs 2.0が出たら移行必須になる</td>
+</tr>
+<tr>
+<td>★★☆☆☆</td>
+<td>Material for MkDocsをダウングレード<br>例: 9.5.xや9.6.x</td>
+<td>警告が出なくなる場合あり</td>
+<td>新機能・修正が使えなくなる</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一番おすすめ</strong>：<br />
+まずはこれを試してみてください（仮想環境推奨）。</p>
+<pre><code class="language-bash">pip install --upgrade mkdocs mkdocs-material
 </code></pre>
-<h3 id="_1">主な特徴・対応状況</h3>
+<p>これでMkDocsが1.6.x系（最新の1.x）になり、Materialも最新に揃います。<br />
+その後 <code>mkdocs serve</code> や <code>mkdocs build</code> を実行して、警告が消えるか確認してください。</p>
+<h3 id="_2">将来の見通し</h3>
 <ul>
-<li>静止画（jpg, png, bmpなど）→ WebP（透過保持）</li>
-<li>アニメーションGIF → アニメーションWebP</li>
-<li>APNG（アニメーションPNG）→ アニメーションWebP</li>
-<li>既存の<code>.webp</code>ファイルはスキップ</li>
-<li>エラー処理あり（壊れた画像などはエラーメッセージ表示）</li>
+<li>Material for MkDocsは<strong>メンテナンスモード</strong>に入っており、新機能追加はほぼ止まっています（クリティカルバグ・セキュリティ修正は2026年11月くらいまで続く）。</li>
+<li>MkDocs 2.0が出たら、<strong>多くのテーマ・プラグインが対応に追われる</strong>可能性が高く、Materialも完全互換にならない見込みです。</li>
+<li>そのため長期的に見ると、<strong>Zensical</strong>（Material開発元が作っているMkDocs互換の新ジェネレーター）への移行を検討する人も増えていますが、まだ急ぐ必要はありません。</li>
 </ul>
-<p>必要に応じて以下の値を調整してください：</p>
-<ul>
-<li><code>quality=90</code> → 画質（80〜95くらいがバランス良い）</li>
-<li><code>method=4</code> → 圧縮努力度（6にするとさらに小さくなるが遅い）</li>
-<li><code>lossless=True</code> → ロスレス（ファイルサイズはかなり大きくなる）</li>
-</ul>
-<p>楽しんで使ってください！</p>
-<hr />
-<h3 id="_2">[修正版]</h3>
-<ul>
-<li>Windowsのコマンドプロンプトにも対応しました</li>
-<li><a href="https://github.com/daisyroid/image2webp">https://github.com/daisyroid/image2webp</a></li>
-</ul>
+<p>結論：<br />
+<strong>今すぐMkDocsをアップデートすれば警告は消えて快適にMaterialを使い続けられます</strong>。<br />
+MkDocs 1.xのままで困っていないなら、そのままでも実害はほとんどありませんが、せっかくなので最新1.xに揃えるのが無難です。</p>
+<p>何かエラーメッセージの詳細や現在のバージョン（<code>pip show mkdocs</code> と <code>pip show mkdocs-material</code> の出力）を教えてくれれば、より正確にアドバイスできますよ！</p>
 
 
 
