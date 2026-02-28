@@ -12,6 +12,8 @@
         <link rel="prev" href="../0017-bash-echo-on/">
       
       
+        <link rel="next" href="../0019-ai-filename-creater/">
+      
       
         
       
@@ -815,6 +817,60 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0019-ai-filename-creater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日本語見出しから英語ファイル名を生成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0020-google-ai-translater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    無料のGoogleAPIで翻訳を試す
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1132,8 +1188,8 @@ shebang行（1行目）はそのままでも動きますが、動かない場合
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a># ドキュメントルート外のファイルパス
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a># =============================================
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>script_dir = os.path.dirname(__file__)           # cgi-bin/
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>project_dir = os.path.dirname(script_dir)        # project/
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>data_dir = os.path.join(os.path.dirname(project_dir), &#39;data&#39;) # ★ここを修正
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>project_dir = os.path.dirname(os.path.dirname(script_dir)) # ★ここを修正
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>data_dir = os.path.join(project_dir, &#39;data&#39;)
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>os.makedirs(data_dir, exist_ok=True)
 </span></code></pre></div>
 <p>なにか別のバグを見つけたらここに追加します。</p>
