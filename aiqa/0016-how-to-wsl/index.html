@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../0001-install-wsl/">
+        <link rel="prev" href="../0015-nice-to-heavy-cgi/">
       
-      
-        <link rel="next" href="../0003-install-github/">
       
       
         
@@ -23,7 +21,7 @@
     
     
       
-        <title>Pythonのインストール - AI質問箱</title>
+        <title>wsl.exeの使い方まとめ - AI質問箱</title>
       
     
     
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#wslexe" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pythonのインストール
+              wsl.exeの使い方まとめ
             
           </span>
         </div>
@@ -249,37 +247,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pythonのインストール
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0002-install-python/" class="md-nav__link">
         
   
   
@@ -295,98 +266,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. パッケージリストの更新
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Pythonとツールのインストール
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. VS Codeとの連携（最重要）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-venv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 仮想環境（venv）の作成と実行
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. サンプルコードの作成と実行
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. サンプルコードの作成と実行">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        次のステップへのヒント
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -746,10 +625,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0016-how-to-wsl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wsl.exeの使い方まとめ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -765,6 +671,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. WSLの起動・停止・管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. WSL上でのジョブ実行（コマンド連携）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. WSL上でのジョブ実行（コマンド連携）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本的な実行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        パイプラインの活用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特定のユーザーとして実行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 設定・情報取得
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 設定・情報取得">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        インストールと更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        インポート / エクスポート（バックアップ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WSLバージョンの変更
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 知っておくと便利な Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -796,10 +844,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-wsl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. パッケージリストの更新
+        1. WSLの起動・停止・管理
       
     </span>
   </a>
@@ -807,55 +855,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-python" class="md-nav__link">
+  <a href="#2-wsl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pythonとツールのインストール
+        2. WSL上でのジョブ実行（コマンド連携）
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. VS Codeとの連携（最重要）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-venv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 仮想環境（venv）の作成と実行
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. サンプルコードの作成と実行
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. サンプルコードの作成と実行">
+    <nav class="md-nav" aria-label="2. WSL上でのジョブ実行（コマンド連携）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        次のステップへのヒント
+        基本的な実行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        パイプラインの活用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特定のユーザーとして実行
       
     </span>
   </a>
@@ -864,6 +901,67 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 設定・情報取得
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 設定・情報取得">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        インストールと更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        インポート / エクスポート（バックアップ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WSLバージョンの変更
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 知っておくと便利な Tips
+      
+    </span>
+  </a>
   
 </li>
       
@@ -884,72 +982,105 @@
 
 
 
-<h1 id="python">Pythonのインストール</h1>
+<h1 id="wslexe">wsl.exeの使い方まとめ</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p><a href="../0001-install-wsl/">&lt;&lt;前の質問から続き</a></p>
-<p>WSL上でPythonの開発環境を作る方法 </p>
+<p>Windowsのwsl.exeでWSLに指令を出す方法のまとめをお願いします。WSLの起動と停止、WSLの設定や情報取得、WSL上でなんらかのジョブを実行させる方法など。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>WSLのインストール、お疲れ様でした！ここからは、WSL上のUbuntuを「最強のPython開発環境」に変えていきましょう。</p>
-<p>WSLで開発する場合、<strong>「WSLの中でコードを実行し、Windows上のVS Codeで編集する」</strong>というスタイルが一般的で、最も快適です。</p>
+<p>Windowsの標準ツールである <code>wsl.exe</code> を使いこなすと、PowerShellやコマンドプロンプトから直接Linux環境を操作できるようになり、作業効率が劇的に上がります。</p>
+<p>主要なコマンドを用途別に整理しました。</p>
 <hr />
-<h2 id="1">1. パッケージリストの更新</h2>
-<p>まずは、Ubuntu内のツールを最新状態にします。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<h2 id="1-wsl">1. WSLの起動・停止・管理</h2>
+<p>WSL自体の動作をコントロールする基本的なコマンドです。</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>コマンド</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>デフォルトの起動</strong></td>
+<td><code>wsl</code></td>
+<td>既定のディストリビューションを起動</td>
+</tr>
+<tr>
+<td><strong>特定OSの起動</strong></td>
+<td><code>wsl -d &lt;名前&gt;</code></td>
+<td>例: <code>wsl -d Ubuntu-22.04</code></td>
+</tr>
+<tr>
+<td><strong>シャットダウン</strong></td>
+<td><code>wsl --shutdown</code></td>
+<td>全てのWSLインスタンスを即座に停止</td>
+</tr>
+<tr>
+<td><strong>特定のOSを停止</strong></td>
+<td><code>wsl -t &lt;名前&gt;</code></td>
+<td>特定のディストリビューションのみ終了</td>
+</tr>
+<tr>
+<td><strong>状態の確認</strong></td>
+<td><code>wsl -l -v</code></td>
+<td>実行中か停止中か、WSLのバージョンを確認</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-wsl">2. WSL上でのジョブ実行（コマンド連携）</h2>
+<p>わざわざWSLのターミナルに入らなくても、Windows側から直接Linuxコマンドを実行できます。</p>
+<h3 id="_1">基本的な実行</h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># WindowsからLinuxのディレクトリ一覧を表示</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">wsl</span> <span class="nb">ls </span><span class="n">-la</span> <span class="p">/</span><span class="n">home</span><span class="p">/</span><span class="n">user</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># WindowsからLinuxの更新を行う</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">wsl</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
 </span></code></pre></div>
-<h2 id="2-python">2. Pythonとツールのインストール</h2>
-<p>Ubuntuには最初からPythonがインストールされていますが、開発に必要な「pip（ライブラリ管理ツール）」や「仮想環境作成ツール」を追加します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
+<h3 id="_2">パイプラインの活用</h3>
+<p>WindowsとLinuxの間でデータを渡すことができます。これが非常に強力です。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># WindowsのテキストファイルをLinuxのgrepで検索</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">type </span><span class="n">data</span><span class="p">.</span><span class="n">txt</span> <span class="p">|</span> <span class="n">wsl</span> <span class="n">grep</span> <span class="s2">&quot;error&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c"># Linuxの出力をWindowsのファイルに保存</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">wsl</span> <span class="nb">cat </span><span class="p">/</span><span class="n">etc</span><span class="p">/</span><span class="n">os-release</span> <span class="p">&gt;</span> <span class="n">linux_info</span><span class="p">.</span><span class="n">txt</span>
+</span></code></pre></div>
+<h3 id="_3">特定のユーザーとして実行</h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">wsl</span> <span class="n">-u</span> <span class="n">root</span> <span class="n">-d</span> <span class="n">Ubuntu</span> <span class="n">apt</span> <span class="n">upgrade</span>
 </span></code></pre></div>
 <hr />
-<h2 id="3-vs-code">3. VS Codeとの連携（最重要）</h2>
-<p>Windows側のVS CodeからWSLの中を直接操作できるようにします。これができると、Windowsのソフトを使っている感覚でLinux上のコードを快適に書けます。</p>
-<ol>
-<li><strong>Windows側でVS Codeを起動</strong>します。</li>
-<li>左側の「拡張機能」アイコン（四角いマーク）をクリックし、<strong>「WSL」</strong>と検索してインストールします（Microsoft公式のもの）。</li>
-<li>インストール後、左下の「青いマーク（&gt;&lt;）」をクリックし、<strong>「Connect to WSL」</strong>を選択します。</li>
-<li>これで、VS Codeのウィンドウが「WSL: Ubuntu」モードに切り替わります。</li>
-</ol>
-<hr />
-<h2 id="4-venv">4. 仮想環境（venv）の作成と実行</h2>
-<p>プロジェクトごとにライブラリを分けるために「仮想環境」を作るのがPython開発の鉄則です。</p>
-<ol>
-<li>
-<p><strong>プロジェクトフォルダを作成して移動</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>my-python-app
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>my-python-app
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>仮想環境を作成（名前を <code>.venv</code> にする場合）</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>仮想環境を起動（アクティベート）</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div></p>
-</li>
-<li>
-<p>ターミナルの左端に <code>(.venv)</code> と表示されれば成功です！</p>
-</li>
-</ol>
-<hr />
-<h2 id="5">5. サンプルコードの作成と実行</h2>
-<p>VS Codeのターミナル（<code>Ctrl + @</code>）で以下を入力して、エディタでファイルを開きます。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>code<span class="w"> </span>hello.py
+<h2 id="3">3. 設定・情報取得</h2>
+<p>環境のバックアップや、WSL自体のバージョン切り替えなどに使用します。</p>
+<h3 id="_4">インストールと更新</h3>
+<ul>
+<li><strong>利用可能なOS一覧:</strong> <code>wsl -l -o</code></li>
+<li><strong>WSL自体の更新:</strong> <code>wsl --update</code></li>
+</ul>
+<h3 id="_5">インポート / エクスポート（バックアップ）</h3>
+<p>環境をまるごとファイル（.tar）として保存できます。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># エクスポート</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-export</span> <span class="n">Ubuntu</span> <span class="n">C</span><span class="p">:\</span><span class="n">backup</span><span class="p">\</span><span class="n">ubuntu_backup</span><span class="p">.</span><span class="n">tar</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c"># インポート（新しい環境として復元）</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-import</span> <span class="n">MyCustomLinux</span> <span class="n">C</span><span class="p">:\</span><span class="n">WSL</span><span class="p">\</span><span class="n">MyCustom</span> <span class="n">C</span><span class="p">:\</span><span class="n">backup</span><span class="p">\</span><span class="n">ubuntu_backup</span><span class="p">.</span><span class="n">tar</span>
 </span></code></pre></div>
-<p>開いたファイルに以下のコードを書き、保存してください。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from WSL!&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p>最後に、ターミナルで実行します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3<span class="w"> </span>hello.py
+<h3 id="wsl">WSLバージョンの変更</h3>
+<p>特定のディストリビューションをWSL 1から2（またはその逆）へ変換します。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">wsl</span> <span class="p">-</span><span class="n">-set-version</span> <span class="p">&lt;</span><span class="n">名前</span><span class="p">&gt;</span> <span class="n">2</span>
 </span></code></pre></div>
 <hr />
-<h3 id="_1">次のステップへのヒント</h3>
-<p>WSLでは、Windows側のファイル（Cドライブなど）にもアクセスできますが、<strong>パフォーマンス向上のため、コードは必ずWSL側のホームディレクトリ（<code>~/</code>）の中に置く</strong>ようにしてください。</p>
-<p>次は、<strong>「機械学習向けのライブラリ（PandasやPyTorchなど）のインストール方法」</strong>や、<strong>「GitHubとの連携設定」</strong>について詳しく説明しましょうか？</p>
+<h2 id="4-tips">4. 知っておくと便利な Tips</h2>
+<ul>
+<li><strong>現在のディレクトリ:</strong> Windowsのパスで <code>wsl</code> を実行すると、自動的にその場所がLinuxパスに変換（<code>/mnt/c/...</code>）された状態で起動します。</li>
+<li><strong>デフォルト設定:</strong> <code>wsl --set-default &lt;名前&gt;</code> で、単に <code>wsl</code> と打った時に起動するOSを指定できます。</li>
+</ul>
+<blockquote>
+<p><strong>注意:</strong> <code>wsl --shutdown</code> は、VS CodeのWSL拡張機能などを使っている場合、それらもすべて切断されるので実行タイミングには気をつけましょう。</p>
+</blockquote>
+<hr />
+<p>特定のワークフロー（例：シェルスクリプトをWindowsのタスクスケジューラで回したい等）について、より具体的な自動化の方法を詳しくお伝えしましょうか？</p>
 
 
 
