@@ -796,6 +796,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [管理者注] cgiモジュールは廃止
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -879,6 +890,17 @@
     <span class="md-ellipsis">
       
         実行手順
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [管理者注] cgiモジュールは廃止
       
     </span>
   </a>
@@ -1090,6 +1112,11 @@ shebang行（1行目）はそのままでも動きますが、動かない場合
 <p>これで<strong>完全にローカル完結</strong>のGUIプログラムが完成です。<br />
 必要に応じてボタンや機能を増やしたり、他のCGIを追加したりしてください。<br />
 質問があればいつでもどうぞ！</p>
+<h3 id="cgi">[管理者注] cgiモジュールは廃止</h3>
+<p>Python 3.13 から cgi モジュールが使えなくなったので、
+サードパーティ製の legacy-cgi をインストールしてください。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>legacy-cgi
+</span></code></pre></div>
 
 
 
