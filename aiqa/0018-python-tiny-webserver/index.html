@@ -797,10 +797,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cgi" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        [管理者注] cgiモジュールは廃止
+        [管理者注] 修正版
       
     </span>
   </a>
@@ -897,10 +897,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cgi" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        [管理者注] cgiモジュールは廃止
+        [管理者注] 修正版
       
     </span>
   </a>
@@ -1112,11 +1112,22 @@ shebang行（1行目）はそのままでも動きますが、動かない場合
 <p>これで<strong>完全にローカル完結</strong>のGUIプログラムが完成です。<br />
 必要に応じてボタンや機能を増やしたり、他のCGIを追加したりしてください。<br />
 質問があればいつでもどうぞ！</p>
-<h3 id="cgi">[管理者注] cgiモジュールは廃止</h3>
+<h3 id="_3">[管理者注] 修正版</h3>
 <p>Python 3.13 から cgi モジュールが使えなくなったので、
-サードパーティ製の legacy-cgi をインストールしてください。</p>
+サードパーティ製の legacy-cgi をインストールすること。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>legacy-cgi
 </span></code></pre></div>
+<p>あとディレクトリ構成は、次のようにwwwの中にcgi-binを入れないとだめだった。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>project/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── server.py
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── www/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│   ├── cgi-bin/
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│   │    └── file_handler.py
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>│   ├── index.html
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>│   └── script.js
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>└── data/
+</span></code></pre></div>
+<p>なにか別のバグを見つけたらここに追加します。</p>
 
 
 
