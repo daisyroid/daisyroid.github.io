@@ -23,7 +23,7 @@
     
     
       
-        <title>pywebviewでマイクロブログ - AI質問箱</title>
+        <title>pywebviewでマイクロブログを作る - AI質問箱</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              pywebviewでマイクロブログ
+              pywebviewでマイクロブログを作る
             
           </span>
         </div>
@@ -225,6 +225,87 @@
   
   
     <li class="md-nav__item">
+      <a href="../0026-fastapi-run-in-task-tray/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastAPIをタスクトレイに常駐させる
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0025-wsl-two-users-pull-request-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSL上で2人のユーザーになりきってプルリクエストの練習
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0024-ollama-with-poor-pc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    非力なPCでollamaを動かせますか
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../0023-pywebview-with-pyw/" class="md-nav__link">
         
   
@@ -268,7 +349,7 @@
   <span class="md-ellipsis">
     
   
-    pywebviewでマイクロブログ
+    pywebviewでマイクロブログを作る
   
 
     
@@ -286,7 +367,7 @@
   <span class="md-ellipsis">
     
   
-    pywebviewでマイクロブログ
+    pywebviewでマイクロブログを作る
   
 
     
@@ -315,40 +396,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        必要な準備
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apppy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        サンプルコード (app.py)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        このコードのポイント
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        動作の仕組み
+        実行方法
       
     </span>
   </a>
@@ -960,40 +1008,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        必要な準備
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apppy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        サンプルコード (app.py)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        このコードのポイント
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        動作の仕組み
+        実行方法
       
     </span>
   </a>
@@ -1017,158 +1032,300 @@
 
 
 
-<h1 id="pywebview">pywebviewでマイクロブログ</h1>
+<h1 id="pywebview">pywebviewでマイクロブログを作る</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>pywebviewに興味があります。そのサンプルとして、個人で使うメモというかmicroblogを作ってください。画面の上部にフォームがあり、タイトルと本文を入れて書き込むと記事が追加されます。現在の記事は画面の下部にタイムラインとして表示されます。単語検索で見つかった記事のみ表示するフィルタ機能と、記事ごとに削除できるボタンも付けてください。</p>
-<p><strong>[回答] Gemini</strong></p>
+<p>pywebviewに興味があります。そのサンプルとして、個人で使うメモというかmicroblogを作ってください。画面の上部にフォームがあり、本文を入れて投稿すると記事が追加されます。画面の下部に全記事がタイムラインとして表示されます。単語検索で見つかった記事のみ表示するフィルタ機能と、記事ごとに削除できるボタンも付けてください。</p>
+<p><strong>[回答] Grok</strong></p>
 </blockquote>
-<p>pywebviewを使って、デスクトップアプリとして動作するシンプルなマイクロブログ（メモ帳）を作成しましょう。</p>
-<p>このアプリでは、データの保存に軽量な <strong>SQLite</strong> を使用し、フロントエンド（HTML/JS）とバックエンド（Python）を連携させます。</p>
-<h3 id="_1">必要な準備</h3>
-<p>事前に <code>pywebview</code> をインストールしておいてください。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pywebview
-</span></code></pre></div>
-<h3 id="apppy">サンプルコード (app.py)</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">webview</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># データベースの初期化</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">DB_NAME</span> <span class="o">=</span> <span class="s2">&quot;memo.db&quot;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">init_db</span><span class="p">():</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">DB_NAME</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="s2">            CREATE TABLE IF NOT EXISTS posts (</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="s2">                id INTEGER PRIMARY KEY AUTOINCREMENT,</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="s2">                title TEXT,</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="s2">                content TEXT,</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="s2">                created_at DATETIME DEFAULT CURRENT_TIMESTAMP</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="s2">            )</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1"># Python側のロジック（API）</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="k">class</span><span class="w"> </span><span class="nc">Api</span><span class="p">:</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">DB_NAME</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>            <span class="n">conn</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>            <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            <span class="k">if</span> <span class="n">query</span><span class="p">:</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM posts WHERE title LIKE ? OR content LIKE ? ORDER BY id DESC&quot;</span><span class="p">,</span> 
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>                               <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;%</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;%</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">))</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM posts ORDER BY id DESC&quot;</span><span class="p">)</span>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>            <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">title</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">content</span><span class="p">:</span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>            <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        <span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">DB_NAME</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>            <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO posts (title, content) VALUES (?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">))</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        <span class="k">return</span> <span class="kc">True</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">delete_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">post_id</span><span class="p">):</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">DB_NAME</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>            <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;DELETE FROM posts WHERE id = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">post_id</span><span class="p">,))</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="k">return</span> <span class="kc">True</span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="c1"># UI (HTML/JavaScript/CSS)</span>
-</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="s2">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="s2">&lt;html&gt;</span>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="s2">&lt;head&gt;</span>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="s2">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
-</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="s2">    &lt;style&gt;</span>
-</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="s2">        body { font-family: sans-serif; margin: 20px; background: #f4f4f9; }</span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="s2">        .form-section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }</span>
-</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="s2">        input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }</span>
-</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="s2">        button { cursor: pointer; background: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 4px; }</span>
-</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="s2">        button:hover { background: #0056b3; }</span>
-</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="s2">        .search-box { margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; width: 100%; }</span>
-</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="s2">        .timeline { margin-top: 20px; }</span>
-</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="s2">        .post { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; border-left: 5px solid #007bff; position: relative; }</span>
-</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="s2">        .post h3 { margin-top: 0; }</span>
-</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="s2">        .delete-btn { position: absolute; top: 10px; right: 10px; background: #ff4d4d; font-size: 12px; }</span>
-</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="s2">    &lt;/style&gt;</span>
-</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="s2">&lt;/head&gt;</span>
-</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="s2">&lt;body&gt;</span>
-</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="s2">    &lt;div class=&quot;form-section&quot;&gt;</span>
-</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="s2">        &lt;input type=&quot;text&quot; id=&quot;title&quot; placeholder=&quot;タイトル&quot;&gt;</span>
-</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="s2">        &lt;textarea id=&quot;content&quot; rows=&quot;3&quot; placeholder=&quot;今なにしてる？&quot;&gt;&lt;/textarea&gt;</span>
-</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="s2">        &lt;button onclick=&quot;savePost()&quot;&gt;投稿する&lt;/button&gt;</span>
-</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="s2">    &lt;/div&gt;</span>
-</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>
-</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="s2">    &lt;input type=&quot;text&quot; id=&quot;search&quot; class=&quot;search-box&quot; placeholder=&quot;キーワードで検索...&quot; oninput=&quot;loadPosts()&quot;&gt;</span>
-</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>
-</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="s2">    &lt;div id=&quot;timeline&quot; class=&quot;timeline&quot;&gt;&lt;/div&gt;</span>
-</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>
-</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="s2">    &lt;script&gt;</span>
-</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="s2">        async function savePost() {</span>
-</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="s2">            const title = document.getElementById(&#39;title&#39;).value;</span>
-</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="s2">            const content = document.getElementById(&#39;content&#39;).value;</span>
-</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="s2">            const success = await pywebview.api.add_post(title, content);</span>
-</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="s2">            if (success) {</span>
-</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="s2">                document.getElementById(&#39;title&#39;).value = &#39;&#39;;</span>
-</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="s2">                document.getElementById(&#39;content&#39;).value = &#39;&#39;;</span>
-</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="s2">                loadPosts();</span>
-</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="s2">            }</span>
-</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="s2">        }</span>
-</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>
-</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="s2">        async function loadPosts() {</span>
-</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a><span class="s2">            const query = document.getElementById(&#39;search&#39;).value;</span>
-</span><span id="__span-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a><span class="s2">            const posts = await pywebview.api.get_posts(query);</span>
-</span><span id="__span-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="s2">            const timeline = document.getElementById(&#39;timeline&#39;);</span>
-</span><span id="__span-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="s2">            timeline.innerHTML = &#39;&#39;;</span>
-</span><span id="__span-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a><span class="s2">            posts.forEach(post =&gt; {</span>
-</span><span id="__span-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a><span class="s2">                const div = document.createElement(&#39;div&#39;);</span>
-</span><span id="__span-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a><span class="s2">                div.className = &#39;post&#39;;</span>
-</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a><span class="s2">                div.innerHTML = `</span>
-</span><span id="__span-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a><span class="s2">                    &lt;h3&gt;$</span><span class="si">{post.title}</span><span class="s2">&lt;/h3&gt;</span>
-</span><span id="__span-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="s2">                    &lt;p&gt;$</span><span class="si">{post.content}</span><span class="s2">&lt;/p&gt;</span>
-</span><span id="__span-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="s2">                    &lt;small&gt;$</span><span class="si">{post.created_at}</span><span class="s2">&lt;/small&gt;</span>
-</span><span id="__span-1-98"><a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="s2">                    &lt;button class=&quot;delete-btn&quot; onclick=&quot;deletePost($</span><span class="si">{post.id}</span><span class="s2">)&quot;&gt;削除&lt;/button&gt;</span>
-</span><span id="__span-1-99"><a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="s2">                `;</span>
-</span><span id="__span-1-100"><a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="s2">                timeline.appendChild(div);</span>
-</span><span id="__span-1-101"><a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="s2">            });</span>
-</span><span id="__span-1-102"><a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="s2">        }</span>
-</span><span id="__span-1-103"><a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a>
-</span><span id="__span-1-104"><a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="s2">        async function deletePost(id) {</span>
-</span><span id="__span-1-105"><a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a><span class="s2">            if (confirm(&#39;削除しますか？&#39;)) {</span>
-</span><span id="__span-1-106"><a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="s2">                await pywebview.api.delete_post(id);</span>
-</span><span id="__span-1-107"><a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="s2">                loadPosts();</span>
-</span><span id="__span-1-108"><a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="s2">            }</span>
-</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a><span class="s2">        }</span>
-</span><span id="__span-1-110"><a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>
-</span><span id="__span-1-111"><a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a><span class="s2">        // 初期読み込み</span>
-</span><span id="__span-1-112"><a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="s2">        window.addEventListener(&#39;pywebviewready&#39;, loadPosts);</span>
-</span><span id="__span-1-113"><a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a><span class="s2">    &lt;/script&gt;</span>
-</span><span id="__span-1-114"><a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a><span class="s2">&lt;/body&gt;</span>
-</span><span id="__span-1-115"><a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a><span class="s2">&lt;/html&gt;</span>
-</span><span id="__span-1-116"><a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-1-117"><a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>
-</span><span id="__span-1-118"><a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span id="__span-1-119"><a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a>    <span class="n">init_db</span><span class="p">()</span>
-</span><span id="__span-1-120"><a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a>    <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">()</span>
-</span><span id="__span-1-121"><a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>    <span class="n">window</span> <span class="o">=</span> <span class="n">webview</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="s2">&quot;Micro Memo App&quot;</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="n">html</span><span class="p">,</span> <span class="n">js_api</span><span class="o">=</span><span class="n">api</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
-</span><span id="__span-1-122"><a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>    <span class="n">webview</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span></code></pre></div>
-<hr />
-<h3 id="_2">このコードのポイント</h3>
+<p><strong>pywebview のサンプルとして、個人用マイクロブログ（シンプルメモアプリ）を作りました！</strong></p>
+<p>このアプリは：</p>
+<ul>
+<li>上部に投稿フォーム（本文を入力して「投稿する」ボタン）</li>
+<li>下部にタイムライン（最新順で表示）</li>
+<li>検索欄で単語検索 → リアルタイムで該当記事のみフィルタ</li>
+<li>各記事に「削除」ボタン</li>
+</ul>
+<p>を搭載しています。<br />
+データは自動で <code>microblog_posts.json</code> に保存されるので、次回起動時も消えません。</p>
+<h3 id="_1">実行方法</h3>
 <ol>
-<li><strong>データの永続化</strong>: <code>sqlite3</code> を使っているため、アプリを閉じてもメモは消えません。実行ディレクトリに <code>memo.db</code> が作成されます。</li>
-<li><strong>双方向の連携</strong>:</li>
-<li>Python側（<code>Api</code> クラス）でDB操作を定義。</li>
-<li>
-<p>JavaScript側から <code>pywebview.api.関数名()</code> でそれを呼び出しています。</p>
-</li>
-<li>
-<p><strong>リアルタイム検索</strong>: 検索窓（<code>oninput</code>）に入力するたびに <code>loadPosts()</code> が走り、Python側の <code>LIKE</code> 句を使ってフィルタリングされた結果を表示します。</p>
-</li>
-<li><strong>モダンなUI</strong>: CSSで少し整えて、デスクトップアプリらしい見た目にしています。</li>
+<li><code>pip install pywebview</code>（初回のみ）</li>
+<li>下記のコードを <strong>microblog.py</strong> として保存</li>
+<li><code>python microblog.py</code> で起動</li>
 </ol>
-<h3 id="_3">動作の仕組み</h3>
-<p>次は、このアプリを <strong>「実行ファイル（.exe）」にする方法</strong> について解説しましょうか？それとも、<strong>画像も投稿できるように拡張</strong> してみますか？</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">webview</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Api</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;microblog_posts.json&#39;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_posts</span><span class="p">()</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_load_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_file</span><span class="p">):</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="k">return</span> <span class="p">[]</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="k">return</span> <span class="p">[]</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_save_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">content</span><span class="p">:</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="k">return</span> <span class="kc">None</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="n">post_id</span> <span class="o">=</span> <span class="nb">max</span><span class="p">((</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>            <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">post_id</span><span class="p">,</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>            <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>            <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="p">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_save_posts</span><span class="p">()</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="k">return</span> <span class="n">post</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search_term</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="n">filtered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="k">if</span> <span class="n">search_term</span> <span class="ow">and</span> <span class="n">search_term</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>            <span class="n">term</span> <span class="o">=</span> <span class="n">search_term</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>            <span class="n">filtered</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="k">if</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>        <span class="c1"># 新しい順にソート</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        <span class="n">filtered</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>        <span class="k">return</span> <span class="n">filtered</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">delete_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">post_id</span><span class="p">):</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">post_id</span><span class="p">]</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_save_posts</span><span class="p">()</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>        <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">()</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>    <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="s2">    &lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="s2">    &lt;html lang=&quot;ja&quot;&gt;</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="s2">    &lt;head&gt;</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="s2">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="s2">        &lt;title&gt;個人マイクロブログ&lt;/title&gt;</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="s2">        &lt;style&gt;</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="s2">            body {</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="s2">                font-family: system-ui, -apple-system, sans-serif;</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="s2">                margin: 0;</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="s2">                padding: 20px;</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="s2">                background: #f5f5f5;</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="s2">            }</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="s2">            .container {</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="s2">                max-width: 800px;</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="s2">                margin: auto;</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="s2">                background: white;</span>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="s2">                border-radius: 12px;</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="s2">                box-shadow: 0 4px 20px rgba(0,0,0,0.1);</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="s2">                overflow: hidden;</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="s2">            }</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="s2">            header {</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="s2">                background: #007bff;</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="s2">                color: white;</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="s2">                padding: 20px;</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="s2">                text-align: center;</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="s2">            }</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="s2">            .form-area {</span>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="s2">                padding: 20px;</span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="s2">                border-bottom: 1px solid #eee;</span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="s2">            }</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="s2">            textarea {</span>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="s2">                width: 100%;</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="s2">                height: 120px;</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="s2">                padding: 12px;</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="s2">                border: 2px solid #ddd;</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="s2">                border-radius: 8px;</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="s2">                font-size: 16px;</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="s2">                box-sizing: border-box;</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="s2">                resize: vertical;</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="s2">            }</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="s2">            button {</span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="s2">                margin-top: 10px;</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="s2">                padding: 12px 24px;</span>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="s2">                background: #007bff;</span>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="s2">                color: white;</span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="s2">                border: none;</span>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="s2">                border-radius: 8px;</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="s2">                font-size: 16px;</span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="s2">                cursor: pointer;</span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="s2">            }</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="s2">            button:hover { background: #0056b3; }</span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="s2">            .search-area {</span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="s2">                padding: 15px 20px;</span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="s2">                background: #f8f9fa;</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="s2">            }</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="s2">            #search {</span>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="s2">                width: 100%;</span>
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="s2">                padding: 12px;</span>
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="s2">                font-size: 16px;</span>
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a><span class="s2">                border: 2px solid #ddd;</span>
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a><span class="s2">                border-radius: 8px;</span>
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a><span class="s2">                box-sizing: border-box;</span>
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a><span class="s2">            }</span>
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a><span class="s2">            #timeline {</span>
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a><span class="s2">                padding: 20px;</span>
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a><span class="s2">            }</span>
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a><span class="s2">            .post {</span>
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a><span class="s2">                padding: 15px;</span>
+</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a><span class="s2">                margin-bottom: 15px;</span>
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126" href="#__codelineno-0-126"></a><span class="s2">                border: 1px solid #eee;</span>
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127" href="#__codelineno-0-127"></a><span class="s2">                border-radius: 8px;</span>
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128" href="#__codelineno-0-128"></a><span class="s2">                background: #fafafa;</span>
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129" href="#__codelineno-0-129"></a><span class="s2">                position: relative;</span>
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130" href="#__codelineno-0-130"></a><span class="s2">            }</span>
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131" href="#__codelineno-0-131"></a><span class="s2">            .post p {</span>
+</span><span id="__span-0-132"><a id="__codelineno-0-132" name="__codelineno-0-132" href="#__codelineno-0-132"></a><span class="s2">                margin: 0 0 10px 0;</span>
+</span><span id="__span-0-133"><a id="__codelineno-0-133" name="__codelineno-0-133" href="#__codelineno-0-133"></a><span class="s2">                white-space: pre-wrap;</span>
+</span><span id="__span-0-134"><a id="__codelineno-0-134" name="__codelineno-0-134" href="#__codelineno-0-134"></a><span class="s2">                font-size: 16px;</span>
+</span><span id="__span-0-135"><a id="__codelineno-0-135" name="__codelineno-0-135" href="#__codelineno-0-135"></a><span class="s2">                line-height: 1.5;</span>
+</span><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136" href="#__codelineno-0-136"></a><span class="s2">            }</span>
+</span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137" href="#__codelineno-0-137"></a><span class="s2">            .meta {</span>
+</span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138" href="#__codelineno-0-138"></a><span class="s2">                font-size: 14px;</span>
+</span><span id="__span-0-139"><a id="__codelineno-0-139" name="__codelineno-0-139" href="#__codelineno-0-139"></a><span class="s2">                color: #666;</span>
+</span><span id="__span-0-140"><a id="__codelineno-0-140" name="__codelineno-0-140" href="#__codelineno-0-140"></a><span class="s2">                display: flex;</span>
+</span><span id="__span-0-141"><a id="__codelineno-0-141" name="__codelineno-0-141" href="#__codelineno-0-141"></a><span class="s2">                justify-content: space-between;</span>
+</span><span id="__span-0-142"><a id="__codelineno-0-142" name="__codelineno-0-142" href="#__codelineno-0-142"></a><span class="s2">                align-items: center;</span>
+</span><span id="__span-0-143"><a id="__codelineno-0-143" name="__codelineno-0-143" href="#__codelineno-0-143"></a><span class="s2">            }</span>
+</span><span id="__span-0-144"><a id="__codelineno-0-144" name="__codelineno-0-144" href="#__codelineno-0-144"></a><span class="s2">            .delete-btn {</span>
+</span><span id="__span-0-145"><a id="__codelineno-0-145" name="__codelineno-0-145" href="#__codelineno-0-145"></a><span class="s2">                background: #dc3545;</span>
+</span><span id="__span-0-146"><a id="__codelineno-0-146" name="__codelineno-0-146" href="#__codelineno-0-146"></a><span class="s2">                color: white;</span>
+</span><span id="__span-0-147"><a id="__codelineno-0-147" name="__codelineno-0-147" href="#__codelineno-0-147"></a><span class="s2">                padding: 6px 12px;</span>
+</span><span id="__span-0-148"><a id="__codelineno-0-148" name="__codelineno-0-148" href="#__codelineno-0-148"></a><span class="s2">                border: none;</span>
+</span><span id="__span-0-149"><a id="__codelineno-0-149" name="__codelineno-0-149" href="#__codelineno-0-149"></a><span class="s2">                border-radius: 6px;</span>
+</span><span id="__span-0-150"><a id="__codelineno-0-150" name="__codelineno-0-150" href="#__codelineno-0-150"></a><span class="s2">                cursor: pointer;</span>
+</span><span id="__span-0-151"><a id="__codelineno-0-151" name="__codelineno-0-151" href="#__codelineno-0-151"></a><span class="s2">                font-size: 14px;</span>
+</span><span id="__span-0-152"><a id="__codelineno-0-152" name="__codelineno-0-152" href="#__codelineno-0-152"></a><span class="s2">            }</span>
+</span><span id="__span-0-153"><a id="__codelineno-0-153" name="__codelineno-0-153" href="#__codelineno-0-153"></a><span class="s2">            .delete-btn:hover { background: #c82333; }</span>
+</span><span id="__span-0-154"><a id="__codelineno-0-154" name="__codelineno-0-154" href="#__codelineno-0-154"></a><span class="s2">            .empty {</span>
+</span><span id="__span-0-155"><a id="__codelineno-0-155" name="__codelineno-0-155" href="#__codelineno-0-155"></a><span class="s2">                text-align: center;</span>
+</span><span id="__span-0-156"><a id="__codelineno-0-156" name="__codelineno-0-156" href="#__codelineno-0-156"></a><span class="s2">                color: #999;</span>
+</span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157" href="#__codelineno-0-157"></a><span class="s2">                padding: 40px 20px;</span>
+</span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158" href="#__codelineno-0-158"></a><span class="s2">                font-size: 18px;</span>
+</span><span id="__span-0-159"><a id="__codelineno-0-159" name="__codelineno-0-159" href="#__codelineno-0-159"></a><span class="s2">            }</span>
+</span><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160" href="#__codelineno-0-160"></a><span class="s2">        &lt;/style&gt;</span>
+</span><span id="__span-0-161"><a id="__codelineno-0-161" name="__codelineno-0-161" href="#__codelineno-0-161"></a><span class="s2">    &lt;/head&gt;</span>
+</span><span id="__span-0-162"><a id="__codelineno-0-162" name="__codelineno-0-162" href="#__codelineno-0-162"></a><span class="s2">    &lt;body&gt;</span>
+</span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163" href="#__codelineno-0-163"></a><span class="s2">        &lt;div class=&quot;container&quot;&gt;</span>
+</span><span id="__span-0-164"><a id="__codelineno-0-164" name="__codelineno-0-164" href="#__codelineno-0-164"></a><span class="s2">            &lt;header&gt;</span>
+</span><span id="__span-0-165"><a id="__codelineno-0-165" name="__codelineno-0-165" href="#__codelineno-0-165"></a><span class="s2">                &lt;h1&gt;📝 個人マイクロブログ&lt;/h1&gt;</span>
+</span><span id="__span-0-166"><a id="__codelineno-0-166" name="__codelineno-0-166" href="#__codelineno-0-166"></a><span class="s2">            &lt;/header&gt;</span>
+</span><span id="__span-0-167"><a id="__codelineno-0-167" name="__codelineno-0-167" href="#__codelineno-0-167"></a>
+</span><span id="__span-0-168"><a id="__codelineno-0-168" name="__codelineno-0-168" href="#__codelineno-0-168"></a><span class="s2">            &lt;div class=&quot;form-area&quot;&gt;</span>
+</span><span id="__span-0-169"><a id="__codelineno-0-169" name="__codelineno-0-169" href="#__codelineno-0-169"></a><span class="s2">                &lt;textarea id=&quot;content&quot; placeholder=&quot;今日の出来事、アイデア、メモを自由に書いてください...&quot;&gt;&lt;/textarea&gt;</span>
+</span><span id="__span-0-170"><a id="__codelineno-0-170" name="__codelineno-0-170" href="#__codelineno-0-170"></a><span class="s2">                &lt;button onclick=&quot;postNew()&quot;&gt;投稿する&lt;/button&gt;</span>
+</span><span id="__span-0-171"><a id="__codelineno-0-171" name="__codelineno-0-171" href="#__codelineno-0-171"></a><span class="s2">            &lt;/div&gt;</span>
+</span><span id="__span-0-172"><a id="__codelineno-0-172" name="__codelineno-0-172" href="#__codelineno-0-172"></a>
+</span><span id="__span-0-173"><a id="__codelineno-0-173" name="__codelineno-0-173" href="#__codelineno-0-173"></a><span class="s2">            &lt;div class=&quot;search-area&quot;&gt;</span>
+</span><span id="__span-0-174"><a id="__codelineno-0-174" name="__codelineno-0-174" href="#__codelineno-0-174"></a><span class="s2">                &lt;input type=&quot;text&quot; id=&quot;search&quot; placeholder=&quot;単語で検索（リアルタイム）&quot; oninput=&quot;filterPosts()&quot;&gt;</span>
+</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a><span class="s2">            &lt;/div&gt;</span>
+</span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>
+</span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a><span class="s2">            &lt;div id=&quot;timeline&quot;&gt;&lt;/div&gt;</span>
+</span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a><span class="s2">        &lt;/div&gt;</span>
+</span><span id="__span-0-179"><a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a>
+</span><span id="__span-0-180"><a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a><span class="s2">        &lt;script&gt;</span>
+</span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a><span class="s2">            let currentFilter = &#39;&#39;;</span>
+</span><span id="__span-0-182"><a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a>
+</span><span id="__span-0-183"><a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a><span class="s2">            async function postNew() {</span>
+</span><span id="__span-0-184"><a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a><span class="s2">                const textarea = document.getElementById(&#39;content&#39;);</span>
+</span><span id="__span-0-185"><a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a><span class="s2">                const content = textarea.value.trim();</span>
+</span><span id="__span-0-186"><a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a><span class="s2">                if (!content) {</span>
+</span><span id="__span-0-187"><a id="__codelineno-0-187" name="__codelineno-0-187" href="#__codelineno-0-187"></a><span class="s2">                    alert(&#39;内容を入力してください&#39;);</span>
+</span><span id="__span-0-188"><a id="__codelineno-0-188" name="__codelineno-0-188" href="#__codelineno-0-188"></a><span class="s2">                    return;</span>
+</span><span id="__span-0-189"><a id="__codelineno-0-189" name="__codelineno-0-189" href="#__codelineno-0-189"></a><span class="s2">                }</span>
+</span><span id="__span-0-190"><a id="__codelineno-0-190" name="__codelineno-0-190" href="#__codelineno-0-190"></a><span class="s2">                try {</span>
+</span><span id="__span-0-191"><a id="__codelineno-0-191" name="__codelineno-0-191" href="#__codelineno-0-191"></a><span class="s2">                    await pywebview.api.add_post(content);</span>
+</span><span id="__span-0-192"><a id="__codelineno-0-192" name="__codelineno-0-192" href="#__codelineno-0-192"></a><span class="s2">                    textarea.value = &#39;&#39;;</span>
+</span><span id="__span-0-193"><a id="__codelineno-0-193" name="__codelineno-0-193" href="#__codelineno-0-193"></a><span class="s2">                    refreshTimeline();</span>
+</span><span id="__span-0-194"><a id="__codelineno-0-194" name="__codelineno-0-194" href="#__codelineno-0-194"></a><span class="s2">                } catch (e) {</span>
+</span><span id="__span-0-195"><a id="__codelineno-0-195" name="__codelineno-0-195" href="#__codelineno-0-195"></a><span class="s2">                    console.error(e);</span>
+</span><span id="__span-0-196"><a id="__codelineno-0-196" name="__codelineno-0-196" href="#__codelineno-0-196"></a><span class="s2">                    alert(&#39;投稿に失敗しました&#39;);</span>
+</span><span id="__span-0-197"><a id="__codelineno-0-197" name="__codelineno-0-197" href="#__codelineno-0-197"></a><span class="s2">                }</span>
+</span><span id="__span-0-198"><a id="__codelineno-0-198" name="__codelineno-0-198" href="#__codelineno-0-198"></a><span class="s2">            }</span>
+</span><span id="__span-0-199"><a id="__codelineno-0-199" name="__codelineno-0-199" href="#__codelineno-0-199"></a>
+</span><span id="__span-0-200"><a id="__codelineno-0-200" name="__codelineno-0-200" href="#__codelineno-0-200"></a><span class="s2">            async function deletePost(id) {</span>
+</span><span id="__span-0-201"><a id="__codelineno-0-201" name="__codelineno-0-201" href="#__codelineno-0-201"></a><span class="s2">                if (!confirm(&#39;この記事を削除しますか？&#39;)) return;</span>
+</span><span id="__span-0-202"><a id="__codelineno-0-202" name="__codelineno-0-202" href="#__codelineno-0-202"></a><span class="s2">                try {</span>
+</span><span id="__span-0-203"><a id="__codelineno-0-203" name="__codelineno-0-203" href="#__codelineno-0-203"></a><span class="s2">                    await pywebview.api.delete_post(id);</span>
+</span><span id="__span-0-204"><a id="__codelineno-0-204" name="__codelineno-0-204" href="#__codelineno-0-204"></a><span class="s2">                    refreshTimeline();</span>
+</span><span id="__span-0-205"><a id="__codelineno-0-205" name="__codelineno-0-205" href="#__codelineno-0-205"></a><span class="s2">                } catch (e) {</span>
+</span><span id="__span-0-206"><a id="__codelineno-0-206" name="__codelineno-0-206" href="#__codelineno-0-206"></a><span class="s2">                    console.error(e);</span>
+</span><span id="__span-0-207"><a id="__codelineno-0-207" name="__codelineno-0-207" href="#__codelineno-0-207"></a><span class="s2">                }</span>
+</span><span id="__span-0-208"><a id="__codelineno-0-208" name="__codelineno-0-208" href="#__codelineno-0-208"></a><span class="s2">            }</span>
+</span><span id="__span-0-209"><a id="__codelineno-0-209" name="__codelineno-0-209" href="#__codelineno-0-209"></a>
+</span><span id="__span-0-210"><a id="__codelineno-0-210" name="__codelineno-0-210" href="#__codelineno-0-210"></a><span class="s2">            function filterPosts() {</span>
+</span><span id="__span-0-211"><a id="__codelineno-0-211" name="__codelineno-0-211" href="#__codelineno-0-211"></a><span class="s2">                currentFilter = document.getElementById(&#39;search&#39;).value;</span>
+</span><span id="__span-0-212"><a id="__codelineno-0-212" name="__codelineno-0-212" href="#__codelineno-0-212"></a><span class="s2">                refreshTimeline();</span>
+</span><span id="__span-0-213"><a id="__codelineno-0-213" name="__codelineno-0-213" href="#__codelineno-0-213"></a><span class="s2">            }</span>
+</span><span id="__span-0-214"><a id="__codelineno-0-214" name="__codelineno-0-214" href="#__codelineno-0-214"></a>
+</span><span id="__span-0-215"><a id="__codelineno-0-215" name="__codelineno-0-215" href="#__codelineno-0-215"></a><span class="s2">            async function refreshTimeline() {</span>
+</span><span id="__span-0-216"><a id="__codelineno-0-216" name="__codelineno-0-216" href="#__codelineno-0-216"></a><span class="s2">                try {</span>
+</span><span id="__span-0-217"><a id="__codelineno-0-217" name="__codelineno-0-217" href="#__codelineno-0-217"></a><span class="s2">                    const posts = await pywebview.api.get_posts(currentFilter);</span>
+</span><span id="__span-0-218"><a id="__codelineno-0-218" name="__codelineno-0-218" href="#__codelineno-0-218"></a><span class="s2">                    renderTimeline(posts);</span>
+</span><span id="__span-0-219"><a id="__codelineno-0-219" name="__codelineno-0-219" href="#__codelineno-0-219"></a><span class="s2">                } catch (e) {</span>
+</span><span id="__span-0-220"><a id="__codelineno-0-220" name="__codelineno-0-220" href="#__codelineno-0-220"></a><span class="s2">                    console.error(e);</span>
+</span><span id="__span-0-221"><a id="__codelineno-0-221" name="__codelineno-0-221" href="#__codelineno-0-221"></a><span class="s2">                }</span>
+</span><span id="__span-0-222"><a id="__codelineno-0-222" name="__codelineno-0-222" href="#__codelineno-0-222"></a><span class="s2">            }</span>
+</span><span id="__span-0-223"><a id="__codelineno-0-223" name="__codelineno-0-223" href="#__codelineno-0-223"></a>
+</span><span id="__span-0-224"><a id="__codelineno-0-224" name="__codelineno-0-224" href="#__codelineno-0-224"></a><span class="s2">            function renderTimeline(posts) {</span>
+</span><span id="__span-0-225"><a id="__codelineno-0-225" name="__codelineno-0-225" href="#__codelineno-0-225"></a><span class="s2">                const timeline = document.getElementById(&#39;timeline&#39;);</span>
+</span><span id="__span-0-226"><a id="__codelineno-0-226" name="__codelineno-0-226" href="#__codelineno-0-226"></a><span class="s2">                if (posts.length === 0) {</span>
+</span><span id="__span-0-227"><a id="__codelineno-0-227" name="__codelineno-0-227" href="#__codelineno-0-227"></a><span class="s2">                    timeline.innerHTML = &#39;&lt;div class=&quot;empty&quot;&gt;記事がありません&lt;/div&gt;&#39;;</span>
+</span><span id="__span-0-228"><a id="__codelineno-0-228" name="__codelineno-0-228" href="#__codelineno-0-228"></a><span class="s2">                    return;</span>
+</span><span id="__span-0-229"><a id="__codelineno-0-229" name="__codelineno-0-229" href="#__codelineno-0-229"></a><span class="s2">                }</span>
+</span><span id="__span-0-230"><a id="__codelineno-0-230" name="__codelineno-0-230" href="#__codelineno-0-230"></a><span class="s2">                let html = &#39;&#39;;</span>
+</span><span id="__span-0-231"><a id="__codelineno-0-231" name="__codelineno-0-231" href="#__codelineno-0-231"></a><span class="s2">                for (let post of posts) {</span>
+</span><span id="__span-0-232"><a id="__codelineno-0-232" name="__codelineno-0-232" href="#__codelineno-0-232"></a><span class="s2">                    const time = new Date(post.timestamp).toLocaleString(&#39;ja-JP&#39;, {</span>
+</span><span id="__span-0-233"><a id="__codelineno-0-233" name="__codelineno-0-233" href="#__codelineno-0-233"></a><span class="s2">                        year: &#39;numeric&#39;,</span>
+</span><span id="__span-0-234"><a id="__codelineno-0-234" name="__codelineno-0-234" href="#__codelineno-0-234"></a><span class="s2">                        month: &#39;2-digit&#39;,</span>
+</span><span id="__span-0-235"><a id="__codelineno-0-235" name="__codelineno-0-235" href="#__codelineno-0-235"></a><span class="s2">                        day: &#39;2-digit&#39;,</span>
+</span><span id="__span-0-236"><a id="__codelineno-0-236" name="__codelineno-0-236" href="#__codelineno-0-236"></a><span class="s2">                        hour: &#39;2-digit&#39;,</span>
+</span><span id="__span-0-237"><a id="__codelineno-0-237" name="__codelineno-0-237" href="#__codelineno-0-237"></a><span class="s2">                        minute: &#39;2-digit&#39;</span>
+</span><span id="__span-0-238"><a id="__codelineno-0-238" name="__codelineno-0-238" href="#__codelineno-0-238"></a><span class="s2">                    });</span>
+</span><span id="__span-0-239"><a id="__codelineno-0-239" name="__codelineno-0-239" href="#__codelineno-0-239"></a><span class="s2">                    html += `</span>
+</span><span id="__span-0-240"><a id="__codelineno-0-240" name="__codelineno-0-240" href="#__codelineno-0-240"></a><span class="s2">                        &lt;div class=&quot;post&quot;&gt;</span>
+</span><span id="__span-0-241"><a id="__codelineno-0-241" name="__codelineno-0-241" href="#__codelineno-0-241"></a><span class="s2">                            &lt;p&gt;${post.content.replace(/</span><span class="se">\\</span><span class="s2">n/g, &#39;&lt;br&gt;&#39;)}&lt;/p&gt;</span>
+</span><span id="__span-0-242"><a id="__codelineno-0-242" name="__codelineno-0-242" href="#__codelineno-0-242"></a><span class="s2">                            &lt;div class=&quot;meta&quot;&gt;</span>
+</span><span id="__span-0-243"><a id="__codelineno-0-243" name="__codelineno-0-243" href="#__codelineno-0-243"></a><span class="s2">                                &lt;span&gt;$</span><span class="si">{time}</span><span class="s2">&lt;/span&gt;</span>
+</span><span id="__span-0-244"><a id="__codelineno-0-244" name="__codelineno-0-244" href="#__codelineno-0-244"></a><span class="s2">                                &lt;button class=&quot;delete-btn&quot; onclick=&quot;deletePost($</span><span class="si">{post.id}</span><span class="s2">)&quot;&gt;削除&lt;/button&gt;</span>
+</span><span id="__span-0-245"><a id="__codelineno-0-245" name="__codelineno-0-245" href="#__codelineno-0-245"></a><span class="s2">                            &lt;/div&gt;</span>
+</span><span id="__span-0-246"><a id="__codelineno-0-246" name="__codelineno-0-246" href="#__codelineno-0-246"></a><span class="s2">                        &lt;/div&gt;</span>
+</span><span id="__span-0-247"><a id="__codelineno-0-247" name="__codelineno-0-247" href="#__codelineno-0-247"></a><span class="s2">                    `;</span>
+</span><span id="__span-0-248"><a id="__codelineno-0-248" name="__codelineno-0-248" href="#__codelineno-0-248"></a><span class="s2">                }</span>
+</span><span id="__span-0-249"><a id="__codelineno-0-249" name="__codelineno-0-249" href="#__codelineno-0-249"></a><span class="s2">                timeline.innerHTML = html;</span>
+</span><span id="__span-0-250"><a id="__codelineno-0-250" name="__codelineno-0-250" href="#__codelineno-0-250"></a><span class="s2">            }</span>
+</span><span id="__span-0-251"><a id="__codelineno-0-251" name="__codelineno-0-251" href="#__codelineno-0-251"></a>
+</span><span id="__span-0-252"><a id="__codelineno-0-252" name="__codelineno-0-252" href="#__codelineno-0-252"></a><span class="s2">            // 起動時に読み込み</span>
+</span><span id="__span-0-253"><a id="__codelineno-0-253" name="__codelineno-0-253" href="#__codelineno-0-253"></a><span class="s2">            window.onload = refreshTimeline;</span>
+</span><span id="__span-0-254"><a id="__codelineno-0-254" name="__codelineno-0-254" href="#__codelineno-0-254"></a><span class="s2">        &lt;/script&gt;</span>
+</span><span id="__span-0-255"><a id="__codelineno-0-255" name="__codelineno-0-255" href="#__codelineno-0-255"></a><span class="s2">    &lt;/body&gt;</span>
+</span><span id="__span-0-256"><a id="__codelineno-0-256" name="__codelineno-0-256" href="#__codelineno-0-256"></a><span class="s2">    &lt;/html&gt;</span>
+</span><span id="__span-0-257"><a id="__codelineno-0-257" name="__codelineno-0-257" href="#__codelineno-0-257"></a><span class="s2">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-258"><a id="__codelineno-0-258" name="__codelineno-0-258" href="#__codelineno-0-258"></a>
+</span><span id="__span-0-259"><a id="__codelineno-0-259" name="__codelineno-0-259" href="#__codelineno-0-259"></a>    <span class="n">window</span> <span class="o">=</span> <span class="n">webview</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span>
+</span><span id="__span-0-260"><a id="__codelineno-0-260" name="__codelineno-0-260" href="#__codelineno-0-260"></a>        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;個人マイクロブログ&#39;</span><span class="p">,</span>
+</span><span id="__span-0-261"><a id="__codelineno-0-261" name="__codelineno-0-261" href="#__codelineno-0-261"></a>        <span class="n">html</span><span class="o">=</span><span class="n">html</span><span class="p">,</span>
+</span><span id="__span-0-262"><a id="__codelineno-0-262" name="__codelineno-0-262" href="#__codelineno-0-262"></a>        <span class="n">js_api</span><span class="o">=</span><span class="n">api</span><span class="p">,</span>
+</span><span id="__span-0-263"><a id="__codelineno-0-263" name="__codelineno-0-263" href="#__codelineno-0-263"></a>        <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+</span><span id="__span-0-264"><a id="__codelineno-0-264" name="__codelineno-0-264" href="#__codelineno-0-264"></a>        <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+</span><span id="__span-0-265"><a id="__codelineno-0-265" name="__codelineno-0-265" href="#__codelineno-0-265"></a>        <span class="n">resizable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-0-266"><a id="__codelineno-0-266" name="__codelineno-0-266" href="#__codelineno-0-266"></a>        <span class="n">min_size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+</span><span id="__span-0-267"><a id="__codelineno-0-267" name="__codelineno-0-267" href="#__codelineno-0-267"></a>    <span class="p">)</span>
+</span><span id="__span-0-268"><a id="__codelineno-0-268" name="__codelineno-0-268" href="#__codelineno-0-268"></a>    <span class="n">webview</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></code></pre></div>
+<p>これで動きます！<br />
+見た目や機能をカスタマイズしたい場合（例：ダークモード追加、編集機能、タグなど）は気軽に教えてください。すぐに拡張版をお作りします♪</p>
+<p>楽しんでください！</p>
 
 
 
