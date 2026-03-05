@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0004-github-push/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0002-install-python/">
+        <link rel="next" href="../0032-acrylic-dns-proxy/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>GitHubの設定 - AI質問箱</title>
+        <title>PowerShellでコマンドの途中で改行する方法 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github" class="md-skip">
+        <a href="#powershell" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHubの設定
+              PowerShellでコマンドの途中で改行する方法
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0033-powershell-break-line-in-command/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerShellでコマンドの途中で改行する方法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. バックティック（ `）を使う
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. パイプ（|）の直後で改行する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. カンマや括弧の途中で改行する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        おすすめのテクニック：「スプラッティング」
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1032,37 +1123,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GitHubの設定
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0003-install-github/" class="md-nav__link">
         
   
   
@@ -1078,98 +1142,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-wslgit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. WSL側のGitにユーザー情報を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. SSHキーの作成（認証設定）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. GitHubに公開鍵を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 接続テスト
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 実際にリポジトリをアップロードする手順
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 実際にリポジトリをアップロードする手順">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tipsvs-codegui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        便利なTips：VS CodeのGUIを使う
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1255,10 +1227,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-wslgit" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. WSL側のGitにユーザー情報を登録
+        1. バックティック（ `）を使う
       
     </span>
   </a>
@@ -1266,10 +1238,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ssh" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SSHキーの作成（認証設定）
+        2. パイプ（|）の直後で改行する
       
     </span>
   </a>
@@ -1277,10 +1249,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-github" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. GitHubに公開鍵を登録
+        3. カンマや括弧の途中で改行する
       
     </span>
   </a>
@@ -1288,41 +1260,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 接続テスト
+        おすすめのテクニック：「スプラッティング」
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 実際にリポジトリをアップロードする手順
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 実際にリポジトリをアップロードする手順">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tipsvs-codegui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        便利なTips：VS CodeのGUIを使う
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1343,62 +1287,60 @@
 
 
 
-<h1 id="github">GitHubの設定</h1>
+<h1 id="powershell">PowerShellでコマンドの途中で改行する方法</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p><a href="../0002-install-python/">&lt;&lt;前の質問から続き</a></p>
-<p>GitHubとの連携設定 </p>
+<p>PowerShellで、コマンドが長くなるとき、行の途中で改行して続行できますか</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>WSL上のPython環境からGitHubへコードをプッシュできるようにしましょう。
-Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰か」を登録し、「認証（SSH）」を設定する</strong>のが最もスムーズで安全な方法です。</p>
+<p>はい、もちろんです！PowerShellで長いコマンドを途中で改行して読みやすくする方法は、主に<strong>3つ</strong>あります。</p>
+<p>状況に合わせて使い分けてみてください。</p>
 <hr />
-<h2 id="1-wslgit">1. WSL側のGitにユーザー情報を登録</h2>
-<p>まず、コミット時に記録される名前とメールアドレスを設定します（GitHubのアカウント情報と一致させてください）。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+<h3 id="1">1. バックティック（<code></code> `）を使う</h3>
+<p>最も一般的な方法です。行の末尾にバックティック（Shift + @ キーで入力できる「 ` 」記号）を置くと、「次の行に続きますよ」という合図になります。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Documents</span> <span class="p">`</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>             <span class="n">-Filter</span> <span class="p">*.</span><span class="n">txt</span> <span class="p">`</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>             <span class="n">-Recurse</span>
 </span></code></pre></div>
-<h2 id="2-ssh">2. SSHキーの作成（認証設定）</h2>
-<p>パスワードを毎回入力するのは面倒なので、<strong>SSH公開鍵認証</strong>を使います。</p>
-<p>1. <strong>鍵ペアを作成する</strong>
-以下のコマンドを入力し、すべてそのまま <code>Enter</code> を押して進めます。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
-</span></code></pre></div></p>
-<p>2. <strong>公開鍵の中身をコピーする</strong>
-作成された鍵の内容を表示させ、表示された文字列（<code>ssh-ed25519 ...</code> で始まる行）をすべてコピーします。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
-</span></code></pre></div></p>
-<h2 id="3-github">3. GitHubに公開鍵を登録</h2>
-<ol>
-<li>ブラウザで <a href="https://github.com/settings/keys">GitHubのSettings</a> を開きます。</li>
-<li><strong>「New SSH key」</strong>ボタンをクリック。</li>
-<li><strong>Title:</strong> 「WSL-Laptop」など適当な名前を付けます。</li>
-<li><strong>Key:</strong> 先ほどコピーした文字列を貼り付けます。</li>
-<li><strong>「Add SSH key」</strong>をクリックして保存。</li>
-</ol>
-<h2 id="4">4. 接続テスト</h2>
-<p>以下のコマンドでGitHubに正しく接続できるか確認します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+<blockquote>
+<p><strong>注意点:</strong> バックティックの直後にスペースが入っていると、エラーになります。必ず「`」がその行の最後の文字になるようにしてください。</p>
+</blockquote>
+<hr />
+<h3 id="2">2. パイプ（<code>|</code>）の直後で改行する</h3>
+<p>コマンドをパイプで繋ぐ場合、パイプ記号のすぐ後ろであれば、バックティックなしでそのまま改行できます。PowerShellが「まだ続きがあるな」と自動で判断してくれるからです。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-Service</span> <span class="p">|</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Status</span> <span class="o">-eq</span> <span class="s2">&quot;Running&quot;</span> <span class="p">}</span> <span class="p">|</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nb">Sort-Object</span> <span class="n">DisplayName</span>
 </span></code></pre></div>
-<p><code>Hi [ユーザー名]! You've successfully authenticated...</code> と表示されれば成功です！</p>
 <hr />
-<h2 id="5">5. 実際にリポジトリをアップロードする手順</h2>
-<p>作成した <code>my-python-app</code> フォルダをGitHubにアップする流れは以下の通りです。</p>
-<ol>
-<li><strong>GitHub上で新しいリポジトリを作成</strong>し、表示される「SSH」のURL（<code>git@github.com:user/repo.git</code>）をコピーします。</li>
-<li><strong>WSLのターミナルで実行:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>init
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>コピーしたURL<span class="o">]</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</span></code></pre></div></li>
-</ol>
+<h3 id="3">3. カンマや括弧の途中で改行する</h3>
+<p>配列のカンマ（<code>,</code>）や、メソッドの括弧（<code>(</code>）、スクリプトブロックの波括弧（<code>{</code>）の途中でも、自然に改行が可能です。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># 配列の例</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">$servers</span> <span class="p">=</span> <span class="s2">&quot;Server01&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>           <span class="s2">&quot;Server02&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>           <span class="s2">&quot;Server03&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c"># メソッドの例</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">123</span><span class="p">.</span><span class="n">456</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">2</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">)</span>
+</span></code></pre></div>
 <hr />
-<h3 id="tipsvs-codegui">便利なTips：VS CodeのGUIを使う</h3>
-<p>VS Codeの左側にある<strong>「ソース管理」アイコン</strong>（枝分かれしたようなマーク）を使えば、コマンドを打たなくてもボタン操作だけで <code>Add</code> や <code>Commit</code>、<code>Push</code> が可能です。WSL環境でもシームレスに動作します。</p>
-<p>次は、<strong>「Gitのブランチ操作のコツ」</strong>や、<strong>「GitHub Actionsを使った自動テストの基本」</strong>などについて深掘りしてみますか？</p>
+<h3 id="_1">おすすめのテクニック：「スプラッティング」</h3>
+<p>もしパラメーターが非常に多くて読みづらい場合は、<strong>スプラッティング（Splatting）</strong>という手法が一番スマートです。ハッシュテーブル（連想配列）に引数をまとめて渡す方法です。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$params</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">Path</span>    <span class="p">=</span> <span class="s2">&quot;C:\Windows&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">Filter</span>  <span class="p">=</span> <span class="s2">&quot;*.log&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">Recurse</span> <span class="p">=</span> <span class="nv">$true</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">ErrorAction</span> <span class="p">=</span> <span class="s2">&quot;SilentlyContinue&quot;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">Get-ChildItem</span> <span class="nv">@params</span>
+</span></code></pre></div>
+<p>※ 最後の実行時だけ、<code>$</code> ではなく <code>@</code> を使うのがポイントです。</p>
+<hr />
+<p>書き方に迷っている具体的な長いコマンドはありますか？もしあれば、スプラッティング形式に書き換えるお手伝いもできますよ！</p>
 
 
 
@@ -1428,7 +1370,7 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0004-github-push/" class="md-footer__link md-footer__link--prev" aria-label="前: GitHubにpushする方法">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1438,20 +1380,20 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
                 前
               </span>
               <div class="md-ellipsis">
-                GitHubにpushする方法
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0002-install-python/" class="md-footer__link md-footer__link--next" aria-label="次: Pythonのインストール">
+          <a href="../0032-acrylic-dns-proxy/" class="md-footer__link md-footer__link--next" aria-label="次: Acrylic DNS ProxyをLAN用のDNSとして使う">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                Pythonのインストール
+                Acrylic DNS ProxyをLAN用のDNSとして使う
               </div>
             </div>
             <div class="md-footer__button md-icon">

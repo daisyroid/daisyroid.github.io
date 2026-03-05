@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0004-github-push/">
+        <link rel="prev" href="../0033-powershell-break-line-in-command/">
       
       
-        <link rel="next" href="../0002-install-python/">
+        <link rel="next" href="../0031-local-backend-nickname/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>GitHubの設定 - AI質問箱</title>
+        <title>Acrylic DNS ProxyをLAN用のDNSとして使う - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github" class="md-skip">
+        <a href="#acrylic-dns-proxylandns" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHubの設定
+              Acrylic DNS ProxyをLAN用のDNSとして使う
             
           </span>
         </div>
@@ -249,10 +249,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0032-acrylic-dns-proxy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acrylic DNS ProxyをLAN用のDNSとして使う
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -268,6 +295,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-windowsacrylic-dns-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Windowsでの準備（Acrylic DNS Proxyの設定）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Windowsファイアウォールの解放
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Androidスマホ側の設定
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 接続確認
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 接続確認">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#androiddns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意点：Androidの「プライベートDNS」
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1032,37 +1140,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GitHubの設定
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0003-install-github/" class="md-nav__link">
         
   
   
@@ -1078,98 +1159,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-wslgit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. WSL側のGitにユーザー情報を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. SSHキーの作成（認証設定）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. GitHubに公開鍵を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 接続テスト
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 実際にリポジトリをアップロードする手順
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 実際にリポジトリをアップロードする手順">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tipsvs-codegui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        便利なTips：VS CodeのGUIを使う
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1255,10 +1244,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-wslgit" class="md-nav__link">
+  <a href="#1-windowsacrylic-dns-proxy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. WSL側のGitにユーザー情報を登録
+        1. Windowsでの準備（Acrylic DNS Proxyの設定）
       
     </span>
   </a>
@@ -1266,10 +1255,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ssh" class="md-nav__link">
+  <a href="#2-windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SSHキーの作成（認証設定）
+        2. Windowsファイアウォールの解放
       
     </span>
   </a>
@@ -1277,10 +1266,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-github" class="md-nav__link">
+  <a href="#3-android" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. GitHubに公開鍵を登録
+        3. Androidスマホ側の設定
       
     </span>
   </a>
@@ -1291,30 +1280,19 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 接続テスト
+        4. 接続確認
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 実際にリポジトリをアップロードする手順
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 実際にリポジトリをアップロードする手順">
+    <nav class="md-nav" aria-label="4. 接続確認">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tipsvs-codegui" class="md-nav__link">
+  <a href="#androiddns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        便利なTips：VS CodeのGUIを使う
+        注意点：Androidの「プライベートDNS」
       
     </span>
   </a>
@@ -1343,62 +1321,69 @@
 
 
 
-<h1 id="github">GitHubの設定</h1>
+<h1 id="acrylic-dns-proxylandns">Acrylic DNS ProxyをLAN用のDNSとして使う</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p><a href="../0002-install-python/">&lt;&lt;前の質問から続き</a></p>
-<p>GitHubとの連携設定 </p>
+<p>Windowsに"Acrylic DNS Proxy"を入れて、LAN内にあるAndroidスマホから、LAN内のAndroidタブレットをホスト名でアクセスする手順を教えてください。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>WSL上のPython環境からGitHubへコードをプッシュできるようにしましょう。
-Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰か」を登録し、「認証（SSH）」を設定する</strong>のが最もスムーズで安全な方法です。</p>
+<p>Windows PCをDNSサーバーとして活用し、Android端末同士をホスト名で通信させる設定ですね。少しマニアックな構成ですが、一度設定してしまえばIPアドレスを覚える必要がなくなるので非常に便利です。</p>
+<p>以下の手順で進めていきましょう。</p>
 <hr />
-<h2 id="1-wslgit">1. WSL側のGitにユーザー情報を登録</h2>
-<p>まず、コミット時に記録される名前とメールアドレスを設定します（GitHubのアカウント情報と一致させてください）。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
-</span></code></pre></div>
-<h2 id="2-ssh">2. SSHキーの作成（認証設定）</h2>
-<p>パスワードを毎回入力するのは面倒なので、<strong>SSH公開鍵認証</strong>を使います。</p>
-<p>1. <strong>鍵ペアを作成する</strong>
-以下のコマンドを入力し、すべてそのまま <code>Enter</code> を押して進めます。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
-</span></code></pre></div></p>
-<p>2. <strong>公開鍵の中身をコピーする</strong>
-作成された鍵の内容を表示させ、表示された文字列（<code>ssh-ed25519 ...</code> で始まる行）をすべてコピーします。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
-</span></code></pre></div></p>
-<h2 id="3-github">3. GitHubに公開鍵を登録</h2>
+<h2 id="1-windowsacrylic-dns-proxy">1. Windowsでの準備（Acrylic DNS Proxyの設定）</h2>
+<p>まずは、Windows PC（192.168.x.x 等の固定IP推奨）にAcrylicをインストールします。</p>
 <ol>
-<li>ブラウザで <a href="https://github.com/settings/keys">GitHubのSettings</a> を開きます。</li>
-<li><strong>「New SSH key」</strong>ボタンをクリック。</li>
-<li><strong>Title:</strong> 「WSL-Laptop」など適当な名前を付けます。</li>
-<li><strong>Key:</strong> 先ほどコピーした文字列を貼り付けます。</li>
-<li><strong>「Add SSH key」</strong>をクリックして保存。</li>
+<li><strong>インストール:</strong> 公式サイトからダウンロードしてインストールします。</li>
+<li><strong>設定ファイルの編集:</strong> スタートメニューから <code>Edit Acrylic Configuration</code> を開き、以下を確認・変更します。</li>
+<li>
+<p><code>Address</code>: <code>0.0.0.0</code> になっていることを確認（LAN内からの要求を受け付けるため）。</p>
+</li>
+<li>
+<p><strong>ホスト名の登録:</strong> <code>Edit Acrylic Hosts</code> を開き、アクセスしたいAndroidタブレットの情報を追記します。
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># IPアドレス [スペース] ホスト名
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>192.168.1.50  my-tablet.lan
+</span></code></pre></div></p>
+</li>
 </ol>
-<h2 id="4">4. 接続テスト</h2>
-<p>以下のコマンドでGitHubに正しく接続できるか確認します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
-</span></code></pre></div>
-<p><code>Hi [ユーザー名]! You've successfully authenticated...</code> と表示されれば成功です！</p>
-<hr />
-<h2 id="5">5. 実際にリポジトリをアップロードする手順</h2>
-<p>作成した <code>my-python-app</code> フォルダをGitHubにアップする流れは以下の通りです。</p>
+<blockquote>
+<p><strong>Note:</strong> AndroidタブレットのIPアドレスは、ルーターの設定などで必ず<strong>固定</strong>しておいてください。</p>
+</blockquote>
 <ol>
-<li><strong>GitHub上で新しいリポジトリを作成</strong>し、表示される「SSH」のURL（<code>git@github.com:user/repo.git</code>）をコピーします。</li>
-<li><strong>WSLのターミナルで実行:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>init
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>コピーしたURL<span class="o">]</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</span></code></pre></div></li>
+<li><strong>サービスの再起動:</strong> <code>Restart Acrylic Service</code> を実行して設定を反映させます。</li>
 </ol>
 <hr />
-<h3 id="tipsvs-codegui">便利なTips：VS CodeのGUIを使う</h3>
-<p>VS Codeの左側にある<strong>「ソース管理」アイコン</strong>（枝分かれしたようなマーク）を使えば、コマンドを打たなくてもボタン操作だけで <code>Add</code> や <code>Commit</code>、<code>Push</code> が可能です。WSL環境でもシームレスに動作します。</p>
-<p>次は、<strong>「Gitのブランチ操作のコツ」</strong>や、<strong>「GitHub Actionsを使った自動テストの基本」</strong>などについて深掘りしてみますか？</p>
+<h2 id="2-windows">2. Windowsファイアウォールの解放</h2>
+<p>外部（Androidスマホ）からのDNSリクエストを許可する必要があります。</p>
+<ul>
+<li><strong>受信規則の設定:</strong> UDPの <strong>53番ポート</strong> を許可してください。</li>
+<li>Windowsの「セキュリティが強化されたWindows Defenderファイアウォール」から、新しい規則を作成し、「ポート」→「UDP」→「53」を指定して接続を許可します。</li>
+</ul>
+<hr />
+<h2 id="3-android">3. Androidスマホ側の設定</h2>
+<p>次に、アクセス元となるAndroidスマホのWi-Fi設定を変更します。</p>
+<ol>
+<li><strong>Wi-Fi設定を開く:</strong> 接続中のSSIDを長押し、または歯車アイコンをタップします。</li>
+<li><strong>ネットワークの編集:</strong> 「IP設定」を「静的（Static）」に変更します。</li>
+<li><strong>DNSサーバーの指定:</strong></li>
+<li><strong>DNS 1:</strong> Windows PCのIPアドレスを入力します。</li>
+<li>
+<p><strong>DNS 2:</strong> 8.8.8.8（予備としてGoogleのDNSなどを入れておくと安心です）。</p>
+</li>
+<li>
+<p><strong>保存:</strong> 設定を保存します。</p>
+</li>
+</ol>
+<hr />
+<h2 id="4">4. 接続確認</h2>
+<p>Androidスマホのブラウザやアプリから、設定したホスト名でアクセスしてみましょう。</p>
+<ul>
+<li>スマホのブラウザに <code>http://my-tablet.lan</code> と入力して、タブレットで動いているサービス（サーバー等）が表示されるか確認してください。</li>
+<li>うまくいかない場合は、スマホ側で一度Wi-Fiをオフ/オンにすると、DNSキャッシュがクリアされて繋がることがあります。</li>
+</ul>
+<hr />
+<h3 id="androiddns">注意点：Androidの「プライベートDNS」</h3>
+<p>最近のAndroidには「プライベートDNS」という設定項目がありますが、これは通常「オフ」にしておいてください。これが有効だと、せっかく設定したローカルのDNS（Windows PC）を無視して外部の暗号化DNSに飛んでしまうことがあります。</p>
+<p>設定は無事に完了しそうでしょうか？もし特定のアプリで繋がらないなどあれば、詳細を教えてくださいね。</p>
 
 
 
@@ -1428,7 +1413,7 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0004-github-push/" class="md-footer__link md-footer__link--prev" aria-label="前: GitHubにpushする方法">
+          <a href="../0033-powershell-break-line-in-command/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellでコマンドの途中で改行する方法">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1438,20 +1423,20 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
                 前
               </span>
               <div class="md-ellipsis">
-                GitHubにpushする方法
+                PowerShellでコマンドの途中で改行する方法
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0002-install-python/" class="md-footer__link md-footer__link--next" aria-label="次: Pythonのインストール">
+          <a href="../0031-local-backend-nickname/" class="md-footer__link md-footer__link--next" aria-label="次: ローカルなんでもバックエンドの愛称">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                Pythonのインストール
+                ローカルなんでもバックエンドの愛称
               </div>
             </div>
             <div class="md-footer__button md-icon">

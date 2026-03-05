@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0004-github-push/">
+        <link rel="prev" href="../0029-fast-api-desktop-001/">
       
       
-        <link rel="next" href="../0002-install-python/">
+        <link rel="next" href="../0027-how-to-avoid-overspending-gemini-api/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>GitHubの設定 - AI質問箱</title>
+        <title>GCPで課金用と完全無料用のプロジェクトを使い分ける - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#github" class="md-skip">
+        <a href="#gcp" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHubの設定
+              GCPで課金用と完全無料用のプロジェクトを使い分ける
             
           </span>
         </div>
@@ -357,10 +357,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0028-gcp-billing-vs-free-projects/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCPで課金用と完全無料用のプロジェクトを使い分ける
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -376,6 +403,115 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. プロジェクトごとの設定イメージ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 具体的な設定手順
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 具体的な設定手順">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① 課金プロジェクト（通常の設定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② 無料プロジェクト（リンク解除の設定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. さらに安全に運用するための追加設定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. さらに安全に運用するための追加設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        予算アラートの設定（1円アラート）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API の割り当て（クォータ）制限
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1032,37 +1168,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GitHubの設定
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0003-install-github/" class="md-nav__link">
         
   
   
@@ -1078,98 +1187,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-wslgit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. WSL側のGitにユーザー情報を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. SSHキーの作成（認証設定）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. GitHubに公開鍵を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 接続テスト
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 実際にリポジトリをアップロードする手順
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 実際にリポジトリをアップロードする手順">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tipsvs-codegui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        便利なTips：VS CodeのGUIを使う
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1255,10 +1272,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-wslgit" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. WSL側のGitにユーザー情報を登録
+        1. プロジェクトごとの設定イメージ
       
     </span>
   </a>
@@ -1266,55 +1283,72 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ssh" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SSHキーの作成（認証設定）
+        2. 具体的な設定手順
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. GitHubに公開鍵を登録
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 接続テスト
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 実際にリポジトリをアップロードする手順
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 実際にリポジトリをアップロードする手順">
+    <nav class="md-nav" aria-label="2. 具体的な設定手順">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tipsvs-codegui" class="md-nav__link">
+  <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        便利なTips：VS CodeのGUIを使う
+        ① 課金プロジェクト（通常の設定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② 無料プロジェクト（リンク解除の設定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. さらに安全に運用するための追加設定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. さらに安全に運用するための追加設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        予算アラートの設定（1円アラート）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API の割り当て（クォータ）制限
       
     </span>
   </a>
@@ -1343,62 +1377,81 @@
 
 
 
-<h1 id="github">GitHubの設定</h1>
+<h1 id="gcp">GCPで課金用と完全無料用のプロジェクトを使い分ける</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p><a href="../0002-install-python/">&lt;&lt;前の質問から続き</a></p>
-<p>GitHubとの連携設定 </p>
+<p>GCPのアカウントで、APIに課金して使うプロジェクトと、無料APIのみ使うプロジェクトを分けたいです。それぞれのプロジェクトをどのように設定すればよいか教えてください。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>WSL上のPython環境からGitHubへコードをプッシュできるようにしましょう。
-Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰か」を登録し、「認証（SSH）」を設定する</strong>のが最もスムーズで安全な方法です。</p>
+<p>Google Cloud（GCP）で「課金用」と「完全無料用」のプロジェクトを分けるのは、予期せぬ請求を防ぐための非常に賢明な方法です。</p>
+<p>結論から言うと、<strong>「無料用プロジェクト」から「請求先アカウント」の紐付けを解除する</strong>のが最も確実な設定方法です。</p>
 <hr />
-<h2 id="1-wslgit">1. WSL側のGitにユーザー情報を登録</h2>
-<p>まず、コミット時に記録される名前とメールアドレスを設定します（GitHubのアカウント情報と一致させてください）。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
-</span></code></pre></div>
-<h2 id="2-ssh">2. SSHキーの作成（認証設定）</h2>
-<p>パスワードを毎回入力するのは面倒なので、<strong>SSH公開鍵認証</strong>を使います。</p>
-<p>1. <strong>鍵ペアを作成する</strong>
-以下のコマンドを入力し、すべてそのまま <code>Enter</code> を押して進めます。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
-</span></code></pre></div></p>
-<p>2. <strong>公開鍵の中身をコピーする</strong>
-作成された鍵の内容を表示させ、表示された文字列（<code>ssh-ed25519 ...</code> で始まる行）をすべてコピーします。
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cat<span class="w"> </span>~/.ssh/id_ed25519.pub
-</span></code></pre></div></p>
-<h2 id="3-github">3. GitHubに公開鍵を登録</h2>
+<h2 id="1">1. プロジェクトごとの設定イメージ</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th><strong>課金プロジェクト（API課金あり）</strong></th>
+<th><strong>無料プロジェクト（無料枠のみ）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>役割</strong></td>
+<td>制限なしで全API・リソースを利用</td>
+<td>「常に無料」枠や無料体験枠のみ利用</td>
+</tr>
+<tr>
+<td><strong>請求先リンク</strong></td>
+<td><strong>有効</strong>（クレジットカード等と紐付け）</td>
+<td><strong>無効（リンク解除）</strong></td>
+</tr>
+<tr>
+<td><strong>リスク</strong></td>
+<td>利用量に応じて料金が発生</td>
+<td>課金が発生する操作はエラーで止まる</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. 具体的な設定手順</h2>
+<h3 id="1_1">① 課金プロジェクト（通常の設定）</h3>
+<p>こちらは、プロジェクト作成時に「請求先アカウント」を選択する通常の状態です。</p>
+<ul>
+<li><strong>設定確認:</strong> <a href="https://console.cloud.google.com/">Google Cloud コンソール</a> ＞ 「お支払い」 ＞ 「プロジェクト管理」で、対象プロジェクトに請求先アカウント名が表示されていればOKです。</li>
+</ul>
+<h3 id="2_1">② 無料プロジェクト（リンク解除の設定）</h3>
+<p>課金が発生する API やリソース（高スペックな VM や有料 AI モデルなど）を物理的に使えない状態にします。</p>
 <ol>
-<li>ブラウザで <a href="https://github.com/settings/keys">GitHubのSettings</a> を開きます。</li>
-<li><strong>「New SSH key」</strong>ボタンをクリック。</li>
-<li><strong>Title:</strong> 「WSL-Laptop」など適当な名前を付けます。</li>
-<li><strong>Key:</strong> 先ほどコピーした文字列を貼り付けます。</li>
-<li><strong>「Add SSH key」</strong>をクリックして保存。</li>
+<li>Google Cloud コンソールの左上メニューから <strong>[お支払い]</strong> を選択します。</li>
+<li>左サイドバーの <strong>[アカウント管理]</strong> または <strong>[プロジェクト管理]</strong> をクリックします。</li>
+<li>無料にしたいプロジェクトの右側にある「三点リーダー（︙）」をクリックします。</li>
+<li><strong>[お支払いを停止]</strong>（または <strong>[課金を無効にする]</strong>）を選択します。</li>
 </ol>
-<h2 id="4">4. 接続テスト</h2>
-<p>以下のコマンドでGitHubに正しく接続できるか確認します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
-</span></code></pre></div>
-<p><code>Hi [ユーザー名]! You've successfully authenticated...</code> と表示されれば成功です！</p>
+<blockquote>
+<p>[!CAUTION]
+<strong>注意点</strong>
+請求先アカウントを解除すると、無料枠（Free Tier）があるサービスであっても、<strong>「有効な請求先アカウントが必要」な一部のAPIは動作しなくなります</strong>（例：Google Maps Platform など）。一方、Gemini API（AI Studio経由等）のようにプロジェクト単位で無料枠が独立しているものは、この設定で「意図しない課金」を100%防げます。</p>
+</blockquote>
 <hr />
-<h2 id="5">5. 実際にリポジトリをアップロードする手順</h2>
-<p>作成した <code>my-python-app</code> フォルダをGitHubにアップする流れは以下の通りです。</p>
-<ol>
-<li><strong>GitHub上で新しいリポジトリを作成</strong>し、表示される「SSH」のURL（<code>git@github.com:user/repo.git</code>）をコピーします。</li>
-<li><strong>WSLのターミナルで実行:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>init
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>コピーしたURL<span class="o">]</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</span></code></pre></div></li>
-</ol>
+<h2 id="3">3. さらに安全に運用するための追加設定</h2>
+<p>「無料プロジェクト」であっても、念のため以下の設定をしておくと安心です。</p>
+<h3 id="1_2">予算アラートの設定（1円アラート）</h3>
+<p>課金プロジェクト側で、予算が <strong>1円（または$0.01）</strong> を超えた瞬間にメールが飛ぶように設定します。</p>
+<ul>
+<li><strong>場所:</strong> [お支払い] ＞ [予算とアラート] ＞ [予算を作成]</li>
+<li><strong>ターゲット:</strong> 「課金プロジェクト」のみを指定</li>
+<li><strong>金額:</strong> 1円などの極小額（無料枠を少しでもはみ出したら通知が来ます）</li>
+</ul>
+<h3 id="api">API の割り当て（クォータ）制限</h3>
+<p>特定の API に対して、1日あたりのリクエスト上限を自分で設定し、物理的にそれ以上使えないようにします。</p>
+<ul>
+<li><strong>場所:</strong> [API とサービス] ＞ [有効な API とサービス] ＞ 各 API の詳細 ＞ [割当]</li>
+<li><strong>設定:</strong> 「1 日あたりのリクエスト数」を、無料枠の範囲内に手動で書き換えます。</li>
+</ul>
 <hr />
-<h3 id="tipsvs-codegui">便利なTips：VS CodeのGUIを使う</h3>
-<p>VS Codeの左側にある<strong>「ソース管理」アイコン</strong>（枝分かれしたようなマーク）を使えば、コマンドを打たなくてもボタン操作だけで <code>Add</code> や <code>Commit</code>、<code>Push</code> が可能です。WSL環境でもシームレスに動作します。</p>
-<p>次は、<strong>「Gitのブランチ操作のコツ」</strong>や、<strong>「GitHub Actionsを使った自動テストの基本」</strong>などについて深掘りしてみますか？</p>
+<p>まずは、「無料用プロジェクト」の請求先リンクを外すところから始めてみてください。</p>
+<p><strong>次に、特定のAPI（例えば Gemini API や Vision API など）について、具体的な無料枠の範囲や制限方法を知りたいものはありますか？</strong></p>
 
 
 
@@ -1428,7 +1481,7 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0004-github-push/" class="md-footer__link md-footer__link--prev" aria-label="前: GitHubにpushする方法">
+          <a href="../0029-fast-api-desktop-001/" class="md-footer__link md-footer__link--prev" aria-label="前: FastAPIデスクトップツール-001">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1438,20 +1491,20 @@ Windows側のGit設定とは別に、<strong>WSL（Linux）側で「自分は誰
                 前
               </span>
               <div class="md-ellipsis">
-                GitHubにpushする方法
+                FastAPIデスクトップツール-001
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0002-install-python/" class="md-footer__link md-footer__link--next" aria-label="次: Pythonのインストール">
+          <a href="../0027-how-to-avoid-overspending-gemini-api/" class="md-footer__link md-footer__link--next" aria-label="次: Gemini APIでお金を使いすぎない方法">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                Pythonのインストール
+                Gemini APIでお金を使いすぎない方法
               </div>
             </div>
             <div class="md-footer__button md-icon">

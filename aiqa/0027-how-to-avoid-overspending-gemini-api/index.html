@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../0028-gcp-billing-vs-free-projects/">
       
       
         <link rel="next" href="../0026-fastapi-run-in-task-tray/">
@@ -206,6 +206,168 @@
     
   
     AI質問箱トップページ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0033-powershell-break-line-in-command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerShellでコマンドの途中で改行する方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0032-acrylic-dns-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acrylic DNS ProxyをLAN用のDNSとして使う
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0031-local-backend-nickname/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ローカルなんでもバックエンドの愛称
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0030-fast-api-desktop-002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastAPIデスクトップツール-002
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0029-fast-api-desktop-001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FastAPIデスクトップツール-001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0028-gcp-billing-vs-free-projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCPで課金用と完全無料用のプロジェクトを使い分ける
   
 
     
@@ -470,6 +632,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ★APIキーを無課金に戻す方法
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1398,6 +1571,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ★APIキーを無課金に戻す方法
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1588,6 +1772,34 @@
 <p>※ Gemini 1.5 Flash など一部のモデルでは、一定以下の短いプロンプト（例：128kトークン以下）は非常に安価、または無料枠が設定されている場合があります。</p>
 <h3 id="_4">次のステップとしておすすめ</h3>
 <p>特定のモデル（Gemini 1.5 Pro や Flash など）で、具体的に「10,000文字の日本語リクエストを毎日100回送ったらいくらになるか」といった<strong>具体的な試算</strong>をお手伝いしましょうか？</p>
+<h2 id="api">★APIキーを無課金に戻す方法</h2>
+<p>AIに聞いたのではなく、Zennの投稿記事に答がありました。</p>
+<ol>
+<li>
+<p>記事リンク</p>
+<ul>
+<li>GeminiAPIを無料枠で使おうとしてうっかり課金された話<br></li>
+<li><a href="https://zenn.dev/cliffstar/articles/da6645fa03f75b" rel="noopener" target="_blank">https://zenn.dev/cliffstar/articles/da6645fa03f75b</a></li>
+</ul>
+</li>
+<li>
+<p>実際の手順</p>
+<ul>
+<li>GCPのコンソールを開く<ul>
+<li><a href="https://console.cloud.google.com/home/" rel="noopener" target="_blank">https://console.cloud.google.com/home/</a></li>
+</ul>
+</li>
+<li>[サイドメニュー]&gt;[課金] を開く</li>
+<li>プロジェクト名の横の三点メニューから[課金を無効にする] を選ぶ</li>
+<li>確認ダイアログボックスで [課金を無効にする] を選ぶ</li>
+<li>確認のため Google AI Studio&gt;[Gemini APIの利用額」を開く<ul>
+<li><a href="https://aistudio.google.com/spend" rel="noopener" target="_blank">https://aistudio.google.com/spend</a></li>
+</ul>
+</li>
+<li>「無料枠」に戻った</li>
+</ul>
+</li>
+</ol>
 
 
 
@@ -1617,7 +1829,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
+          <a href="../0028-gcp-billing-vs-free-projects/" class="md-footer__link md-footer__link--prev" aria-label="前: GCPで課金用と完全無料用のプロジェクトを使い分ける">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1627,7 +1839,7 @@
                 前
               </span>
               <div class="md-ellipsis">
-                AI質問箱トップページ
+                GCPで課金用と完全無料用のプロジェクトを使い分ける
               </div>
             </div>
           </a>
