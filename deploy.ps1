@@ -30,7 +30,7 @@ if ($conclusion -eq "success") {
 	$text = "お待たせしました。JOB が完了しました。";
 	$color = "Green";
 } else {
-	$text = "`n処理が失敗しました (Result: $conclusion)";
+	$text = "処理が失敗しました (Result: $conclusion)";
 	$color = "Red";
 }
 Write-Host "`n$text" -ForegroundColor $color;
