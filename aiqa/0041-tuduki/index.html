@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0003-install-github/">
+        <link rel="prev" href="../0042-gtts-vs-cloudtts/">
       
       
-        <link rel="next" href="../0001-install-wsl/">
+        <link rel="next" href="../0040-api-post-put-patch/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Pythonのインストール - AI質問箱</title>
+        <title>さきほどの続き - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pythonのインストール
+              さきほどの続き
             
           </span>
         </div>
@@ -249,10 +249,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0041-tuduki/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    さきほどの続き
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -268,6 +295,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FastAPIによる実装例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装のポイント
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="実装のポイント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-exclude_unsettrue-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. exclude_unset=True の活用（PATCH）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. スキーマの使い分け
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. バリデーション
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1302,37 +1410,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pythonのインストール
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0002-install-python/" class="md-nav__link">
         
   
   
@@ -1348,98 +1429,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. パッケージリストの更新
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Pythonとツールのインストール
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. VS Codeとの連携（最重要）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-venv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 仮想環境（venv）の作成と実行
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. サンプルコードの作成と実行
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. サンプルコードの作成と実行">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        次のステップへのヒント
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1498,10 +1487,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#fastapi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. パッケージリストの更新
+        FastAPIによる実装例
       
     </span>
   </a>
@@ -1509,55 +1498,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-python" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pythonとツールのインストール
+        実装のポイント
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-vs-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. VS Codeとの連携（最重要）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-venv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 仮想環境（venv）の作成と実行
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. サンプルコードの作成と実行
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. サンプルコードの作成と実行">
+    <nav class="md-nav" aria-label="実装のポイント">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1-exclude_unsettrue-patch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        次のステップへのヒント
+        1. exclude_unset=True の活用（PATCH）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. スキーマの使い分け
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. バリデーション
       
     </span>
   </a>
@@ -1586,72 +1564,81 @@
 
 
 
-<h1 id="python">Pythonのインストール</h1>
+<h1 id="_1">さきほどの続き</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p><a href="../0001-install-wsl/">&lt;&lt;前の質問から続き</a></p>
-<p>WSL上でPythonの開発環境を作る方法 </p>
+<p>FastAPIでの具体的なコード例を見せてください</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>WSLのインストール、お疲れ様でした！ここからは、WSL上のUbuntuを「最強のPython開発環境」に変えていきましょう。</p>
-<p>WSLで開発する場合、<strong>「WSLの中でコードを実行し、Windows上のVS Codeで編集する」</strong>というスタイルが一般的で、最も快適です。</p>
+<p>FastAPIでは、デコレータ（<code>@app.post</code> など）を使用して、HTTPメソッドとPythonの関数を直感的に紐付けることができます。</p>
+<p>前述の使い分けに基づいた、シンプルなブログ記事管理のコード例を紹介します。</p>
 <hr />
-<h2 id="1">1. パッケージリストの更新</h2>
-<p>まずは、Ubuntu内のツールを最新状態にします。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
-</span></code></pre></div>
-<h2 id="2-python">2. Pythonとツールのインストール</h2>
-<p>Ubuntuには最初からPythonがインストールされていますが、開発に必要な「pip（ライブラリ管理ツール）」や「仮想環境作成ツール」を追加します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv
+<h2 id="fastapi">FastAPIによる実装例</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">HTTPException</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 擬似的なデータベース（辞書型）</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">db</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Initial post content.&quot;</span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># データモデルの定義</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">class</span><span class="w"> </span><span class="nc">PostCreate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">class</span><span class="w"> </span><span class="nc">PostUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="n">title</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">content</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># 1. POST: 新規作成</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/posts&quot;</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_post</span><span class="p">(</span><span class="n">post</span><span class="p">:</span> <span class="n">PostCreate</span><span class="p">):</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">new_id</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="n">db</span><span class="p">[</span><span class="n">new_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">new_id</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">[</span><span class="n">new_id</span><span class="p">]}</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1"># 2. PUT: 全置換（リソースを丸ごと入れ替える）</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="nd">@app</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;/posts/</span><span class="si">{post_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">replace_post</span><span class="p">(</span><span class="n">post_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">post</span><span class="p">:</span> <span class="n">PostCreate</span><span class="p">):</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="k">if</span> <span class="n">post_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Post not found&quot;</span><span class="p">)</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="c1"># 送信されたデータで完全に上書き</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="n">db</span><span class="p">[</span><span class="n">post_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Updated completely&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">[</span><span class="n">post_id</span><span class="p">]}</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="c1"># 3. PATCH: 部分更新（変更がある項目だけ上書き）</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="nd">@app</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;/posts/</span><span class="si">{post_id}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="k">def</span><span class="w"> </span><span class="nf">update_post</span><span class="p">(</span><span class="n">post_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">post_update</span><span class="p">:</span> <span class="n">PostUpdate</span><span class="p">):</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    <span class="k">if</span> <span class="n">post_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Post not found&quot;</span><span class="p">)</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    <span class="n">current_data</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="n">post_id</span><span class="p">]</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    <span class="c1"># 送信された（Noneでない）フィールドのみを抽出して更新</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    <span class="n">update_data</span> <span class="o">=</span> <span class="n">post_update</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">exclude_unset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="n">current_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update_data</span><span class="p">)</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    <span class="n">db</span><span class="p">[</span><span class="n">post_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_data</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Updated partially&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">db</span><span class="p">[</span><span class="n">post_id</span><span class="p">]}</span>
 </span></code></pre></div>
 <hr />
-<h2 id="3-vs-code">3. VS Codeとの連携（最重要）</h2>
-<p>Windows側のVS CodeからWSLの中を直接操作できるようにします。これができると、Windowsのソフトを使っている感覚でLinux上のコードを快適に書けます。</p>
-<ol>
-<li><strong>Windows側でVS Codeを起動</strong>します。</li>
-<li>左側の「拡張機能」アイコン（四角いマーク）をクリックし、<strong>「WSL」</strong>と検索してインストールします（Microsoft公式のもの）。</li>
-<li>インストール後、左下の「青いマーク（&gt;&lt;）」をクリックし、<strong>「Connect to WSL」</strong>を選択します。</li>
-<li>これで、VS Codeのウィンドウが「WSL: Ubuntu」モードに切り替わります。</li>
-</ol>
+<h2 id="_2">実装のポイント</h2>
+<h3 id="1-exclude_unsettrue-patch">1. <code>exclude_unset=True</code> の活用（PATCH）</h3>
+<p>PATCHメソッドの実装では、Pydanticの <code>model_dump(exclude_unset=True)</code> が非常に便利です。これは「リクエストに含まれていなかったフィールド」を除外してくれるため、<strong>「タイトルだけ送られてきたらタイトルだけ更新する」</strong>というロジックが簡単に書けます。</p>
+<h3 id="2">2. スキーマの使い分け</h3>
+<ul>
+<li><strong>POST/PUT用</strong>: 全てのフィールドを必須にする（<code>PostCreate</code>）。</li>
+<li><strong>PATCH用</strong>: 全てのフィールドを <code>Optional</code> にし、一部欠けていても受け取れるようにする（<code>PostUpdate</code>）。</li>
+</ul>
+<h3 id="3">3. バリデーション</h3>
+<p>FastAPIは型ヒントを読み取って自動的にバリデーション（型チェック）を行ってくれるため、不正な形式のデータが送られた場合は、関数が実行される前に <code>422 Unprocessable Entity</code> を返してくれます。</p>
 <hr />
-<h2 id="4-venv">4. 仮想環境（venv）の作成と実行</h2>
-<p>プロジェクトごとにライブラリを分けるために「仮想環境」を作るのがPython開発の鉄則です。</p>
-<ol>
-<li>
-<p><strong>プロジェクトフォルダを作成して移動</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>my-python-app
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>my-python-app
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>仮想環境を作成（名前を <code>.venv</code> にする場合）</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>仮想環境を起動（アクティベート）</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div></p>
-</li>
-<li>
-<p>ターミナルの左端に <code>(.venv)</code> と表示されれば成功です！</p>
-</li>
-</ol>
-<hr />
-<h2 id="5">5. サンプルコードの作成と実行</h2>
-<p>VS Codeのターミナル（<code>Ctrl + @</code>）で以下を入力して、エディタでファイルを開きます。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>code<span class="w"> </span>hello.py
-</span></code></pre></div>
-<p>開いたファイルに以下のコードを書き、保存してください。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from WSL!&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p>最後に、ターミナルで実行します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3<span class="w"> </span>hello.py
-</span></code></pre></div>
-<hr />
-<h3 id="_1">次のステップへのヒント</h3>
-<p>WSLでは、Windows側のファイル（Cドライブなど）にもアクセスできますが、<strong>パフォーマンス向上のため、コードは必ずWSL側のホームディレクトリ（<code>~/</code>）の中に置く</strong>ようにしてください。</p>
-<p>次は、<strong>「機械学習向けのライブラリ（PandasやPyTorchなど）のインストール方法」</strong>や、<strong>「GitHubとの連携設定」</strong>について詳しく説明しましょうか？</p>
+<p>FastAPIはサーバーを起動して <code>/docs</code> にアクセスすると、これらのメソッドをブラウザから直接テストできる <strong>Swagger UI</strong> が自動生成されます。</p>
+<p>このコードをベースにして、SQLiteなどのデータベースと連携（SQLAlchemyやTortoise ORMなどを使用）させる方向で進めてみましょうか？</p>
 
 
 
@@ -1681,7 +1668,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0003-install-github/" class="md-footer__link md-footer__link--prev" aria-label="前: GitHubの設定">
+          <a href="../0042-gtts-vs-cloudtts/" class="md-footer__link md-footer__link--prev" aria-label="前: gTTSとCloud Text-to-Speech APIの違い">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1691,20 +1678,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                GitHubの設定
+                gTTSとCloud Text-to-Speech APIの違い
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0001-install-wsl/" class="md-footer__link md-footer__link--next" aria-label="次: WSLのインストール">
+          <a href="../0040-api-post-put-patch/" class="md-footer__link md-footer__link--next" aria-label="次: APIにおけるPOST,PUT,PATCHの違い">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                WSLのインストール
+                APIにおけるPOST,PUT,PATCHの違い
               </div>
             </div>
             <div class="md-footer__button md-icon">
