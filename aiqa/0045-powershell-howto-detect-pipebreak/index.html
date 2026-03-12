@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0032-acrylic-dns-proxy/">
+        <link rel="prev" href="../0046-powershell-array-subexpression/">
       
       
-        <link rel="next" href="../0030-fast-api-desktop-002/">
+        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>ローカルなんでもバックエンドの愛称 - AI質問箱</title>
+        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#powershell" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ローカルなんでもバックエンドの愛称
+              PowerShellでパイプラインが中断するとき何がおこるか
             
           </span>
         </div>
@@ -276,10 +276,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerShellでパイプラインが中断するとき何がおこるか
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -295,6 +322,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stopping-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実験：上流が止まったことを証明する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linuxとの決定的な違い
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -654,37 +745,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ローカルなんでもバックエンドの愛称
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0031-local-backend-nickname/" class="md-nav__link">
         
   
   
@@ -700,70 +764,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 役割や技術名から連想する名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 「なんでも屋・便利屋」をイメージした名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-geminiai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Gemini（双子座）やAI要素を混ぜた名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        個人的なイチオシ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1605,10 +1605,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#stopping-exception" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 役割や技術名から連想する名前
+        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
       
     </span>
   </a>
@@ -1616,10 +1616,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 「なんでも屋・便利屋」をイメージした名前
+        実験：上流が止まったことを証明する
       
     </span>
   </a>
@@ -1627,10 +1627,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-geminiai" class="md-nav__link">
+  <a href="#linux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Gemini（双子座）やAI要素を混ぜた名前
+        Linuxとの決定的な違い
       
     </span>
   </a>
@@ -1641,7 +1641,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        個人的なイチオシ
+        まとめ
       
     </span>
   </a>
@@ -1665,84 +1665,76 @@
 
 
 
-<h1 id="_1">ローカルなんでもバックエンドの愛称</h1>
+<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>WindowsのlocalhostでSQLiteとFastAPIによる「なんでもバックエンド」を作ろうとしています。「今日は何の日」を返すAPIとか、短文メモの読み書きAPI、自分のGeminiに質疑応答できるAPIなど。このバックエンドを擬人化した愛称をかんがえてください。バックエンドだからバッキーくん、とか考えたけどいまいちです。女の子の名前でもいいです。</p>
+<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>Windowsのlocalhostで動く、自分専用の多機能バックエンド。愛着が持てる名前になると、開発のモチベーションもグッと上がりますよね！</p>
-<p>「バックエンド」「SQLite（蓄積）」「FastAPI（高速・仲介）」「Gemini（知能）」といった要素を盛り込みつつ、「バッキーくん」よりも少しひねった、呼びやすくて可愛い愛称をいくつか提案します。</p>
+<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
+<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
 <hr />
-<h3 id="1">1. 役割や技術名から連想する名前</h3>
+<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
+<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
+<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
+<ol>
+<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
+<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
+<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
+<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
+</ol>
+<hr />
+<h3 id="_1">実験：上流が止まったことを証明する</h3>
+<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
+</span></code></pre></div>
+<p><strong>実行結果:</strong></p>
 <ul>
-<li><strong>ココア (Cocoa)</strong></li>
-<li>
-<p><strong>由来:</strong> 「<strong>Co</strong>re」+「<strong>Lo</strong>cal」。あなたのPCの核（コア）となり、ローカルで動くことから。温かみがあって、日常に溶け込むイメージです。</p>
-</li>
-<li>
-<p><strong>ファスナ (Fasna)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> <strong>Fast</strong>APIの「Fast」から。なんでも素早く繋いでくれる「ファスナー」のような存在。</p>
-</li>
-<li>
-<p><strong>りーた (Lita)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> SQ<strong>Lite</strong>から。軽快で、何でも書き留めておいてくれる健気な秘書キャラのイメージ。</p>
-</li>
-<li>
-<p><strong>アンカー (Anchor)</strong></p>
-</li>
-<li><strong>由来:</strong> ローカル（地元・碇）にどっしり構えて、あらゆる情報を繋ぎ止める役割から。</li>
-</ul>
-<h3 id="2">2. 「なんでも屋・便利屋」をイメージした名前</h3>
-<ul>
-<li><strong>めめ (Meme)</strong></li>
-<li>
-<p><strong>由来:</strong> 「<strong>Me</strong>mo」+「<strong>Me</strong>mory」。短文メモや今日の情報を、自分の代わりにずっと覚えていてくれる女の子。</p>
-</li>
-<li>
-<p><strong>ルカ (Luka)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> <strong>Lo</strong>cal <strong>Ka</strong>pper（ローカルの河童／何でも運んでくる）。「ルカに聞けばわかる」という語感の良さもポイントです。</p>
-</li>
-<li>
-<p><strong>ヨリ (Yori)</strong></p>
-</li>
-<li><strong>由来:</strong> 「寄り添う」＋「万（よろず）」。あなたの日常に寄り添い、万事引き受けてくれるバックエンド。</li>
-</ul>
-<h3 id="3-geminiai">3. Gemini（双子座）やAI要素を混ぜた名前</h3>
-<ul>
-<li><strong>ジェニ (Jeni)</strong></li>
-<li>
-<p><strong>由来:</strong> <strong>Geni</strong>e（魔法の精霊）+ <strong>Gemini</strong>。ローカルというランプの中に住んでいる、何でも叶えてくれる精霊。</p>
-</li>
-<li>
-<p><strong>ミナ (Mina)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> Ge<strong>mini</strong>の「Mini（小さい）」から。PCの中に住んでいる小さな知能。</p>
-</li>
-<li>
-<p><strong>ポル (Pol)</strong></p>
-</li>
-<li><strong>由来:</strong> 双子座の星「ポルックス」から。Gemini APIを叩くメイン機能があるなら、その片割れとして。</li>
+<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
+<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
 </ul>
 <hr />
-<h3 id="_2">個人的なイチオシ</h3>
-<p><strong>「リタ (Lita)」</strong> はいかがでしょうか？
-「SQLiteベースで軽い（Light）」「データを利活用する（利他）」というダブルミーニングになります。</p>
-<blockquote>
-<p><strong>呼び方の例:</strong>
-「リタ、今日の記念日教えて」
-「これリタにメモしといて」
-「リタ、Geminiに繋いで聞いてみて」</p>
-</blockquote>
-<p>もし「もう少しクールな感じがいい」とか「和風な名前がいい」といった好みの方向性があれば、さらに絞り込んで提案します。</p>
-<p><strong>次は、この「愛称」をベースに、APIの起動時に表示されるアスキーアートやウェルカムメッセージを考えてみましょうか？</strong></p>
+<h3 id="linux">Linuxとの決定的な違い</h3>
+<table>
+<thead>
+<tr>
+<th>比較項目</th>
+<th>Linux (bash/zshなど)</th>
+<th>PowerShell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>伝達手段</strong></td>
+<td><code>SIGPIPE</code> (OSシグナル)</td>
+<td><code>.NET Exception</code> (例外処理)</td>
+</tr>
+<tr>
+<td><strong>データの単位</strong></td>
+<td>バイト / テキスト</td>
+<td><strong>.NET オブジェクト</strong></td>
+</tr>
+<tr>
+<td><strong>制御の主体</strong></td>
+<td>カーネルがパイプを管理</td>
+<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">まとめ</h3>
+<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
+<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
+<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
 
 
 
@@ -1772,7 +1764,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0032-acrylic-dns-proxy/" class="md-footer__link md-footer__link--prev" aria-label="前: Acrylic DNS ProxyをLAN用のDNSとして使う">
+          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1782,20 +1774,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                Acrylic DNS ProxyをLAN用のDNSとして使う
+                PowerShellの配列サブ式について
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0030-fast-api-desktop-002/" class="md-footer__link md-footer__link--next" aria-label="次: FastAPIデスクトップツール-002">
+          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                FastAPIデスクトップツール-002
+                ffmpegをPythonで制御したい
               </div>
             </div>
             <div class="md-footer__button md-icon">

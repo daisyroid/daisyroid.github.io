@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0032-acrylic-dns-proxy/">
+        <link rel="prev" href="../0044-ffmpeg-oneliner-to-script/">
       
       
-        <link rel="next" href="../0030-fast-api-desktop-002/">
+        <link rel="next" href="../0042-gtts-vs-cloudtts/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>ローカルなんでもバックエンドの愛称 - AI質問箱</title>
+        <title>PowerShellで画像を処理する方法 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#powershell" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ローカルなんでもバックエンドの愛称
+              PowerShellで画像を処理する方法
             
           </span>
         </div>
@@ -330,10 +330,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0043-image-lib-for-powershell/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerShellで画像を処理する方法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -349,6 +376,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-systemdrawing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 標準機能（System.Drawing）を使う方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-imagemagick-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ImageMagick をPowerShellから叩く
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-imagesharp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. モダンな選択肢：ImageSharp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. モダンな選択肢：ImageSharp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pythonpillow-vs-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比較表：Python(Pillow) vs PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正直なアドバイス
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -654,37 +762,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ローカルなんでもバックエンドの愛称
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0031-local-backend-nickname/" class="md-nav__link">
         
   
   
@@ -700,70 +781,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 役割や技術名から連想する名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 「なんでも屋・便利屋」をイメージした名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-geminiai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Gemini（双子座）やAI要素を混ぜた名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        個人的なイチオシ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1605,10 +1622,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-systemdrawing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 役割や技術名から連想する名前
+        1. 標準機能（System.Drawing）を使う方法
       
     </span>
   </a>
@@ -1616,10 +1633,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-imagemagick-powershell" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 「なんでも屋・便利屋」をイメージした名前
+        2. ImageMagick をPowerShellから叩く
       
     </span>
   </a>
@@ -1627,24 +1644,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-geminiai" class="md-nav__link">
+  <a href="#3-imagesharp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Gemini（双子座）やAI要素を混ぜた名前
+        3. モダンな選択肢：ImageSharp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. モダンな選択肢：ImageSharp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pythonpillow-vs-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比較表：Python(Pillow) vs PowerShell
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        個人的なイチオシ
+        正直なアドバイス
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1665,84 +1699,79 @@
 
 
 
-<h1 id="_1">ローカルなんでもバックエンドの愛称</h1>
+<h1 id="powershell">PowerShellで画像を処理する方法</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>WindowsのlocalhostでSQLiteとFastAPIによる「なんでもバックエンド」を作ろうとしています。「今日は何の日」を返すAPIとか、短文メモの読み書きAPI、自分のGeminiに質疑応答できるAPIなど。このバックエンドを擬人化した愛称をかんがえてください。バックエンドだからバッキーくん、とか考えたけどいまいちです。女の子の名前でもいいです。</p>
+<p>PowerShellで、PythonのPillowのようにImageを扱うことはできますか。今は画像処理関係はPowerShellのスクリプトから、Pythonスクリプトに下請けさせています。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>Windowsのlocalhostで動く、自分専用の多機能バックエンド。愛着が持てる名前になると、開発のモチベーションもグッと上がりますよね！</p>
-<p>「バックエンド」「SQLite（蓄積）」「FastAPI（高速・仲介）」「Gemini（知能）」といった要素を盛り込みつつ、「バッキーくん」よりも少しひねった、呼びやすくて可愛い愛称をいくつか提案します。</p>
+<p>結論から申し上げますと、<strong>可能です。</strong> PowerShellは .NET Framework / .NET Core の機能を直接呼び出せるため、標準の描画ライブラリ（System.Drawing）や、よりモダンな外部ライブラリを使用することで、Python（Pillow）を介さずに画像処理を完結させられます。</p>
+<p>ただ、Pillowほど「至れり尽くせり」なコマンドが標準で用意されているわけではないので、少しコードが「プログラミング寄り」になる点には注意が必要です。</p>
 <hr />
-<h3 id="1">1. 役割や技術名から連想する名前</h3>
-<ul>
-<li><strong>ココア (Cocoa)</strong></li>
-<li>
-<p><strong>由来:</strong> 「<strong>Co</strong>re」+「<strong>Lo</strong>cal」。あなたのPCの核（コア）となり、ローカルで動くことから。温かみがあって、日常に溶け込むイメージです。</p>
-</li>
-<li>
-<p><strong>ファスナ (Fasna)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> <strong>Fast</strong>APIの「Fast」から。なんでも素早く繋いでくれる「ファスナー」のような存在。</p>
-</li>
-<li>
-<p><strong>りーた (Lita)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> SQ<strong>Lite</strong>から。軽快で、何でも書き留めておいてくれる健気な秘書キャラのイメージ。</p>
-</li>
-<li>
-<p><strong>アンカー (Anchor)</strong></p>
-</li>
-<li><strong>由来:</strong> ローカル（地元・碇）にどっしり構えて、あらゆる情報を繋ぎ止める役割から。</li>
-</ul>
-<h3 id="2">2. 「なんでも屋・便利屋」をイメージした名前</h3>
-<ul>
-<li><strong>めめ (Meme)</strong></li>
-<li>
-<p><strong>由来:</strong> 「<strong>Me</strong>mo」+「<strong>Me</strong>mory」。短文メモや今日の情報を、自分の代わりにずっと覚えていてくれる女の子。</p>
-</li>
-<li>
-<p><strong>ルカ (Luka)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> <strong>Lo</strong>cal <strong>Ka</strong>pper（ローカルの河童／何でも運んでくる）。「ルカに聞けばわかる」という語感の良さもポイントです。</p>
-</li>
-<li>
-<p><strong>ヨリ (Yori)</strong></p>
-</li>
-<li><strong>由来:</strong> 「寄り添う」＋「万（よろず）」。あなたの日常に寄り添い、万事引き受けてくれるバックエンド。</li>
-</ul>
-<h3 id="3-geminiai">3. Gemini（双子座）やAI要素を混ぜた名前</h3>
-<ul>
-<li><strong>ジェニ (Jeni)</strong></li>
-<li>
-<p><strong>由来:</strong> <strong>Geni</strong>e（魔法の精霊）+ <strong>Gemini</strong>。ローカルというランプの中に住んでいる、何でも叶えてくれる精霊。</p>
-</li>
-<li>
-<p><strong>ミナ (Mina)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> Ge<strong>mini</strong>の「Mini（小さい）」から。PCの中に住んでいる小さな知能。</p>
-</li>
-<li>
-<p><strong>ポル (Pol)</strong></p>
-</li>
-<li><strong>由来:</strong> 双子座の星「ポルックス」から。Gemini APIを叩くメイン機能があるなら、その片割れとして。</li>
-</ul>
+<h2 id="1-systemdrawing">1. 標準機能（System.Drawing）を使う方法</h2>
+<p>Windows標準のPowerShellであれば、.NETの <code>System.Drawing</code> アセンブリを利用して、リサイズ、回転、フォーマット変換などが可能です。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># アセンブリの読み込み</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># 画像の読み込み</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$image</span> <span class="p">=</span> <span class="no">[System.Drawing.Image]</span><span class="p">::</span><span class="n">FromFile</span><span class="p">(</span><span class="s2">&quot;C:\temp\input.jpg&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c"># 例：画像を時計回りに90度回転</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">$image</span><span class="p">.</span><span class="n">RotateFlip</span><span class="p">(</span><span class="no">[System.Drawing.RotateFlipType]</span><span class="p">::</span><span class="n">Rotate90FlipNone</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c"># 例：PNGとして保存</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nv">$image</span><span class="p">.</span><span class="n">Save</span><span class="p">(</span><span class="s2">&quot;C:\temp\output.png&quot;</span><span class="p">,</span> <span class="no">[System.Drawing.Imaging.ImageFormat]</span><span class="p">::</span><span class="n">Png</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c"># メモリ解放（重要！）</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nv">$image</span><span class="p">.</span><span class="n">Dispose</span><span class="p">()</span>
+</span></code></pre></div>
 <hr />
-<h3 id="_2">個人的なイチオシ</h3>
-<p><strong>「リタ (Lita)」</strong> はいかがでしょうか？
-「SQLiteベースで軽い（Light）」「データを利活用する（利他）」というダブルミーニングになります。</p>
-<blockquote>
-<p><strong>呼び方の例:</strong>
-「リタ、今日の記念日教えて」
-「これリタにメモしといて」
-「リタ、Geminiに繋いで聞いてみて」</p>
-</blockquote>
-<p>もし「もう少しクールな感じがいい」とか「和風な名前がいい」といった好みの方向性があれば、さらに絞り込んで提案します。</p>
-<p><strong>次は、この「愛称」をベースに、APIの起動時に表示されるアスキーアートやウェルカムメッセージを考えてみましょうか？</strong></p>
+<h2 id="2-imagemagick-powershell">2. ImageMagick をPowerShellから叩く</h2>
+<p>「Pillowのような手軽さ」を求めるなら、<strong>ImageMagick</strong> をインストールして、そのCLI（<code>magick</code> コマンド）をPowerShellから制御するのが最も効率的です。</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># リサイズとフォーマット変換を一行で</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">magick</span> <span class="n">input</span><span class="p">.</span><span class="n">jpg</span> <span class="n">-resize</span> <span class="n">50</span><span class="p">%</span> <span class="n">output</span><span class="p">.</span><span class="n">png</span>
+</span></code></pre></div>
+<p>PowerShellのループと組み合わせれば、フォルダ内の画像一括処理も非常に強力です。</p>
+<hr />
+<h2 id="3-imagesharp">3. モダンな選択肢：ImageSharp</h2>
+<p>もしあなたが PowerShell 7系（Core）を使っていて、より高度で高速な処理を求めるなら、<strong>.NET用の「ImageSharp」</strong>というライブラリを読み込んで使う手もあります。これはPillowに非常に近い操作感を持つモダンなライブラリです。</p>
+<h3 id="pythonpillow-vs-powershell">比較表：Python(Pillow) vs PowerShell</h3>
+<table>
+<thead>
+<tr>
+<th>機能</th>
+<th>Python (Pillow)</th>
+<th>PowerShell (.NET)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>手軽さ</strong></td>
+<td>非常に高い</td>
+<td>中（.NETの知識が必要）</td>
+</tr>
+<tr>
+<td><strong>速度</strong></td>
+<td>高速</td>
+<td>高速（ネイティブ動作）</td>
+</tr>
+<tr>
+<td><strong>外部依存</strong></td>
+<td><code>pip install Pillow</code></td>
+<td>標準なら不要（ImageMagick等なら必要）</td>
+</tr>
+<tr>
+<td><strong>得意分野</strong></td>
+<td>AI/画像解析連携</td>
+<td>OS操作・ファイル管理との連携</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_1">正直なアドバイス</h3>
+<p>「餅は餅屋」という言葉通り、<strong>複雑な画像フィルタリングや描画を伴うなら、今のままPythonに下請けさせるのが一番楽</strong>です。</p>
+<p>しかし、「特定のフォルダに来た画像をリサイズして保存するだけ」といった単純なワークフローであれば、PowerShellだけで完結させたほうが、Pythonの実行環境（仮想環境など）を気にしなくて済むため、管理がスッキリします。</p>
+<p>まずは「サイズ変更」や「形式変換」など、どの程度の処理をPowerShell化したいか、具体的なやり方を作成してみましょうか？</p>
 
 
 
@@ -1772,7 +1801,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0032-acrylic-dns-proxy/" class="md-footer__link md-footer__link--prev" aria-label="前: Acrylic DNS ProxyをLAN用のDNSとして使う">
+          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--prev" aria-label="前: ffmpegをPythonで制御したい">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1782,20 +1811,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                Acrylic DNS ProxyをLAN用のDNSとして使う
+                ffmpegをPythonで制御したい
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0030-fast-api-desktop-002/" class="md-footer__link md-footer__link--next" aria-label="次: FastAPIデスクトップツール-002">
+          <a href="../0042-gtts-vs-cloudtts/" class="md-footer__link md-footer__link--next" aria-label="次: gTTSとCloud Text-to-Speech APIの違い">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                FastAPIデスクトップツール-002
+                gTTSとCloud Text-to-Speech APIの違い
               </div>
             </div>
             <div class="md-footer__button md-icon">

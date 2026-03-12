@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0032-acrylic-dns-proxy/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0030-fast-api-desktop-002/">
+        <link rel="next" href="../0046-powershell-array-subexpression/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>ローカルなんでもバックエンドの愛称 - AI質問箱</title>
+        <title>PowerShellの解析モード(Parsing Mode)について - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#powershellparsing-mode" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ローカルなんでもバックエンドの愛称
+              PowerShellの解析モード(Parsing Mode)について
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0047-powershell-parsing-mode/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerShellの解析モード(Parsing Mode)について
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,136 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-write-output-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Write-Output (1..10) （グループ化演算子）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-write-output-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Write-Output $(1..10) （サブ式）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write-output-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Write-Output @(1..10) （配列サブ式）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比較まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        補足：なぜ 1..10 だけだとダメなのか？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. パス指定や文字列結合での計算エラー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. プロパティ参照（ドット）の空振り
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 文字列内での変数展開（プロパティの場合）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ：モードの見極め方
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 迷った時の鉄則
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -654,37 +811,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ローカルなんでもバックエンドの愛称
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0031-local-backend-nickname/" class="md-nav__link">
         
   
   
@@ -700,70 +830,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 役割や技術名から連想する名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 「なんでも屋・便利屋」をイメージした名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-geminiai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Gemini（双子座）やAI要素を混ぜた名前
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        個人的なイチオシ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1605,10 +1671,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-write-output-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Write-Output (1..10) （グループ化演算子）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-write-output-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Write-Output $(1..10) （サブ式）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write-output-110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Write-Output @(1..10) （配列サブ式）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比較まとめ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        補足：なぜ 1..10 だけだとダメなのか？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 役割や技術名から連想する名前
+        1. パス指定や文字列結合での計算エラー
       
     </span>
   </a>
@@ -1619,7 +1740,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 「なんでも屋・便利屋」をイメージした名前
+        2. プロパティ参照（ドット）の空振り
       
     </span>
   </a>
@@ -1627,10 +1748,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-geminiai" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Gemini（双子座）やAI要素を混ぜた名前
+        3. 文字列内での変数展開（プロパティの場合）
       
     </span>
   </a>
@@ -1641,7 +1762,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        個人的なイチオシ
+        まとめ：モードの見極め方
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 迷った時の鉄則
       
     </span>
   </a>
@@ -1665,84 +1797,161 @@
 
 
 
-<h1 id="_1">ローカルなんでもバックエンドの愛称</h1>
+<h1 id="powershellparsing-mode">PowerShellの解析モード(Parsing Mode)について</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>WindowsのlocalhostでSQLiteとFastAPIによる「なんでもバックエンド」を作ろうとしています。「今日は何の日」を返すAPIとか、短文メモの読み書きAPI、自分のGeminiに質疑応答できるAPIなど。このバックエンドを擬人化した愛称をかんがえてください。バックエンドだからバッキーくん、とか考えたけどいまいちです。女の子の名前でもいいです。</p>
+<p>入門書の説明で、あえて「Write-Outputで 1..10を出力する」というコマンド例を書くとき、「Write-Output 1..10」だと引数が式として解釈されません。「Write-Output (1..10)」ならうまくいきます。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>Windowsのlocalhostで動く、自分専用の多機能バックエンド。愛着が持てる名前になると、開発のモチベーションもグッと上がりますよね！</p>
-<p>「バックエンド」「SQLite（蓄積）」「FastAPI（高速・仲介）」「Gemini（知能）」といった要素を盛り込みつつ、「バッキーくん」よりも少しひねった、呼びやすくて可愛い愛称をいくつか提案します。</p>
+<p>おっしゃる通り、PowerShellの「解析モード（Parsing Mode）」の違いによる落とし穴ですね。</p>
+<p><code>Write-Output 1..10</code> と書くと、PowerShellはこれを数値の範囲ではなく、<strong>「1..10」という1つの文字列</strong>（正確には引数モードでの未引用文字列）として解釈しようとしてしまいます。</p>
+<p>これを正しく実行させるための3つの書き方の違いを整理しました。</p>
 <hr />
-<h3 id="1">1. 役割や技術名から連想する名前</h3>
+<h3 id="1-write-output-110">1. <code>Write-Output (1..10)</code> （グループ化演算子）</h3>
+<p><strong>最も推奨される、標準的な書き方です。</strong></p>
 <ul>
-<li><strong>ココア (Cocoa)</strong></li>
-<li>
-<p><strong>由来:</strong> 「<strong>Co</strong>re」+「<strong>Lo</strong>cal」。あなたのPCの核（コア）となり、ローカルで動くことから。温かみがあって、日常に溶け込むイメージです。</p>
-</li>
-<li>
-<p><strong>ファスナ (Fasna)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> <strong>Fast</strong>APIの「Fast」から。なんでも素早く繋いでくれる「ファスナー」のような存在。</p>
-</li>
-<li>
-<p><strong>りーた (Lita)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> SQ<strong>Lite</strong>から。軽快で、何でも書き留めておいてくれる健気な秘書キャラのイメージ。</p>
-</li>
-<li>
-<p><strong>アンカー (Anchor)</strong></p>
-</li>
-<li><strong>由来:</strong> ローカル（地元・碇）にどっしり構えて、あらゆる情報を繋ぎ止める役割から。</li>
+<li><strong>仕組み:</strong> <code>()</code> は<strong>グループ化演算子</strong>です。括弧の中身を「一つの式」として先に評価し、その<strong>結果（配列）</strong>を <code>Write-Output</code> の引数に渡します。</li>
+<li><strong>メリット:</strong> 簡潔で、算術演算や範囲演算を引数に渡す際のデファクトスタンダードです。</li>
 </ul>
-<h3 id="2">2. 「なんでも屋・便利屋」をイメージした名前</h3>
+<h3 id="2-write-output-110">2. <code>Write-Output $(1..10)</code> （サブ式）</h3>
+<p><strong>「処理を完結させてから渡す」というニュアンスが強くなります。</strong></p>
 <ul>
-<li><strong>めめ (Meme)</strong></li>
-<li>
-<p><strong>由来:</strong> 「<strong>Me</strong>mo」+「<strong>Me</strong>mory」。短文メモや今日の情報を、自分の代わりにずっと覚えていてくれる女の子。</p>
-</li>
-<li>
-<p><strong>ルカ (Luka)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> <strong>Lo</strong>cal <strong>Ka</strong>pper（ローカルの河童／何でも運んでくる）。「ルカに聞けばわかる」という語感の良さもポイントです。</p>
-</li>
-<li>
-<p><strong>ヨリ (Yori)</strong></p>
-</li>
-<li><strong>由来:</strong> 「寄り添う」＋「万（よろず）」。あなたの日常に寄り添い、万事引き受けてくれるバックエンド。</li>
+<li><strong>仕組み:</strong> <code>$()</code> は中身を独立したスクリプトブロックのように実行します。</li>
+<li><strong>違い:</strong> <code>()</code> との結果は同じですが、<code>$()</code> の中には <code>;</code>（セミコロン）を使って複数の命令を書くことができます（例: <code>$( $a=1; $a..10 )</code>）。</li>
+<li><strong>使い所:</strong> 単なる範囲指定だけならオーバースペックですが、代入や計算を複数行わずに行いたい場合に便利です。</li>
 </ul>
-<h3 id="3-geminiai">3. Gemini（双子座）やAI要素を混ぜた名前</h3>
+<h3 id="3-write-output-110">3. <code>Write-Output @(1..10)</code> （配列サブ式）</h3>
+<p><strong>「結果を確実に配列として扱いたい」という意思表示です。</strong></p>
 <ul>
-<li><strong>ジェニ (Jeni)</strong></li>
-<li>
-<p><strong>由来:</strong> <strong>Geni</strong>e（魔法の精霊）+ <strong>Gemini</strong>。ローカルというランプの中に住んでいる、何でも叶えてくれる精霊。</p>
-</li>
-<li>
-<p><strong>ミナ (Mina)</strong></p>
-</li>
-<li>
-<p><strong>由来:</strong> Ge<strong>mini</strong>の「Mini（小さい）」から。PCの中に住んでいる小さな知能。</p>
-</li>
-<li>
-<p><strong>ポル (Pol)</strong></p>
-</li>
-<li><strong>由来:</strong> 双子座の星「ポルックス」から。Gemini APIを叩くメイン機能があるなら、その片割れとして。</li>
+<li><strong>仕組み:</strong> 中身を評価したあと、結果が単一のオブジェクトであっても強制的に <code>[Object[]]</code>（配列）に包み直します。</li>
+<li><strong>今回のケース:</strong> <code>1..10</code> は元々配列を返すため、結果的に <code>()</code> と同じ挙動になります。</li>
+<li><strong>使い所:</strong> 出力結果が1つなのか複数なのか不明なコマンドの結果を、安全にループ処理（<code>foreach</code>）に流したい時に多用されます。</li>
 </ul>
 <hr />
-<h3 id="_2">個人的なイチオシ</h3>
-<p><strong>「リタ (Lita)」</strong> はいかがでしょうか？
-「SQLiteベースで軽い（Light）」「データを利活用する（利他）」というダブルミーニングになります。</p>
+<h3 id="_1">比較まとめ</h3>
+<table>
+<thead>
+<tr>
+<th>構文</th>
+<th>読み方</th>
+<th>主な役割</th>
+<th>入門書でのニュアンス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>(...)</code></strong></td>
+<td>グループ化</td>
+<td>式を優先的に評価する</td>
+<td>「この計算結果を引数にしてね」</td>
+</tr>
+<tr>
+<td><strong><code>$(...)</code></strong></td>
+<td>サブ式</td>
+<td>命令を実行し結果を返す</td>
+<td>「一連の処理の結果をここに置いてね」</td>
+</tr>
+<tr>
+<td><strong><code>@(...)</code></strong></td>
+<td>配列サブ式</td>
+<td>常に配列として返す</td>
+<td>「何が何でも配列として扱ってね」</td>
+</tr>
+</tbody>
+</table>
+<h3 id="110">補足：なぜ <code>1..10</code> だけだとダメなのか？</h3>
+<p>PowerShellには2つのモードがあります。</p>
+<ol>
+<li><strong>式モード（Expression Mode）:</strong> 数値計算や変数の代入を行うモード。<code>1..10</code> は配列として解釈される。</li>
+<li><strong>引数モード（Argument Mode）:</strong> コマンドのあとに続くモード。ここでは <code>1..10</code> は「ただの文字列」として扱われがち。</li>
+</ol>
+<p><code>Write-Output</code> はコマンドなので、その後の引数は「引数モード」で解析されます。そのため、<strong>「ここからは式モードで計算してね」</strong>と合図を送るために <code>()</code> などの記号が必要になるわけです。</p>
+<p>次は、この「モードの違い」が原因でよく起こる別のエラー（パス指定や計算式など）についても解説しましょうか？</p>
+<hr />
 <blockquote>
-<p><strong>呼び方の例:</strong>
-「リタ、今日の記念日教えて」
-「これリタにメモしといて」
-「リタ、Geminiに繋いで聞いてみて」</p>
+<p>「モードの違い」が原因でよく起こる別のエラーの例を解説してください</p>
 </blockquote>
-<p>もし「もう少しクールな感じがいい」とか「和風な名前がいい」といった好みの方向性があれば、さらに絞り込んで提案します。</p>
-<p><strong>次は、この「愛称」をベースに、APIの起動時に表示されるアスキーアートやウェルカムメッセージを考えてみましょうか？</strong></p>
+<p>PowerShellの「モードの違い」は、初心者から中級者までが最も頻繁にハマるポイントです。</p>
+<p>PowerShellは、<strong>「式モード（計算機のモード）」</strong>と<strong>「引数モード（シェル・コマンドのモード）」</strong>を、文脈に応じて自動で切り替えています。この切り替えが意図せずに行われることでエラーや予期せぬ挙動が発生します。</p>
+<p>よくあるエラー例を3つ挙げます。</p>
+<hr />
+<h3 id="1">1. パス指定や文字列結合での計算エラー</h3>
+<p>もっとも多いのが、コマンドの引数に「計算結果」をそのまま渡そうとして失敗するパターンです。</p>
+<ul>
+<li>
+<p><strong>失敗例:</strong> <code>1 + 2</code> の結果（3）を名前に含むディレクトリを作りたい。
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># 期待: &quot;Folder3&quot; を作成</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="n">Folder</span> <span class="p">+</span> <span class="p">(</span><span class="n">1</span> <span class="p">+</span> <span class="n">2</span><span class="p">)</span> <span class="n">-ItemType</span> <span class="n">Directory</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>なぜエラーか:</strong> <code>New-Item</code>（コマンド）の後は<strong>引数モード</strong>です。ここでは <code>+</code> も <code>(</code> も「ただの文字」として扱われようとします。結果、「Folderという名前のフォルダ」と「+という名前のフォルダ」を作ろうとするなど、カオスな挙動になります。</p>
+</li>
+<li><strong>正解:</strong> <code>()</code> で囲んで、強制的にその部分だけ<strong>式モード</strong>にします。
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="p">(</span><span class="s2">&quot;Folder&quot;</span> <span class="p">+</span> <span class="p">(</span><span class="n">1</span> <span class="p">+</span> <span class="n">2</span><span class="p">))</span> <span class="n">-ItemType</span> <span class="n">Directory</span>
+</span></code></pre></div></li>
+</ul>
+<h3 id="2">2. プロパティ参照（ドット）の空振り</h3>
+<p>オブジェクトの特定のプロパティを表示しようとして、プロパティ名が「ただの文字列」として出力されるパターンです。</p>
+<ul>
+<li>
+<p><strong>失敗例:</strong> 今日の日付の「年」だけを表示したい。
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Write-Output</span> <span class="nb">Get-Date</span><span class="p">.</span><span class="n">Year</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>なぜエラーか:</strong> 引数モードでは <code>.</code>（ドット）は特別な意味を持たず、<code>Get-Date.Year</code> という一続きの「文字列」として解釈されます。</p>
+</li>
+<li><strong>正解:</strong> <code>()</code> で囲むことで、まず「日付オブジェクトを取得」し、その「Yearプロパティにアクセスする」という<strong>式モード</strong>の動きを保証します。
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Write-Output</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="n">Year</span>
+</span></code></pre></div></li>
+</ul>
+<h3 id="3">3. 文字列内での変数展開（プロパティの場合）</h3>
+<p>ダブルクォートの中で変数のプロパティを表示しようとする際のエラーです。</p>
+<ul>
+<li>
+<p><strong>失敗例:</strong>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$proc</span> <span class="p">=</span> <span class="nb">Get-Process</span> <span class="n">-Id</span> <span class="nv">$PID</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Write-Output</span> <span class="s2">&quot;実行中のIDは $proc.Id です&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c"># 出力: 実行中のIDは System.Diagnostics.Process (pwsh).Id です</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>なぜエラーか:</strong> 文字列展開（引数モードの一部）では、<code>$</code> の直後の変数名（<code>$proc</code>）までは認識しますが、その後の <code>.Id</code> は「ただの地文」として扱われます。</p>
+</li>
+<li><strong>正解:</strong> ここで **サブ式 <code>$()**</code> の出番です。
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Write-Output</span> <span class="s2">&quot;実行中のIDは </span><span class="p">$(</span><span class="nv">$proc</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span><span class="s2"> です&quot;</span>
+</span></code></pre></div></li>
+</ul>
+<hr />
+<h3 id="_2">まとめ：モードの見極め方</h3>
+<p>PowerShellがどちらのモードで動いているかは、<strong>「行の最初が何か」</strong>で決まります。</p>
+<table>
+<thead>
+<tr>
+<th>始まりの文字</th>
+<th>モード</th>
+<th>解釈のルール</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>英単語</strong> (<code>Get-</code>, <code>cd</code> 等)</td>
+<td><strong>引数モード</strong></td>
+<td>スペース区切りで「文字」として扱う。</td>
+</tr>
+<tr>
+<td><strong>記号・数値</strong> (<code>$</code>, <code>(</code>, <code>1</code>, <code>"</code>)</td>
+<td><strong>式モード</strong></td>
+<td>変数や計算、文字列オブジェクトとして扱う。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_3">💡 迷った時の鉄則</h3>
+<p><strong>「コマンドの途中で計算やプロパティ参照をしたいなら、とりあえず <code>()</code> か <code>$()</code> で囲む」</strong></p>
+<p>これだけで、PowerShellにおけるエラーの8割は回避できます。</p>
+<p>次に、これに関連して「文字列の中で複雑な計算を埋め込むテクニック」について詳しく知りたいですか？</p>
 
 
 
@@ -1772,7 +1981,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0032-acrylic-dns-proxy/" class="md-footer__link md-footer__link--prev" aria-label="前: Acrylic DNS ProxyをLAN用のDNSとして使う">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1782,20 +1991,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                Acrylic DNS ProxyをLAN用のDNSとして使う
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0030-fast-api-desktop-002/" class="md-footer__link md-footer__link--next" aria-label="次: FastAPIデスクトップツール-002">
+          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--next" aria-label="次: PowerShellの配列サブ式について">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                FastAPIデスクトップツール-002
+                PowerShellの配列サブ式について
               </div>
             </div>
             <div class="md-footer__button md-icon">
