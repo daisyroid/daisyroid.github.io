@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0038-fast-api-blog-backend/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0036-save-windows-terminal-pane-settings/">
+        <link rel="next" href="../0047-powershell-parsing-mode/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Pythonの標準クラスの見やすいドキュメント - AI質問箱</title>
+        <title>Ollamaをfile://からfetch()でアクセスする - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#ollamafilefetch" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pythonの標準クラスの見やすいドキュメント
+              Ollamaをfile://からfetch()でアクセスする
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0048-ollama-local-access/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollamaをfile://からfetch()でアクセスする
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        なぜできないのか？（CORSの壁）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解決策：どうすればアクセスできるか
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解決策：どうすればアクセスできるか">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ローカルサーバーを立てる（推奨）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ollama-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ollama 側の CORS 設定を変更する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ブラウザのセキュリティ設定を一時的に下げる（非推奨）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装のヒント
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -519,37 +638,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pythonの標準クラスの見やすいドキュメント
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0037-python-standard-class-document/" class="md-nav__link">
         
   
   
@@ -565,126 +657,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 外部のおすすめリファレンスサイト
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. 外部のおすすめリファレンスサイト">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#devdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DevDocs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-cheatsheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python Cheatsheet
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 実行環境で「一覧」を生成する（コードで解決）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 実行環境で「一覧」を生成する（コードで解決）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help-dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        help() 関数と dir() 関数
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pydoc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        pydoc をブラウザで起動する
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-idevs-code-pycharm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. IDE（VS Code / PyCharm）の機能をフル活用する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        結論：どれを使うべき？
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1688,88 +1660,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#cors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 外部のおすすめリファレンスサイト
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. 外部のおすすめリファレンスサイト">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#devdocs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DevDocs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-cheatsheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python Cheatsheet
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 実行環境で「一覧」を生成する（コードで解決）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 実行環境で「一覧」を生成する（コードで解決）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help-dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        help() 関数と dir() 関数
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pydoc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        pydoc をブラウザで起動する
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-idevs-code-pycharm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. IDE（VS Code / PyCharm）の機能をフル活用する
+        なぜできないのか？（CORSの壁）
       
     </span>
   </a>
@@ -1780,7 +1674,57 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        結論：どれを使うべき？
+        解決策：どうすればアクセスできるか
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解決策：どうすればアクセスできるか">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ローカルサーバーを立てる（推奨）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ollama-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ollama 側の CORS 設定を変更する
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ブラウザのセキュリティ設定を一時的に下げる（非推奨）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装のヒント
       
     </span>
   </a>
@@ -1804,78 +1748,71 @@
 
 
 
-<h1 id="python">Pythonの標準クラスの見やすいドキュメント</h1>
+<h1 id="ollamafilefetch">Ollamaをfile://からfetch()でアクセスする</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>Pythonで、公式配布に含まれる既存クラスのプロパティやメソッドの一覧を見やすくまとめたドキュメントはありませんか。サードパーティが作るライブラリは、そういうドキュメントが完備していることが多いですが、公式の https://docs.python.org は、あまり見やすくありません。</p>
+<p>ollamaに file:// スキームの HTMLファイルからfetch()でアクセスできますか</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>おっしゃる通り、Pythonの公式ドキュメントは「網羅性」と「正確性」には非常に優れていますが、サードパーティ製のライブラリ（PandasやScikit-learnなど）が提供する「APIリファレンス」のような一覧性には欠ける部分がありますよね。</p>
-<p>公式が少し読みづらいと感じる場合に、<strong>「見やすさ・引きやすさ」に特化したリソースや方法</strong>をいくつかご紹介します。</p>
+<p>結論から申し上げますと、<strong>通常のブラウザ環境（JavaScript）から <code>file://</code> スキームで開いたHTMLファイルを使って、OllamaのAPI（<code>http://localhost:11434</code>）に <code>fetch()</code> でアクセスすることは、セキュリティ制限（CORS）により原則できません。</strong></p>
+<p>「ローカルファイルなんだからいいじゃないか」と感じるかもしれませんが、ブラウザにとっては非常に高い壁があります。</p>
 <hr />
-<h2 id="1">1. 外部のおすすめリファレンスサイト</h2>
-<p>公式よりも構造化されており、メソッド一覧がパッと見でわかるサイトです。</p>
-<h3 id="devdocs"><strong><a href="https://devdocs.io/python~3.12/">DevDocs</a></strong></h3>
-<p>個人的に最もおすすめです。左側にクラスや関数のサイドバーが常駐し、<strong>インクリメンタル検索（打ち込んだ瞬間に候補が出る）</strong>が可能です。</p>
+<h3 id="cors">なぜできないのか？（CORSの壁）</h3>
+<p>ブラウザには<strong>同一生成元ポリシー（Same-Origin Policy）</strong>という厳格なルールがあります。</p>
 <ul>
-<li><strong>メリット:</strong> 動作が非常に軽く、複数のバージョンを切り替えて保持できます。オフラインでも動作します。</li>
-<li><strong>見やすさ:</strong> 無駄な装飾がなく、メソッド一覧をスクロールで追うのに最適です。</li>
-</ul>
-<h3 id="python-cheatsheet"><strong><a href="https://www.pythoncheatsheet.org/">Python Cheatsheet</a></strong></h3>
-<p>クラス単体というよりは、主要な組み込み型（List, Dict, Stringなど）のメソッドを「やりたいこと別」にまとめたサイトです。</p>
-<ul>
-<li><strong>メリット:</strong> 「文字列を分割したい」「リストの末尾に追加したい」といった目的から逆引きできます。</li>
+<li><strong>Origin（生成元）の不一致:</strong> <code>file://path/to/index.html</code> と <code>http://localhost:11434</code> は、プロトコル（file vs http）もドメインも異なるため、別々のサイトとみなされます。</li>
+<li><strong>file:// の特殊性:</strong> 多くのブラウザにおいて、<code>file://</code> スキームはセキュリティ上の理由から「Originが <code>null</code> または一意」として扱われ、外部へのリクエストが厳しく制限されます。</li>
 </ul>
 <hr />
-<h2 id="2">2. 実行環境で「一覧」を生成する（コードで解決）</h2>
-<p>ドキュメントを探すよりも、Pythonの機能を使ってその場で「見やすいリスト」を作る方が早い場合もあります。</p>
-<h3 id="help-dir"><strong><code>help()</code> 関数と <code>dir()</code> 関数</strong></h3>
-<p>対話モード（REPL）やJupyter Notebookで以下を叩くと、そのクラスが持っているものを確認できます。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 文字列クラス(str)のメソッド一覧を表示</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># より詳細な説明付きで表示</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<h3 id="_1">解決策：どうすればアクセスできるか</h3>
+<p>この問題を回避して Ollama と連携させるには、主に3つの方法があります。</p>
+<h4 id="1">1. ローカルサーバーを立てる（推奨）</h4>
+<p>HTMLファイルを <code>file://</code> で直接開くのではなく、簡単なローカルサーバー経由で（<code>http://localhost:8000</code> など）開きます。</p>
+<ul>
+<li><strong>手順:</strong> ターミナルでHTMLのあるフォルダに移動し、以下を実行します。</li>
+<li>Pythonがある場合: <code>python -m http.server 8000</code></li>
+<li>
+<p>Node.jsがある場合: <code>npx serve</code></p>
+</li>
+<li>
+<p><strong>メリット:</strong> 標準的なWeb開発の手法であり、セキュリティ的にも健全です。</p>
+</li>
+</ul>
+<h4 id="2-ollama-cors">2. Ollama 側の CORS 設定を変更する</h4>
+<p>Ollama サーバー自体に「どのサイトからのアクセスを許可するか」を教えてあげる必要があります。</p>
+<ul>
+<li>
+<p><strong>設定方法 (macOS/Linux):</strong>
+環境変数 <code>OLLAMA_ORIGINS</code> を設定して再起動します。
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_ORIGINS</span><span class="o">=</span><span class="s2">&quot;file://*,http://localhost:*&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ollama<span class="w"> </span>serve
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Windows:</strong> システム環境変数に <code>OLLAMA_ORIGINS</code> を追加し、値に <code>*</code> または特定のURLを入れてOllamaを再起動します。</p>
+</li>
+</ul>
+<h4 id="3">3. ブラウザのセキュリティ設定を一時的に下げる（非推奨）</h4>
+<p>ブラウザの起動オプションで <code>---disable-web-security</code> を指定する方法もありますが、PC全体のセキュリティが脆弱になるため、開発中であってもおすすめしません。</p>
+<hr />
+<h3 id="_2">実装のヒント</h3>
+<p>もしローカルサーバー経由でアクセスする場合、以下のようなコードで Ollama を叩けます。</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">askOllama</span><span class="p">(</span><span class="nx">prompt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;http://localhost:11434/api/generate&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;llama3&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// インストール済みのモデル名</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nx">prompt</span><span class="o">:</span><span class="w"> </span><span class="nx">prompt</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nx">stream</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">});</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="pydoc"><strong><code>pydoc</code> をブラウザで起動する</strong></h3>
-<p>実はPythonには、標準で<strong>ローカルドキュメントサーバー</strong>を立てる機能があります。
-ターミナルで以下のコマンドを打ってみてください。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pydoc<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>
-</span></code></pre></div>
-<p>これを実行してブラウザで <code>http://localhost:8080</code> を開くと、あなたのPCにインストールされている全モジュールのリファレンスを、公式とは少し違う構成（よりシンプルなリスト形式）で閲覧できます。</p>
 <hr />
-<h2 id="3-idevs-code-pycharm">3. IDE（VS Code / PyCharm）の機能をフル活用する</h2>
-<p>ドキュメントサイトを見に行く手間を省くのが、現代的な「見やすさ」の解決策かもしれません。</p>
-<ul>
-<li><strong>アウトライン表示:</strong> VS Codeなら左側の「アウトライン」パネルを開くと、今開いているクラスやインポートしたクラスのメソッド一覧がツリー形式で表示されます。</li>
-<li><strong>ホバー表示:</strong> メソッド名にカーソルを合わせるだけで、型ヒントと説明がポップアップします。</li>
-</ul>
-<hr />
-<h2 id="_1">結論：どれを使うべき？</h2>
-<table>
-<thead>
-<tr>
-<th>目的</th>
-<th>推奨ツール</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>素早く検索・一覧したい</strong></td>
-<td><strong><a href="https://devdocs.io/python~3.12/">DevDocs</a></strong></td>
-</tr>
-<tr>
-<td><strong>目的から逆引きしたい</strong></td>
-<td><strong>Python Cheatsheet</strong></td>
-</tr>
-<tr>
-<td><strong>オフライン・手元で確認</strong></td>
-<td><strong><code>pydoc</code> サーバー</strong></td>
-</tr>
-</tbody>
-</table>
-<p>「公式ドキュメントのあの長いテキストを読み解くのが苦痛」という場合は、まず <strong>DevDocs</strong> をブックマークしておくのが一番の近道だと思います。</p>
-<p>もし特定のモジュール（例：<code>datetime</code> や <code>pathlib</code> など）について、「もっとこういう形式でまとまったものが欲しい」という具体的な希望があれば、それらをまとめた表を作成することも可能です。いかがいたしましょうか？</p>
+<p>まずは <strong>Python などで簡易サーバーを立ててみる</strong> のが一番スムーズかと思います。</p>
+<p>もし特定のプログラミング言語（PythonやNode.js）を使ってツールを作りたいということであれば、そちらに最適なライブラリをご紹介しましょうか？</p>
 
 
 
@@ -1905,7 +1842,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0038-fast-api-blog-backend/" class="md-footer__link md-footer__link--prev" aria-label="前: FastAPIでブログのバックエンドを作る">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1915,20 +1852,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                FastAPIでブログのバックエンドを作る
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0036-save-windows-terminal-pane-settings/" class="md-footer__link md-footer__link--next" aria-label="次: Windowsターミナルの状態を保存する">
+          <a href="../0047-powershell-parsing-mode/" class="md-footer__link md-footer__link--next" aria-label="次: PowerShellの解析モード(Parsing Mode)について">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                Windowsターミナルの状態を保存する
+                PowerShellの解析モード(Parsing Mode)について
               </div>
             </div>
             <div class="md-footer__button md-icon">
