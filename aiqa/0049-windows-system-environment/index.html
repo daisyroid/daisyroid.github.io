@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0031-local-backend-nickname/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0029-fast-api-desktop-001/">
+        <link rel="next" href="../0048-ollama-local-access/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>FastAPIデスクトップツール-002 - AI質問箱</title>
+        <title>Windowsのシステム環境変数を設定するページ - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fastapi-002" class="md-skip">
+        <a href="#windows" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FastAPIデスクトップツール-002
+              Windowsのシステム環境変数を設定するページ
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0049-windows-system-environment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windowsのシステム環境変数を設定するページ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,76 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一番早い開き方（おすすめ）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スタートメニューにショートカットを作る方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="スタートメニューにショートカットを作る方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1sysdmcpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法1：一番簡単・おすすめ（sysdm.cplを使う）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法2：設定アプリの「バージョン情報」ページへのショートカット
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -735,37 +832,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FastAPIデスクトップツール-002
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0030-fast-api-desktop-002/" class="md-nav__link">
         
   
   
@@ -781,76 +851,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. main.py への追加
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-templatesindexhtml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. templates/index.html の修正
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 動作の仕組み
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 動作の仕組み">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        次のステップ：さらに使いやすくするには？
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1665,44 +1665,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. main.py への追加
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-templatesindexhtml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. templates/index.html の修正
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 動作の仕組み
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 動作の仕組み">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        次のステップ：さらに使いやすくするには？
+        一番早い開き方（おすすめ）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        スタートメニューにショートカットを作る方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="スタートメニューにショートカットを作る方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1sysdmcpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法1：一番簡単・おすすめ（sysdm.cplを使う）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法2：設定アプリの「バージョン情報」ページへのショートカット
       
     </span>
   </a>
@@ -1731,72 +1731,50 @@
 
 
 
-<h1 id="fastapi-002">FastAPIデスクトップツール-002</h1>
+<h1 id="windows">Windowsのシステム環境変数を設定するページ</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>（前回の続き） 削除機能、いいですね。付けてください。 </p>
-<p><strong>[回答] Gemini</strong></p>
+<p>Windowsのシステム環境変数を設定するのは、[設定]のどのページでしたっけ？ スタートメニューに、そのページのショートカットを作れますか？</p>
+<p><strong>[回答] Grok</strong></p>
 </blockquote>
-<p>削除機能を追加しましょう！
-個人の日記やメモとして使う場合、間違えて投稿したものをサクッと消せると便利ですよね。</p>
-<p>既存のコードに <strong>「削除用エンドポイント（API）」</strong> の追加と、<strong>「削除ボタン」</strong> の設置を行います。</p>
-<hr />
-<h2 id="1-mainpy">1. <code>main.py</code> への追加</h2>
-<p>投稿をIDで指定して削除する処理を追加します。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 既存のインポートに加えて、redirectを追加（既にResponseで入っていますが一応）</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTTPException</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># --- 既存のコードの下に追加 ---</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/delete/</span><span class="si">{post_id}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">delete_post</span><span class="p">(</span><span class="n">post_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_db</span><span class="p">)):</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">post</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Post</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Post</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">post_id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">post</span><span class="p">:</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;Post not found&quot;</span><span class="p">)</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">return</span> <span class="n">responses</span><span class="o">.</span><span class="n">RedirectResponse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="mi">303</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="2-templatesindexhtml">2. <code>templates/index.html</code> の修正</h2>
-<p>各記事のフッター部分に「削除」ボタンを追加します。誤操作を防ぐために、少し小さめのデザインにしましょう。</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{{ post.title }}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> 
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="p">&lt;</span><span class="nt">small</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: right;&quot;</span><span class="p">&gt;</span>{{ post.created_at.strftime(&#39;%Y-%m-%d %H:%M&#39;) }}<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ post.content }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/delete/{{ post.id }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin: 0; text-align: right;&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;outline secondary&quot;</span> 
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                    <span class="na">style</span><span class="o">=</span><span class="s">&quot;padding: 2px 10px; font-size: 0.8rem; border-color: #e53935; color: #e53935;&quot;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                    <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;return confirm(&#39;本当に削除しますか？&#39;)&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                削除
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<hr />
-<h2 id="3">3. 動作の仕組み</h2>
-<p>今回の修正で、データの流れは以下のようになります。</p>
+<p>Windowsの<strong>システム環境変数</strong>を設定するページは、<strong>[設定]</strong> アプリの中の以下の場所にあります（Windows 11の場合、2026年現在でも基本的に同じです）。</p>
+<p><strong>設定 → システム → バージョン情報 → システムの詳細設定 → 環境変数</strong>（ボタン）</p>
+<p>つまり、<strong>「システムのプロパティ」</strong> の <strong>「詳細設定」</strong> タブにある <strong>「環境変数」</strong> ボタンを押すと出てくる、あのダイアログ画面です。</p>
+<h3 id="_1">一番早い開き方（おすすめ）</h3>
 <ol>
-<li><strong>HTML側</strong>: 各投稿に紐付いた <code>post.id</code> を使って <code>/delete/1</code> のようなURLへフォームを送信します。</li>
-<li><strong>JavaScript</strong>: <code>onclick="return confirm(...)"</code> を入れているので、ボタンを押した瞬間にブラウザの確認ダイアログが出ます。</li>
-<li><strong>FastAPI側</strong>: 指定されたIDのデータをDBから探し、<code>db.delete()</code> で削除を実行します。</li>
-<li><strong>リダイレクト</strong>: 削除完了後、再びトップページ（<code>/</code>）を表示して、一覧から消えていることを確認できます。</li>
+<li>Windowsキー押して検索窓に<br />
+<code>env</code>  または  <code>環境変数</code><br />
+   と入力</li>
+<li>候補に出てくる<br />
+<strong>「システム環境変数の編集」</strong><br />
+   （または「環境変数の編集」）をクリック</li>
 </ol>
-<hr />
-<h3 id="_1">次のステップ：さらに使いやすくするには？</h3>
-<p>これで「書く・見る・消す」の基本が揃いました。次に欲しくなるとしたら、こんな機能でしょうか：</p>
-<ul>
-<li><strong>編集機能</strong>: 誤字脱字を直せるようにする。</li>
-<li><strong>検索機能</strong>: 過去の投稿をキーワードで探せるようにする。</li>
-<li><strong>画像アップロード</strong>: 写真も一緒に投稿できるようにする。</li>
-</ul>
-<p>どれか気になるものはありますか？あるいは、見た目をもっとオシャレにカスタマイズしたいなど、リクエストがあれば教えてください！</p>
+<p>これが一番手っ取り早いです。管理者権限が必要なシステム環境変数を変えたい場合は「システム環境変数の編集」を選んでください。</p>
+<h3 id="_2">スタートメニューにショートカットを作る方法</h3>
+<p>はい、作れます！<br />
+ただし、このページは純粋な「ms-settings:」URIでは直接開けない古いシステムダイアログなので、以下のどちらかの方法でショートカットを作成します。</p>
+<h4 id="1sysdmcpl">方法1：一番簡単・おすすめ（sysdm.cplを使う）</h4>
+<ol>
+<li>デスクトップを右クリック → <strong>新規作成</strong> → <strong>ショートカット</strong></li>
+<li>項目の場所に以下をコピペ<br />
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sysdm.cpl
+</span></code></pre></div>
+   （またはもっと直接環境変数まで飛ぶなら）
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rundll32 sysdm.cpl,EditEnvironmentVariables
+</span></code></pre></div></li>
+<li>次へ → 名前を「環境変数設定」や「システム環境変数」など好きな名前にして完了</li>
+<li>出来上がったショートカットをスタートメニューにピン留めしたい場合<br />
+   → 右クリック → <strong>スタートにピン留めする</strong>（またはタスクバーにもピン留め可）</li>
+</ol>
+<p><code>rundll32</code> 版の方が一発で環境変数ダイアログまで開くので便利です。</p>
+<h4 id="2">方法2：設定アプリの「バージョン情報」ページへのショートカット</h4>
+<p>（そこからさらに2クリック必要ですが…）
+- ショートカットの場所に<br />
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ms-settings:about
+</span></code></pre></div>
+  と入力して作成<br />
+  → これで「バージョン情報」ページが直接開くので、そこから「システムの詳細設定」→「環境変数」と進む形になります。</p>
+<p>日常的に使うなら <strong>rundll32</strong> 版のショートカットを作ってスタートメニューやデスクトップに置いておくと便利ですよ！</p>
 
 
 
@@ -1826,7 +1804,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0031-local-backend-nickname/" class="md-footer__link md-footer__link--prev" aria-label="前: ローカルなんでもバックエンドの愛称">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1836,20 +1814,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                ローカルなんでもバックエンドの愛称
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0029-fast-api-desktop-001/" class="md-footer__link md-footer__link--next" aria-label="次: FastAPIデスクトップツール-001">
+          <a href="../0048-ollama-local-access/" class="md-footer__link md-footer__link--next" aria-label="次: Ollamaをfile://からfetch()でアクセスする">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                FastAPIデスクトップツール-001
+                Ollamaをfile://からfetch()でアクセスする
               </div>
             </div>
             <div class="md-footer__button md-icon">
