@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0046-powershell-array-subexpression/">
+        <link rel="prev" href="../0057-python-cgi-redirect/">
       
       
-        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
+        <link rel="next" href="../0055-discord-private-server-2/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
+        <title>Discord Bot の作り方 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#powershell" class="md-skip">
+        <a href="#discord-bot" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShellでパイプラインが中断するとき何がおこるか
+              Discord Bot の作り方
             
           </span>
         </div>
@@ -249,10 +249,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0056-howto-make-discord-bot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord Bot の作り方
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -268,6 +295,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. サーバー運営の自動化（管理機能）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. インタラクティブなエンタメ機能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 外部情報の取得と通知（API連携）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bot3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Botを動かすために必要な3つのステップ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ★続き
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="★続き">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 準備するもの
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 「挨拶Bot」のコード
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 動かしてみる
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 注意点：Intent（インテント）の設定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -546,37 +698,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShellでパイプラインが中断するとき何がおこるか
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
         
   
   
@@ -592,70 +717,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1875,10 +1936,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
+        1. サーバー運営の自動化（管理機能）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. インタラクティブなエンタメ機能
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 外部情報の取得と通知（API連携）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bot3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Botを動かすために必要な3つのステップ
       
     </span>
   </a>
@@ -1889,32 +1983,60 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実験：上流が止まったことを証明する
+        ★続き
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="★続き">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 準備するもの
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-bot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linuxとの決定的な違い
+        2. 「挨拶Bot」のコード
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        3. 動かしてみる
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 注意点：Intent（インテント）の設定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1935,76 +2057,113 @@
 
 
 
-<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
+<h1 id="discord-bot">Discord Bot の作り方</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
+<p>Discordの公式Botを作り、自分のDiscorサーバーに入れました。このBotは何ができるのですか。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
-<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
+<p>自作Botの導入、おめでとうございます！自分のサーバーに「命」が吹き込まれたようなワクワク感がありますよね。</p>
+<p>結論から言うと、そのBotは現時点では<strong>「無限の可能性を秘めた、白紙のノート」</strong>のような状態です。Discordの公式Bot（Developer Portalで作ったもの）は、あなたがコードを書かない限り、基本的には何もしません。</p>
+<p>しかし、プログラミング（PythonやJavaScriptなど）を通じて命令を与えることで、以下のようなことができるようになります。</p>
 <hr />
-<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
-<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
-<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
-<ol>
-<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
-<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
-<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
-<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
-</ol>
-<hr />
-<h3 id="_1">実験：上流が止まったことを証明する</h3>
-<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
-</span></code></pre></div>
-<p><strong>実行結果:</strong></p>
+<h3 id="1">1. サーバー運営の自動化（管理機能）</h3>
+<p>多くのユーザーが最初に実装する機能です。</p>
 <ul>
-<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
-<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
+<li><strong>自動挨拶:</strong> 新しいメンバーが入った時にウェルカムメッセージを送る。</li>
+<li><strong>荒らし対策:</strong> 特定の禁止ワードを検知して削除したり、連投するユーザーを自動でキック・BANする。</li>
+<li><strong>役職（ロール）付与:</strong> メッセージのリアクションを押した人に、自動で特定の役職を付与する。</li>
+</ul>
+<h3 id="2">2. インタラクティブなエンタメ機能</h3>
+<p>コミュニティを盛り上げるための遊び要素です。</p>
+<ul>
+<li><strong>独自コマンド:</strong> <code>/omikuji</code> と打つと運勢を返したり、ダイスを振ったりする。</li>
+<li><strong>ゲーム連携:</strong> 特定のゲームの戦績を表示したり、サーバー内専用のポイント（通貨）システムを作る。</li>
+<li><strong>音楽再生:</strong> YouTubeなどの音声をボイスチャンネルで流す。</li>
+</ul>
+<h3 id="3-api">3. 外部情報の取得と通知（API連携）</h3>
+<p>Discordの外の世界とつなげる機能です。</p>
+<ul>
+<li><strong>通知ボット:</strong> お気に入りの配信者がYouTubeを始めたらチャンネルに通知する。</li>
+<li><strong>AI対話:</strong> ChatGPTなどのAPIと連携させて、Botと自然な会話ができるようにする。</li>
+<li><strong>お役立ち情報:</strong> 天気予報や最新ニュースを定期的に投稿する。</li>
 </ul>
 <hr />
-<h3 id="linux">Linuxとの決定的な違い</h3>
-<table>
-<thead>
-<tr>
-<th>比較項目</th>
-<th>Linux (bash/zshなど)</th>
-<th>PowerShell</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>伝達手段</strong></td>
-<td><code>SIGPIPE</code> (OSシグナル)</td>
-<td><code>.NET Exception</code> (例外処理)</td>
-</tr>
-<tr>
-<td><strong>データの単位</strong></td>
-<td>バイト / テキスト</td>
-<td><strong>.NET オブジェクト</strong></td>
-</tr>
-<tr>
-<td><strong>制御の主体</strong></td>
-<td>カーネルがパイプを管理</td>
-<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">まとめ</h3>
-<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
-<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
-<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
+<h3 id="bot3">💡 Botを動かすために必要な3つのステップ</h3>
+<p>Botを「作成してサーバーに入れた」だけでは、Botのステータスは「オフライン」のままか、オンラインでも反応しないはずです。動かすには以下の準備が必要です。</p>
+<ol>
+<li><strong>開発環境を整える:</strong> パソコンに Python や Node.js などの言語をインストールする。</li>
+<li><strong>コードを書く:</strong> 「『こんにちは』と言われたら『こんにちは！』と返す」といったプログラムを書く。</li>
+<li><strong>実行（ホスティング）する:</strong> プログラムを自分のPCやサーバーで動かし続ける（PCを閉じるとBotも寝てしまいます）。</li>
+</ol>
+<hr />
+<p><strong>次の一歩として、何に挑戦してみたいですか？</strong>
+もしよろしければ、<strong>「Pythonで挨拶するだけの簡単なBotを作ってみたい」</strong>や<strong>「JavaScriptで役職を配るBotにしたい」</strong>など、興味がある方向性を教えていただければ、具体的なコードの書き方をサポートしますよ！</p>
+<h2 id="_1">★続き</h2>
+<blockquote>
+<p>Pythonで挨拶するだけの簡単なBotを作ってみたい、です</p>
+</blockquote>
+<p>素晴らしいですね！まずは「Botが自分の言葉に反応してくれた！」という感動を味わうのが、開発の第一歩として最高です。</p>
+<p>PythonでDiscord Botを作るには、<strong><code>discord.py</code></strong> という定番のライブラリを使うのが最もスムーズです。</p>
+<hr />
+<h3 id="1_1">1. 準備するもの</h3>
+<p>まずは、プログラムを動かすための「道具」を揃えましょう。</p>
+<ul>
+<li><strong>Pythonのインストール:</strong> 公式サイトからインストールしておいてください。</li>
+<li>
+<p><strong>ライブラリのインストール:</strong> パソコンのターミナル（コマンドプロンプト）で以下のコマンドを実行します。
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>discord.py
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Botの「Token（トークン）」:</strong> 先ほどBotを作成した <a href="https://discord.com/developers/applications">Discord Developer Portal</a> から、<code>Bot</code> セクションにある <strong>Reset Token</strong> を押して表示される文字列をコピーしておいてください（※これはBotのパスワードなので、絶対に他人に教えないでください）。</p>
+</li>
+</ul>
+<hr />
+<h3 id="2-bot">2. 「挨拶Bot」のコード</h3>
+<p>以下のコードを、例えば <code>main.py</code> という名前で保存してください。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">discord</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">discord.ext</span><span class="w"> </span><span class="kn">import</span> <span class="n">commands</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 1. Botの「権限」を設定します（メッセージを読み取るために必要）</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">intents</span> <span class="o">=</span> <span class="n">discord</span><span class="o">.</span><span class="n">Intents</span><span class="o">.</span><span class="n">default</span><span class="p">()</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">intents</span><span class="o">.</span><span class="n">message_content</span> <span class="o">=</span> <span class="kc">True</span> 
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 2. Botのインスタンスを作成します（コマンドの頭文字を ! に設定）</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">bot</span> <span class="o">=</span> <span class="n">commands</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">command_prefix</span><span class="o">=</span><span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="n">intents</span><span class="o">=</span><span class="n">intents</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># 起動した時に実行されるイベント</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nd">@bot</span><span class="o">.</span><span class="n">event</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">on_ready</span><span class="p">():</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ログインしました: </span><span class="si">{</span><span class="n">bot</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># 「!hello」と打つと反応するコマンド</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nd">@bot</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">ctx</span><span class="p">):</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="k">await</span> <span class="n">ctx</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ctx</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">さん、こんにちは！&#39;</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1"># 3. 自分のBotトークンを入れて動かします</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">bot</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ここにコピーしたトークンを貼り付け&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="3">3. 動かしてみる</h3>
+<ol>
+<li>保存したファイルがあるフォルダで、ターミナルから <code>python main.py</code> を実行します。</li>
+<li>「ログインしました」と表示されたら成功です！</li>
+<li>Discordサーバーのテキストチャンネルで <strong><code>!hello</code></strong> と打ってみてください。Botがあなたに挨拶を返してくれます。</li>
+</ol>
+<hr />
+<h3 id="intent">⚠️ 注意点：Intent（インテント）の設定</h3>
+<p>最近のDiscordの仕様で、プログラムを書くだけではメッセージを読み取れないようになっています。</p>
+<ol>
+<li><a href="https://discord.com/developers/applications">Developer Portal</a> にログイン。</li>
+<li>自分のBotを選択し、左メニューの <strong>「Bot」</strong> をクリック。</li>
+<li>下の方にある <strong>「Message Content Intent」</strong> を <strong>ON</strong> にして保存してください。</li>
+<li>これを行わないと、Botはコマンドを無視してしまいます。</li>
+</ol>
+<hr />
+<p><strong>まずは挨拶ができるようになりましたね！</strong>
+次は、<strong>「特定の言葉（例えば『お疲れ様』）に自動で反応するようにしたい」</strong>ですか？それとも<strong>「ランダムにおみくじの結果を返すようにしたい」</strong>ですか？やってみたいことがあれば教えてください！</p>
 
 
 
@@ -2034,7 +2193,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
+          <a href="../0057-python-cgi-redirect/" class="md-footer__link md-footer__link--prev" aria-label="前: PythonのCGIでリダイレクトができない解決策">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2044,20 +2203,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                PowerShellの配列サブ式について
+                PythonのCGIでリダイレクトができない解決策
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
+          <a href="../0055-discord-private-server-2/" class="md-footer__link md-footer__link--next" aria-label="次: Discord友達いない問題Grokの回答">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                ffmpegをPythonで制御したい
+                Discord友達いない問題Grokの回答
               </div>
             </div>
             <div class="md-footer__button md-icon">
