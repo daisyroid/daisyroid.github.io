@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0028-gcp-billing-vs-free-projects/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0026-fastapi-run-in-task-tray/">
+        <link rel="next" href="../0058-status-http-header/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Gemini APIでお金を使いすぎない方法 - AI質問箱</title>
+        <title>Pythonのsubprocessの環境変数を設定する - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gemini-api" class="md-skip">
+        <a href="#pythonsubprocess" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gemini APIでお金を使いすぎない方法
+              Pythonのsubprocessの環境変数を設定する
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0059-python-setenv-subprocess/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pythonのsubprocessの環境変数を設定する
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,93 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. なぜ「直接書き換え」が推奨されないのか
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. おすすめの「お行儀の良い」方法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. おすすめの「お行儀の良い」方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 使い分けの判断基準
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 使い分けの判断基準">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1086,37 +1200,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gemini APIでお金を使いすぎない方法
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0027-how-to-avoid-overspending-gemini-api/" class="md-nav__link">
         
   
   
@@ -1132,226 +1219,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 自動停止を実現する仕組み
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. API 単体で「利用量」に制限をかける（推奨）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 実装のステップ（自動停止を自作する場合）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 実装のステップ（自動停止を自作する場合）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        主な手順:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quota" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★Quota割り当てについて
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="★Quota割り当てについて">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1ヶ月の予算を守るための「現実的な設定」
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google-cloud" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        具体的な設定手順（Google Cloud コンソール）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめとアドバイス
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★トークン量の推定
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-counttokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. countTokens メソッドを使う（推奨）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. countTokens メソッドを使う（推奨）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python での例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 簡易的な推定方法（ざっくり計算）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 画像や動画のトークン計算
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 実際の料金を計算する
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 実際の料金を計算する">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        次のステップとしておすすめ
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★APIキーを無課金に戻す方法
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2088,138 +1955,10 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 自動停止を実現する仕組み
+        1. なぜ「直接書き換え」が推奨されないのか
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. API 単体で「利用量」に制限をかける（推奨）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 実装のステップ（自動停止を自作する場合）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 実装のステップ（自動停止を自作する場合）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        主な手順:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quota" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★Quota割り当てについて
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="★Quota割り当てについて">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1ヶ月の予算を守るための「現実的な設定」
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google-cloud" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        具体的な設定手順（Google Cloud コンソール）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめとアドバイス
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★トークン量の推定
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-counttokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. countTokens メソッドを使う（推奨）
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. countTokens メソッドを使う（推奨）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python での例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2227,41 +1966,19 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 簡易的な推定方法（ざっくり計算）
+        2. おすすめの「お行儀の良い」方法
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 画像や動画のトークン計算
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 実際の料金を計算する
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 実際の料金を計算する">
+    <nav class="md-nav" aria-label="2. おすすめの「お行儀の良い」方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        次のステップとしておすすめ
+        実装例
       
     </span>
   </a>
@@ -2274,13 +1991,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ★APIキーを無課金に戻す方法
+        3. 使い分けの判断基準
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. 使い分けの判断基準">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2301,207 +2035,71 @@
 
 
 
-<h1 id="gemini-api">Gemini APIでお金を使いすぎない方法</h1>
+<h1 id="pythonsubprocess">Pythonのsubprocessの環境変数を設定する</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>Google Gemini API で、利用料金が一定量を越えたら連絡がくるように設定しています。連絡だけでなく、自動的に無効化することは可能ですか。</p>
+<p>Pythonのsubprocessに環境変数を渡す方法として、自分のプロセスの環境変数を設定して子プロセスを起動する、という方法は行儀が悪いですか</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>結論から申し上げますと、Google Gemini API（Google Cloud 版）において、標準機能だけで「予算に達したら自動で API を停止する」という<strong>チェックボックスのような設定項目は存在しません。</strong></p>
-<p>デフォルトの予算アラートは、あくまで「メールで通知する」だけです。しかし、<strong>Google Cloud の機能を組み合わせることで、自動停止の仕組みを構築することは可能</strong>です。</p>
+<p>結論から言うと、<strong>「あまり行儀が良いとは言えない」</strong>ケースが多いです。</p>
+<p>自分のプロセス（親プロセス）の環境変数を <code>os.environ</code> で直接書き換えてしまうと、その後に実行されるプログラム全体に影響が及ぶため、予期せぬサイドエフェクト（副作用）を生むリスクがあるからです。</p>
+<p>もっと「お行儀が良く」、かつ安全な方法が Python には用意されています。</p>
 <hr />
-<h2 id="1">1. 自動停止を実現する仕組み</h2>
-<p>予算を超えた際に自動で API を無効化（正確にはプロジェクトの課金を停止）するには、以下の 3 つのサービスを連携させます。</p>
-<ol>
-<li><strong>Cloud Billing（予算アラート）</strong>: 予算の 100% 到達を検知し、Pub/Sub にメッセージを送信。</li>
-<li><strong>Cloud Pub/Sub</strong>: 予算アラートの中継地点。</li>
-<li><strong>Cloud Functions</strong>: 通知を受け取り、API を通じて対象プロジェクトの「課金を無効化」するプログラムを実行。</li>
-</ol>
-<blockquote>
-<p>[!CAUTION]
-<strong>注意点</strong>
-課金を無効化すると、そのプロジェクト内の <strong>Gemini API 以外のリソース（ストレージ、データベース、VM など）もすべて停止</strong>します。また、一度停止したリソースは自動では復旧しない場合があるため、本番環境での運用には注意が必要です。</p>
-</blockquote>
-<hr />
-<h2 id="2-api">2. API 単体で「利用量」に制限をかける（推奨）</h2>
-<p>「プロジェクト全体を止めたいわけではなく、Gemini API の使いすぎだけを防ぎたい」という場合は、<strong>「割り当て（Quota）」の制限</strong>を設定するのが最も安全で簡単です。</p>
+<h2 id="1">1. なぜ「直接書き換え」が推奨されないのか</h2>
+<p>Pythonで <code>os.environ["VAR"] = "value"</code> とすると、そのスクリプト内の全コードでその変数が有効になります。</p>
 <ul>
-<li><strong>設定場所</strong>: Google Cloud コンソールの「API とサービス」 &gt; 「有効な API とサービス」 &gt; 「Generative Language API」 &gt; 「管理」 &gt; 「割当」</li>
-<li><strong>方法</strong>: <code>Requests per minute</code> などの上限を、あらかじめ決めた数値に手動で下げます。</li>
-<li><strong>メリット</strong>: 設定した回数を超えるとエラーが返るだけで、他のサービスに影響を与えません。</li>
+<li><strong>他のライブラリへの影響:</strong> 読み込んでいる外部ライブラリが同じ環境変数を参照していた場合、挙動が変わってしまう可能性があります。</li>
+<li><strong>マルチスレッドでの危険性:</strong> <code>os.environ</code> はプロセス全体で共有されるため、あるスレッドで書き換えた変数が、意図せず別のスレッドで動いている処理に影響する「競合」が発生します。</li>
+<li><strong>後片付けの漏れ:</strong> 子プロセスが終わった後に元の値に戻し忘れると、親プロセスの残りの処理が汚染された状態で進んでしまいます。</li>
 </ul>
 <hr />
-<h2 id="3">3. 実装のステップ（自動停止を自作する場合）</h2>
-<p>どうしても自動停止させたい場合は、Google 公式のガイド「<a href="https://www.google.com/search?q=https://cloud.google.com/billing/docs/how-to/disable-billing-with-notifications%3Fhl%3Dja">通知による Cloud Billing の無効化</a>」に従って設定を行います。</p>
-<h3 id="_1">主な手順:</h3>
-<ol>
-<li><strong>Cloud Billing API の有効化</strong>: プログラムから課金を操作できるようにします。</li>
-<li><strong>Pub/Sub トピックの作成</strong>: 名前を <code>billing-alerts</code> などにします。</li>
-<li><strong>予算アラートの設定</strong>: 「管理通知」セクションで、作成した Pub/Sub トピックを接続します。</li>
-<li><strong>Cloud Functions のデプロイ</strong>: 予算が 100% を超えたメッセージを受け取った際に、<code>projects.updateBillingInfo</code> を呼び出して課金を解除するコードを記述します。</li>
-</ol>
-<hr />
-<p>「そこまで複雑な設定はしたくない」ということであれば、<strong>「2. API 単体で上限を設定する」</strong> 方法で、1 日あたりのリクエスト上限を低めに設定しておく運用をおすすめします。</p>
-<p>具体的な Cloud Functions のコード例や、割り当て制限の具体的な数値の決め方について詳しく知りたいですか？</p>
-<h2 id="quota">★Quota割り当てについて</h2>
-<blockquote>
-<p>[質問]</p>
-<p>Quotaの設定は、Requests per minute の他に、一ヶ月あたりの制限なども設定できますか。</p>
-</blockquote>
-<p>残念ながら、Google Cloud の Quota（割り当て）設定において、<strong>「1ヶ月あたりの制限（Monthly Limit）」を直接設定する項目は用意されていません。</strong></p>
-<p>現在の Google Cloud の仕様では、API の利用制限は以下の 2 つの単位が基本となっています。</p>
-<ul>
-<li><strong>1分あたりの制限 (Requests per minute / RPM)</strong>: 短時間のスパイク（過負荷）を防ぐ。</li>
-<li><strong>1日あたりの制限 (Requests per day / RPD)</strong>: 1日の総利用量を抑える。</li>
-</ul>
-<h3 id="1_1">1ヶ月の予算を守るための「現実的な設定」</h3>
-<p>1ヶ月の予算を超えないようにするには、<strong>「1ヶ月の予算 ÷ 30日」</strong> で計算した値を <strong>「1日あたりの制限 (RPD)」</strong> に設定するのが最も一般的な方法です。</p>
-<table>
-<thead>
-<tr>
-<th>制限の単位</th>
-<th>設定可否</th>
-<th>役割</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1分間 (RPM)</strong></td>
-<td>○</td>
-<td>瞬間的なリクエスト過多によるエラーや課金増大を防ぐ</td>
-</tr>
-<tr>
-<td><strong>1日 (RPD)</strong></td>
-<td>○</td>
-<td>24時間ごとの利用上限。これが「1ヶ月の総額」をコントロールする鍵</td>
-</tr>
-<tr>
-<td><strong>1ヶ月 (Monthly)</strong></td>
-<td>✕</td>
-<td><strong>設定項目なし。</strong> 1日の制限を積み重ねて管理する</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="google-cloud">具体的な設定手順（Google Cloud コンソール）</h3>
-<ol>
-<li>Google Cloud コンソールの [<strong>IAM と管理 &gt; 割り当て</strong>] ページに移動します。</li>
-<li>フィルターに <code>Generative Language API</code>（または <code>Vertex AI API</code>）と入力します。</li>
-<li><strong>「Requests per day」</strong> というメトリクスを探します。</li>
-<li>右側の「編集」アイコンをクリックし、1日あたりの上限値を入力して保存します。</li>
-</ol>
-<blockquote>
-<p>[!TIP]
-<strong>計算例：</strong>
-もし Gemini API に月額 3,000 円までしか払いたくない場合、1,000トークンあたりの単価から逆算して「1日のトークン数」や「1日のリクエスト数」に上限をかければ、月間の請求額をほぼ確実にコントロールできます。</p>
-</blockquote>
-<hr />
-<h3 id="_2">まとめとアドバイス</h3>
-<p>「1ヶ月単位」で止めたい場合は、最初にご紹介した <strong>「予算アラート ＋ Cloud Functions」</strong> の仕組みを使って、予算が 100% に達した瞬間にプロジェクトごと止めるしかありません。</p>
-<p>「そこまで大掛かりなことはしたくない」という場合は、まずは <strong>1日あたりの上限（Requests per day）</strong> を低めに設定して、数日間様子を見るのが最も安全なスタートです。</p>
-<p>1日あたりの上限値を決めるための、料金計算のサポートが必要であれば、お使いのモデル名（Gemini 1.5 Flash など）を教えてくださいね。</p>
-<h2 id="_3">★トークン量の推定</h2>
-<blockquote>
-<p>[質問3]</p>
-<p>Geminiにリクエストするプロンプト文から、トークン使用料を推定できますか。 </p>
-</blockquote>
-<p>はい、<strong>リクエストを送信する前</strong>にプロンプト文からトークン数を正確に推定（カウント）することが可能です。</p>
-<p>Google Gemini API には、実際の生成（課金対象）を行う前にトークン数だけを計算する専用のメソッドが用意されています。</p>
-<hr />
-<h2 id="1-counttokens">1. <code>countTokens</code> メソッドを使う（推奨）</h2>
-<p>SDK（Python, Node.js 等）に含まれる <code>countTokens</code> メソッドを使用すると、そのプロンプトが何トークンになるかを事前に取得できます。</p>
-<ul>
-<li><strong>料金</strong>: <code>countTokens</code> 自体の呼び出しは<strong>無料</strong>です。</li>
-<li><strong>精度</strong>: 実際に API で使われる計算エンジンと同じものを使うため、<strong>100% 正確</strong>です。</li>
-</ul>
-<h3 id="python">Python での例</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google</span><span class="w"> </span><span class="kn">import</span> <span class="n">genai</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_API_KEY&quot;</span><span class="p">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">model_id</span> <span class="o">=</span> <span class="s2">&quot;gemini-2.0-flash&quot;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;ここに推定したいプロンプト文を入力します。&quot;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># リクエストを送る前にトークン数をカウント</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">count_tokens</span><span class="p">(</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">model</span><span class="o">=</span><span class="n">model_id</span><span class="p">,</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">contents</span><span class="o">=</span><span class="n">prompt</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;総トークン数: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">total_tokens</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<h2 id="2">2. おすすめの「お行儀の良い」方法</h2>
+<p><code>subprocess.run</code> などの引数にある <strong><code>env</code> パラメータ</strong> を使うのがベストプラクティスです。これを使えば、<strong>親プロセスの環境変数は汚さず、子プロセスにだけ特定の変数を渡す</strong>ことができます。</p>
+<h3 id="_1">実装例</h3>
+<p>現在の環境変数をコピーし、必要な分だけ追加・更新して渡すのが一般的です。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 1. 現在の環境変数をコピー（親プロセスは汚さない）</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">my_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 2. 子プロセスに渡したい変数だけを追加・上書き</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">my_env</span><span class="p">[</span><span class="s2">&quot;MY_SPECIAL_VAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;hello_world&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">my_env</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/custom/path:</span><span class="si">{</span><span class="n">my_env</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 3. env引数に渡して実行</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span> <span class="s2">&quot;-l&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">my_env</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
-<h2 id="2">2. 簡易的な推定方法（ざっくり計算）</h2>
-<p>プログラムを書かずに、文字数からざっくりと計算したい場合の目安は以下の通りです。</p>
-<ul>
-<li><strong>英語</strong>: 1トークン ≒ 約4文字（または 0.75単語）</li>
-<li><strong>日本語</strong>: <strong>1文字 ≒ 1〜2トークン</strong> 程度</li>
-<li>ひらがなは少なめ、複雑な漢字や特殊記号は多めにカウントされる傾向があります。</li>
-<li>日本語は英語に比べてトークン効率が悪いため、「文字数 × 1.5」くらいで見積もっておくと予算内に収まりやすいです。</li>
-</ul>
-<hr />
-<h2 id="3_1">3. 画像や動画のトークン計算</h2>
-<p>Gemini はマルチモーダルなため、テキスト以外もトークンとして計算されます。</p>
+<h2 id="3">3. 使い分けの判断基準</h2>
 <table>
 <thead>
 <tr>
-<th>メディアタイプ</th>
-<th>トークン数の目安</th>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">影響範囲</th>
+<th style="text-align: left;">評価</th>
+<th style="text-align: left;">使うべき場面</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>画像</strong></td>
-<td>基本 258 トークン（解像度によりタイリングされ増加する場合あり）</td>
+<td style="text-align: left;"><strong><code>env</code>引数を使う</strong></td>
+<td style="text-align: left;">子プロセスのみ</td>
+<td style="text-align: left;"><strong>推奨</strong></td>
+<td style="text-align: left;">ほとんどのケース（安全・確実）</td>
 </tr>
 <tr>
-<td><strong>動画</strong></td>
-<td>1秒あたり 約263 トークン</td>
-</tr>
-<tr>
-<td><strong>音声</strong></td>
-<td>1秒あたり 約32 トークン</td>
+<td style="text-align: left;"><strong><code>os.environ</code>を書き換える</strong></td>
+<td style="text-align: left;">プロセス全体</td>
+<td style="text-align: left;"><strong>非推奨</strong></td>
+<td style="text-align: left;">スクリプトの開始直後に設定し、最後までその設定で動かしたい使い捨てツールなど</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="4">4. 実際の料金を計算する</h2>
-<p>トークン数がわかれば、モデルごとの単価を掛けるだけで料金が算出できます。</p>
-<blockquote>
-<p><strong>計算式:</strong>
-<code>(入力トークン数 × 入力単価) + (出力トークン数 × 出力単価) = 合計料金</code></p>
-</blockquote>
-<p>※ Gemini 1.5 Flash など一部のモデルでは、一定以下の短いプロンプト（例：128kトークン以下）は非常に安価、または無料枠が設定されている場合があります。</p>
-<h3 id="_4">次のステップとしておすすめ</h3>
-<p>特定のモデル（Gemini 1.5 Pro や Flash など）で、具体的に「10,000文字の日本語リクエストを毎日100回送ったらいくらになるか」といった<strong>具体的な試算</strong>をお手伝いしましょうか？</p>
-<h2 id="api">★APIキーを無課金に戻す方法</h2>
-<p>AIに聞いたのではなく、Zennの投稿記事に答がありました。</p>
-<ol>
-<li>
-<p>記事リンク</p>
-<ul>
-<li>GeminiAPIを無料枠で使おうとしてうっかり課金された話<br></li>
-<li><a href="https://zenn.dev/cliffstar/articles/da6645fa03f75b" rel="noopener" target="_blank">https://zenn.dev/cliffstar/articles/da6645fa03f75b</a></li>
-</ul>
-</li>
-<li>
-<p>実際の手順</p>
-<ul>
-<li>GCPのコンソールを開く<ul>
-<li><a href="https://console.cloud.google.com/home/" rel="noopener" target="_blank">https://console.cloud.google.com/home/</a></li>
-</ul>
-</li>
-<li>[サイドメニュー]&gt;[課金] を開く</li>
-<li>プロジェクト名の横の三点メニューから[課金を無効にする] を選ぶ</li>
-<li>確認ダイアログボックスで [課金を無効にする] を選ぶ</li>
-<li>確認のため Google AI Studio&gt;[Gemini APIの利用額」を開く<ul>
-<li><a href="https://aistudio.google.com/spend" rel="noopener" target="_blank">https://aistudio.google.com/spend</a></li>
-</ul>
-</li>
-<li>「無料枠」に戻った</li>
-</ul>
-</li>
-</ol>
+<h3 id="_2">まとめ</h3>
+<p>「自分の環境を汚さず、相手に必要なものだけ持たせて送り出す」のが、プログラム界隈におけるスマートな振る舞いです。</p>
+<p>もし特定の環境変数が複雑に絡むような構成を作ろうとしているのであれば、その変数を設定するロジックをお手伝いしましょうか？</p>
 
 
 
@@ -2531,7 +2129,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0028-gcp-billing-vs-free-projects/" class="md-footer__link md-footer__link--prev" aria-label="前: GCPで課金用と完全無料用のプロジェクトを使い分ける">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2541,20 +2139,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                GCPで課金用と完全無料用のプロジェクトを使い分ける
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0026-fastapi-run-in-task-tray/" class="md-footer__link md-footer__link--next" aria-label="次: FastAPIをタスクトレイに常駐させる">
+          <a href="../0058-status-http-header/" class="md-footer__link md-footer__link--next" aria-label="次: Statusヘッダーはどこの世界の話か">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                FastAPIをタスクトレイに常駐させる
+                Statusヘッダーはどこの世界の話か
               </div>
             </div>
             <div class="md-footer__button md-icon">
