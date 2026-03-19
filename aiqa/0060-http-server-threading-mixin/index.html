@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0060-http-server-threading-mixin/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0058-status-http-header/">
+        <link rel="next" href="../0059-python-setenv-subprocess/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Pythonのsubprocessの環境変数を設定する - AI質問箱</title>
+        <title>http.serverをchromeが独占する問題と解決策 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pythonsubprocess" class="md-skip">
+        <a href="#httpserverchrome" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pythonのsubprocessの環境変数を設定する
+              http.serverをchromeが独占する問題と解決策
             
           </span>
         </div>
@@ -222,33 +222,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../0060-http-server-threading-mixin/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    http.serverをchromeが独占する問題と解決策
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -268,7 +241,7 @@
   <span class="md-ellipsis">
     
   
-    Pythonのsubprocessの環境変数を設定する
+    http.serverをchromeが独占する問題と解決策
   
 
     
@@ -286,7 +259,7 @@
   <span class="md-ellipsis">
     
   
-    Pythonのsubprocessの環境変数を設定する
+    http.serverをchromeが独占する問題と解決策
   
 
     
@@ -312,61 +285,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. なぜ「直接書き換え」が推奨されないのか
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. おすすめの「お行儀の良い」方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. おすすめの「お行儀の良い」方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実装例
+        現実的な解決策（おすすめ順）
       
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 使い分けの判断基準
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 使い分けの判断基準">
+    <nav class="md-nav" aria-label="現実的な解決策（おすすめ順）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1-threadingmixin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        1. 最もおすすめ：ThreadingMixIn を使う（同時接続対応）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. とりあえず試す価値あり（超簡単）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Chrome側の設定変更（一時しのぎ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ（2026年現在でも有効な現実解）
       
     </span>
   </a>
@@ -375,67 +342,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★続き
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        健全な使い方のイメージ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="健全な使い方のイメージ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        健全なケース（設定の継承）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        行儀が悪いケース（一時的なすり替え）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        補足：子プロセスに「親の意図」を伝えるコツ
-      
-    </span>
-  </a>
   
 </li>
       
@@ -443,6 +349,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0059-python-setenv-subprocess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pythonのsubprocessの環境変数を設定する
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2040,61 +1973,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. なぜ「直接書き換え」が推奨されないのか
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. おすすめの「お行儀の良い」方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. おすすめの「お行儀の良い」方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実装例
+        現実的な解決策（おすすめ順）
       
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 使い分けの判断基準
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. 使い分けの判断基準">
+    <nav class="md-nav" aria-label="現実的な解決策（おすすめ順）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1-threadingmixin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        1. 最もおすすめ：ThreadingMixIn を使う（同時接続対応）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. とりあえず試す価値あり（超簡単）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Chrome側の設定変更（一時しのぎ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ（2026年現在でも有効な現実解）
       
     </span>
   </a>
@@ -2103,67 +2030,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ★続き
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        健全な使い方のイメージ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="健全な使い方のイメージ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        健全なケース（設定の継承）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        行儀が悪いケース（一時的なすり替え）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        補足：子プロセスに「親の意図」を伝えるコツ
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2184,114 +2050,124 @@
 
 
 
-<h1 id="pythonsubprocess">Pythonのsubprocessの環境変数を設定する</h1>
+<h1 id="httpserverchrome">http.serverをchromeが独占する問題と解決策</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>Pythonのsubprocessに環境変数を渡す方法として、自分のプロセスの環境変数を設定して子プロセスを起動する、という方法は行儀が悪いですか</p>
-<p><strong>[回答] Gemini</strong></p>
+<p>Pythonのhttp.serverで立てたローカルWebサーバーにchromeとfirefoxでアクセスしたところ、何かのタイミングでchromeがHTTP接続を握ったままになり、セッション数の制限から、firefoxで接続できなくなります。解決策はありますか。</p>
+<p><strong>[回答] Grok</strong></p>
 </blockquote>
-<p>結論から言うと、<strong>「あまり行儀が良いとは言えない」</strong>ケースが多いです。</p>
-<p>自分のプロセス（親プロセス）の環境変数を <code>os.environ</code> で直接書き換えてしまうと、その後に実行されるプログラム全体に影響が及ぶため、予期せぬサイドエフェクト（副作用）を生むリスクがあるからです。</p>
-<p>もっと「お行儀が良く」、かつ安全な方法が Python には用意されています。</p>
-<hr />
-<h2 id="1">1. なぜ「直接書き換え」が推奨されないのか</h2>
-<p>Pythonで <code>os.environ["VAR"] = "value"</code> とすると、そのスクリプト内の全コードでその変数が有効になります。</p>
+<p>はい、これは <strong>Pythonの組み込み<code>http.server</code>（旧SimpleHTTPServer）</strong> を使っているときによく起こる、かなり有名な問題です。</p>
+<p>主な原因は以下の組み合わせです：</p>
 <ul>
-<li><strong>他のライブラリへの影響:</strong> 読み込んでいる外部ライブラリが同じ環境変数を参照していた場合、挙動が変わってしまう可能性があります。</li>
-<li><strong>マルチスレッドでの危険性:</strong> <code>os.environ</code> はプロセス全体で共有されるため、あるスレッドで書き換えた変数が、意図せず別のスレッドで動いている処理に影響する「競合」が発生します。</li>
-<li><strong>後片付けの漏れ:</strong> 子プロセスが終わった後に元の値に戻し忘れると、親プロセスの残りの処理が汚染された状態で進んでしまいます。</li>
+<li><code>http.server</code> は<strong>シングルスレッド</strong>で動く（<code>socketserver.TCPServer</code>ベース）</li>
+<li>HTTP/1.1の<strong>persistent connection（Keep-Alive）</strong>をデフォルトで許可している</li>
+<li>Chromeが<strong>非常に積極的にKeep-Alive接続を使い続け</strong>、かつ並列リクエストを複数発行しようとする</li>
+<li>一つの接続が「読み込み待ち」の状態で開いたままになると、<strong>サーバーが新しい接続を受け付けられなくなる</strong></li>
 </ul>
-<hr />
-<h2 id="2">2. おすすめの「お行儀の良い」方法</h2>
-<p><code>subprocess.run</code> などの引数にある <strong><code>env</code> パラメータ</strong> を使うのがベストプラクティスです。これを使えば、<strong>親プロセスの環境変数は汚さず、子プロセスにだけ特定の変数を渡す</strong>ことができます。</p>
-<h3 id="_1">実装例</h3>
-<p>現在の環境変数をコピーし、必要な分だけ追加・更新して渡すのが一般的です。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 1. 現在の環境変数をコピー（親プロセスは汚さない）</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">my_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 2. 子プロセスに渡したい変数だけを追加・上書き</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">my_env</span><span class="p">[</span><span class="s2">&quot;MY_SPECIAL_VAR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;hello_world&quot;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">my_env</span><span class="p">[</span><span class="s2">&quot;PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/custom/path:</span><span class="si">{</span><span class="n">my_env</span><span class="p">[</span><span class="s1">&#39;PATH&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 3. env引数に渡して実行</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span> <span class="s2">&quot;-l&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">my_env</span><span class="p">)</span>
-</span></code></pre></div>
-<hr />
-<h2 id="3">3. 使い分けの判断基準</h2>
+<p>結果として、Chromeが1本の接続を握り続けたままにすると、他のブラウザ（Firefoxなど）が接続できなくなる、という症状が出ます。</p>
+<h3 id="_1">現実的な解決策（おすすめ順）</h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">方法</th>
-<th style="text-align: left;">影響範囲</th>
-<th style="text-align: left;">評価</th>
-<th style="text-align: left;">使うべき場面</th>
+<th>順位</th>
+<th>方法</th>
+<th>難易度</th>
+<th>おすすめ度</th>
+<th>備考</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong><code>env</code>引数を使う</strong></td>
-<td style="text-align: left;">子プロセスのみ</td>
-<td style="text-align: left;"><strong>推奨</strong></td>
-<td style="text-align: left;">ほとんどのケース（安全・確実）</td>
+<td>1</td>
+<td>ThreadingMixIn を使う</td>
+<td>★★☆</td>
+<td>★★★★★</td>
+<td>一番おすすめ</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong><code>os.environ</code>を書き換える</strong></td>
-<td style="text-align: left;">プロセス全体</td>
-<td style="text-align: left;"><strong>非推奨</strong></td>
-<td style="text-align: left;">スクリプトの開始直後に設定し、最後までその設定で動かしたい使い捨てツールなど</td>
+<td>2</td>
+<td>--bind 127.0.0.1 を明示</td>
+<td>★☆☆</td>
+<td>★★★★☆</td>
+<td>簡単だが効果は中程度</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Chromeの「プリフェッチ/予測サービス」をオフ</td>
+<td>★☆☆</td>
+<td>★★★☆☆</td>
+<td>根本解決ではない</td>
+</tr>
+<tr>
+<td>4</td>
+<td>HTTP/1.0強制（protocol_version変更）</td>
+<td>★★☆</td>
+<td>★★☆☆☆</td>
+<td>Keep-Aliveを切るが非推奨</td>
+</tr>
+<tr>
+<td>5</td>
+<td>http.server ではなく他のサーバーを使う</td>
+<td>★★★★</td>
+<td>★★★★★</td>
+<td>長期的にベスト</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h3 id="_2">まとめ</h3>
-<p>「自分の環境を汚さず、相手に必要なものだけ持たせて送り出す」のが、プログラム界隈におけるスマートな振る舞いです。</p>
-<p>もし特定の環境変数が複雑に絡むような構成を作ろうとしているのであれば、その変数を設定するロジックをお手伝いしましょうか？</p>
-<hr />
-<h2 id="_3">★続き</h2>
-<blockquote>
-<p>たしかに「子プロセスの引数の代わりに、親プロセスがいちいち環境変数を設定する」というのはよくないですね。
-それに対して、「親プロセスが自分のために環境変数を設定し、子プロセスはそれを見て親プロセスの環境を知る」
-という使い方は問題ない感じですね。</p>
-</blockquote>
-<p>その通りです！「親が自分の状態を定義し、子がそれを継承する」という流れは、UNIX/Linux以来の伝統的でごく自然な設計思想です。</p>
-<p>おっしゃる通り、
-<strong>「親プロセスの設定（コンフィグ）として環境変数を使う」</strong>
-のであれば、それは「行儀が悪い」どころか、むしろ標準的なプラクティスと言えます。</p>
-<h2 id="_4">健全な使い方のイメージ</h2>
-<p>「行儀が悪い（副作用）」と「健全な継承」の違いを整理すると、以下のようになります。</p>
-<h3 id="_5">健全なケース（設定の継承）</h3>
-<p>親プロセスが起動時に <code>DEBUG=1</code> や <code>DB_URL=...</code>
-という環境変数を持っていて、それを子プロセスが参照して「あ、今はデバッグモードなんだな」と判断する。</p>
-<ul>
-<li><strong>メリット:</strong>  設定を一元管理できる。</li>
-<li><strong>例:</strong>  DockerやCI/CDツール（GitHub Actionsなど）では、この「親が設定した環境を子が引き継ぐ」仕組みがフル活用されています。</li>
-</ul>
-<h3 id="_6">行儀が悪いケース（一時的なすり替え）</h3>
-<p>親プロセスが本来の自分の目的とは関係なく、特定の子プロセスを動かす <strong>瞬間だけ</strong>
-<code>os.environ</code> を書き換えて、終わったら戻す（あるいは戻し忘れる）。</p>
-<ul>
-<li><strong>デメリット:</strong> スレッドセーフではなく、予期せぬ場所で「書き換わった値」を参照してしまうリスクがある。</li>
-</ul>
-<h2 id="_7">補足：子プロセスに「親の意図」を伝えるコツ</h2>
-<p>もし親プロセスがプログラムの途中で「この子プロセスにだけは、特別な設定を伝えたい」と思った場合は、やはり前述の <code>env</code> 引数を使うのが最も安全です。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 親プロセス自身の「基本設定」</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APP_MODE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;production&quot;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># 特定の子プロセスにだけ「特殊な役割」を伝えたい場合</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">special_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">special_env</span><span class="p">[</span><span class="s2">&quot;TASK_TYPE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;background_cleanup&quot;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># 親の環境(APP_MODE)を引き継ぎつつ、TASK_TYPEを添えて起動</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;worker.py&quot;</span><span class="p">],</span> <span class="n">env</span><span class="o">=</span><span class="n">special_env</span><span class="p">)</span>
+<h4 id="1-threadingmixin">1. 最もおすすめ：ThreadingMixIn を使う（同時接続対応）</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">http.server</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socketserver</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">PORT</span> <span class="o">=</span> <span class="mi">8000</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># ここがポイント</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">ThreadedHTTPServer</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">ThreadingMixIn</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">):</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle requests in a separate thread.&quot;&quot;&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">pass</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># ハンドラはそのまま</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">Handler</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># ThreadedHTTPServer を使う</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">with</span> <span class="n">ThreadedHTTPServer</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">),</span> <span class="n">Handler</span><span class="p">)</span> <span class="k">as</span> <span class="n">httpd</span><span class="p">:</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;serving at port </span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
 </span></code></pre></div>
-<p>このように、<strong>「親のアイデンティティ（環境）」はそのままに、子に渡す「メモ（追加の変数）」だけを切り分ける</strong>のが、最も堅牢な実装になります。</p>
-<p>このあたりの「親子の役割分担」について、具体的にどのような値を渡そうと考えていらっしゃいますか？もし具体的なユースケースがあれば、より最適な構成案を考えられます。</p>
+<p>これだけで<strong>同時接続を複数処理</strong>できるようになり、Chromeが接続を握っていてもFirefoxが普通に繋がるようになります。</p>
+<h4 id="2">2. とりあえず試す価値あり（超簡単）</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Windows / macOS / Linux 共通</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--bind<span class="w"> </span><span class="m">127</span>.0.0.1
+</span></code></pre></div>
+<p><code>--bind 127.0.0.1</code> を付けると、Chromeの妙な挙動が多少マシになるケースが結構あります。</p>
+<h4 id="3-chrome">3. Chrome側の設定変更（一時しのぎ）</h4>
+<p>Chromeで<br />
+<code>chrome://settings/privacy</code> → 「ページのプリロード」または「予測サービスを利用してページをより速く読み込む」のチェックを<strong>外す</strong></p>
+<p>かなり古い問題ですが、いまだに効く環境が残っています。</p>
+<h4 id="2026">まとめ（2026年現在でも有効な現実解）</h4>
+<p>一番手っ取り早く、かつ根本的に解決したいなら<br />
+<strong>ThreadingMixInを使ったサーバーを自分で書く</strong>のが最もおすすめです。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 最小構成・おすすめ版</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">http.server</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socketserver</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">PORT</span> <span class="o">=</span> <span class="mi">8000</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">ThreadingSimpleServer</span><span class="p">(</span><span class="n">socketserver</span><span class="o">.</span><span class="n">ThreadingMixIn</span><span class="p">,</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                           <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">):</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">pass</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">with</span> <span class="n">ThreadingSimpleServer</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">),</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>                          <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span><span class="p">)</span> <span class="k">as</span> <span class="n">httpd</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">シャットダウンします&quot;</span><span class="p">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">httpd</span><span class="o">.</span><span class="n">server_close</span><span class="p">()</span>
+</span></code></pre></div>
+<p>これでほぼ100%解決します。</p>
+<p>必要なら<code>--cgi</code>も使えるように<code>CGIHTTPRequestHandler</code>に変えたりできます。</p>
+<p>お試しください！</p>
 
 
 
@@ -2321,7 +2197,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0060-http-server-threading-mixin/" class="md-footer__link md-footer__link--prev" aria-label="前: http.serverをchromeが独占する問題と解決策">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2331,20 +2207,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                http.serverをchromeが独占する問題と解決策
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0058-status-http-header/" class="md-footer__link md-footer__link--next" aria-label="次: Statusヘッダーはどこの世界の話か">
+          <a href="../0059-python-setenv-subprocess/" class="md-footer__link md-footer__link--next" aria-label="次: Pythonのsubprocessの環境変数を設定する">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                Statusヘッダーはどこの世界の話か
+                Pythonのsubprocessの環境変数を設定する
               </div>
             </div>
             <div class="md-footer__button md-icon">
