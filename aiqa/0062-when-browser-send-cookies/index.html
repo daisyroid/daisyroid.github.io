@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0046-powershell-array-subexpression/">
+        <link rel="prev" href="../0063-python-session/">
       
       
-        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
+        <link rel="next" href="../0061-curl-cookie-send-recieve/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
+        <title>ブラウザがクッキーを送信する条件 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#powershell" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShellでパイプラインが中断するとき何がおこるか
+              ブラウザがクッキーを送信する条件
             
           </span>
         </div>
@@ -330,10 +330,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0062-when-browser-send-cookies/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ブラウザがクッキーを送信する条件
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -349,6 +376,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ドメイン（Domain）の不一致がないこと
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. パス（Path）が一致していること
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-expires-max-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 有効期限（Expires / Max-Age）内であること
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-secure-httponly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. セキュリティ設定（Secure / HttpOnly）のクリア
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-samesite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. サードパーティ規制（SameSite 属性）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. サードパーティ規制（SameSite 属性）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ：送信のフローチャート
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -789,37 +908,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShellでパイプラインが中断するとき何がおこるか
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
         
   
   
@@ -835,70 +927,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2118,10 +2146,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
+  <a href="#1-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
+        1. ドメイン（Domain）の不一致がないこと
       
     </span>
   </a>
@@ -2129,10 +2157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#2-path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実験：上流が止まったことを証明する
+        2. パス（Path）が一致していること
       
     </span>
   </a>
@@ -2140,10 +2168,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+  <a href="#3-expires-max-age" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linuxとの決定的な違い
+        3. 有効期限（Expires / Max-Age）内であること
       
     </span>
   </a>
@@ -2151,13 +2179,41 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#4-secure-httponly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. セキュリティ設定（Secure / HttpOnly）のクリア
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-samesite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. サードパーティ規制（SameSite 属性）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. サードパーティ規制（SameSite 属性）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        まとめ：送信のフローチャート
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2178,76 +2234,74 @@
 
 
 
-<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
+<h1 id="_1">ブラウザがクッキーを送信する条件</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
+<p>ブラウザがWebサーバーにクッキーを送信するのは、どんな条件が成立したときですか</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
-<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
+<p>ブラウザが「よし、このクッキーをサーバーに送ろう」と判断するまでには、いくつかの重要なチェックポイントがあります。単に「同じサイトだから」というわけではなく、属性（属性値）に基づいた厳格なルールがあるんです。</p>
+<p>主な条件を整理すると、以下のようになります。</p>
 <hr />
-<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
-<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
-<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
-<ol>
-<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
-<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
-<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
-<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
-</ol>
-<hr />
-<h3 id="_1">実験：上流が止まったことを証明する</h3>
-<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
-</span></code></pre></div>
-<p><strong>実行結果:</strong></p>
+<h2 id="1-domain">1. ドメイン（Domain）の不一致がないこと</h2>
+<p>ブラウザは、クッキーを発行したサーバーが指定した <strong><code>Domain</code> 属性</strong> を確認します。</p>
 <ul>
-<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
-<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
+<li><strong>完全一致または後方一致:</strong> 例えば、<code>Domain=example.com</code> と設定されている場合、<code>www.example.com</code> や <code>api.example.com</code> へのリクエストでも送信されます。</li>
+<li><strong>未指定の場合:</strong> クッキーを発行したホストそのもの（例：<code>example.com</code> のみ）に限定されます。</li>
 </ul>
-<hr />
-<h3 id="linux">Linuxとの決定的な違い</h3>
+<h2 id="2-path">2. パス（Path）が一致していること</h2>
+<p><strong><code>Path</code> 属性</strong> で指定された範囲内にリクエスト先のURLが含まれている必要があります。</p>
+<ul>
+<li><code>Path=/shop</code> と設定されている場合、<code>/shop/items</code> へのアクセスには送信されますが、<code>/blog</code> へのアクセスには送信されません。</li>
+</ul>
+<h2 id="3-expires-max-age">3. 有効期限（Expires / Max-Age）内であること</h2>
+<p>当然ながら、期限切れのクッキーは削除されるため送信されません。</p>
+<ul>
+<li><strong>セッションクッキー:</strong> ブラウザを閉じると消滅。</li>
+<li><strong>永続クッキー:</strong> 指定された日時、または秒数が経過するまで保持されます。</li>
+</ul>
+<h2 id="4-secure-httponly">4. セキュリティ設定（Secure / HttpOnly）のクリア</h2>
+<p>通信の安全性に関する条件です。</p>
+<ul>
+<li><strong>Secure属性:</strong> これがついている場合、<strong>HTTPS通信</strong> のときしか送信されません。HTTP（暗号化なし）では無視されます。</li>
+<li><strong>HttpOnly属性:</strong> これは「JavaScript（<code>document.cookie</code>）からアクセスできるか」を制御するものなので、ブラウザからサーバーへのHTTPリクエスト送信自体には影響しません。</li>
+</ul>
+<h2 id="5-samesite">5. サードパーティ規制（SameSite 属性）</h2>
+<p>これが現代のブラウザにおいて最も「送信されない」原因になりやすいポイントです。</p>
 <table>
 <thead>
 <tr>
-<th>比較項目</th>
-<th>Linux (bash/zshなど)</th>
-<th>PowerShell</th>
+<th style="text-align: left;">設定値</th>
+<th style="text-align: left;">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>伝達手段</strong></td>
-<td><code>SIGPIPE</code> (OSシグナル)</td>
-<td><code>.NET Exception</code> (例外処理)</td>
+<td style="text-align: left;"><strong>Strict</strong></td>
+<td style="text-align: left;">同じサイト内での移動でのみ送信。別サイトのリンクから飛んできた場合は送信されません。</td>
 </tr>
 <tr>
-<td><strong>データの単位</strong></td>
-<td>バイト / テキスト</td>
-<td><strong>.NET オブジェクト</strong></td>
+<td style="text-align: left;"><strong>Lax</strong></td>
+<td style="text-align: left;">基本は同じサイトのみ。ただし、別サイトからのリンク（GETリクエスト）などのトップレベルの遷移なら送信されます。（現在のブラウザのデフォルト）</td>
 </tr>
 <tr>
-<td><strong>制御の主体</strong></td>
-<td>カーネルがパイプを管理</td>
-<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
+<td style="text-align: left;"><strong>None</strong></td>
+<td style="text-align: left;">サイトをまたいでも送信されますが、<code>Secure</code> 属性との併用が必須です。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_2">まとめ</h3>
-<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
-<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
-<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
+<hr />
+<h3 id="_2">まとめ：送信のフローチャート</h3>
+<p>ブラウザ内部では、リクエストのたびに以下のフィルターを通しています。</p>
+<ol>
+<li><strong>有効期限</strong>は切れていないか？</li>
+<li>リクエスト先の<strong>ドメイン</strong>は許可範囲か？</li>
+<li>リクエスト先の<strong>パス</strong>は合致しているか？</li>
+<li>HTTPSが必要（<strong>Secure</strong>）な場合、ちゃんとHTTPSか？</li>
+<li>別のサイトからのリクエスト（<strong>SameSite</strong>）制限に引っかかっていないか？</li>
+</ol>
+<p>これらがすべて「YES」になったとき、初めてHTTPヘッダーの <code>Cookie: name=value</code> としてパケットに乗っかります。</p>
+<p>特定のサイトでログイン状態が維持されないなど、具体的なトラブルでお困りですか？もし必要であれば、デベロッパーツールの見方などを解説することも可能です。</p>
 
 
 
@@ -2277,7 +2331,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
+          <a href="../0063-python-session/" class="md-footer__link md-footer__link--prev" aria-label="前: Pythonでセッション管理">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2287,20 +2341,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                PowerShellの配列サブ式について
+                Pythonでセッション管理
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
+          <a href="../0061-curl-cookie-send-recieve/" class="md-footer__link md-footer__link--next" aria-label="次: curlでクッキーを送受信する方法">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                ffmpegをPythonで制御したい
+                curlでクッキーを送受信する方法
               </div>
             </div>
             <div class="md-footer__button md-icon">

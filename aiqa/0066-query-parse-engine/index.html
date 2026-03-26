@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0046-powershell-array-subexpression/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
+        <link rel="next" href="../0065-poython-port-scan/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
+        <title>クエリ解析エンジンについて - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#powershell" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShellでパイプラインが中断するとき何がおこるか
+              クエリ解析エンジンについて
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0066-query-parse-engine/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    クエリ解析エンジンについて
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,187 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Google 検索スタイル (直感的・シンプル)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Google 検索スタイル (直感的・シンプル)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLへの変換イメージ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lucene-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lucene / Web API スタイル (標準的・パワフル)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Lucene / Web API スタイル (標準的・パワフル)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLへの変換イメージ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. プログラミング言語ライク (厳密)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装における比較表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLへ落とし込む際の注意点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ★続き
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-luqum-lucene-query-mapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. luqum (Lucene Query Mapper)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pyparsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. pyparsing (汎用パーサー構築)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-whoosh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Whoosh (全文検索ライブラリ内のパーサー)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Whoosh (全文検索ライブラリ内のパーサー)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luqum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装のヒント：luqum を使ったイメージ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        どれを選ぶべき？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -789,37 +997,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShellでパイプラインが中断するとき何がおこるか
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
         
   
   
@@ -835,70 +1016,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2118,32 +2235,66 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
+  <a href="#1-google" class="md-nav__link">
     <span class="md-ellipsis">
       
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
+        1. Google 検索スタイル (直感的・シンプル)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Google 検索スタイル (直感的・シンプル)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLへの変換イメージ
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#2-lucene-web-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実験：上流が止まったことを証明する
+        2. Lucene / Web API スタイル (標準的・パワフル)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Lucene / Web API スタイル (標準的・パワフル)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLへの変換イメージ
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linuxとの決定的な違い
+        3. プログラミング言語ライク (厳密)
       
     </span>
   </a>
@@ -2154,10 +2305,93 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        実装における比較表
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLへ落とし込む際の注意点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ★続き
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-luqum-lucene-query-mapper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. luqum (Lucene Query Mapper)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pyparsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. pyparsing (汎用パーサー構築)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-whoosh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Whoosh (全文検索ライブラリ内のパーサー)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Whoosh (全文検索ライブラリ内のパーサー)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luqum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実装のヒント：luqum を使ったイメージ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        どれを選ぶべき？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2178,76 +2412,148 @@
 
 
 
-<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
+<h1 id="_1">クエリ解析エンジンについて</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
+<p>検索文字列で、AND演算、OR演算、カッコ記号（グループ化）をするための入力書式は、どんなものがありますか。最終的にはSQLに落とし込みたいです。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
-<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
+<p>ユーザーが入力する検索文字列を解析して、最終的にSQLの <code>WHERE</code> 句に変換したいということですね。</p>
+<p>一般的な検索システムやプログラミング言語で採用されている書式には、大きく分けて<strong>3つのパターン</strong>があります。用途やターゲットとするユーザーに合わせて選ぶのが一般的です。</p>
 <hr />
-<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
-<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
-<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
-<ol>
-<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
-<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
-<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
-<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
-</ol>
-<hr />
-<h3 id="_1">実験：上流が止まったことを証明する</h3>
-<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
-</span></code></pre></div>
-<p><strong>実行結果:</strong></p>
+<h2 id="1-google">1. Google 検索スタイル (直感的・シンプル)</h2>
+<p>一般ユーザーに最も馴染みがある形式です。スペースを <code>AND</code> とみなし、マイナス記号で除外（NOT）を表現します。</p>
 <ul>
-<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
-<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
+<li><strong>AND</strong>: <code>A B</code> (スペース区切り)</li>
+<li><strong>OR</strong>: <code>A OR B</code> (大文字のOR)</li>
+<li><strong>除外</strong>: <code>-B</code></li>
+<li><strong>グループ化</strong>: 原則サポートしないことが多いですが、拡張して <code>(A OR B) C</code> とする実装もあります。</li>
+</ul>
+<h3 id="sql">SQLへの変換イメージ</h3>
+<p>入力：<code>Python OR Ruby 開発</code>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">tags</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Python%&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Ruby%&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%開発%&#39;</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="2-lucene-web-api">2. Lucene / Web API スタイル (標準的・パワフル)</h2>
+<p>Elasticsearchや多くの全文検索エンジンで採用されている「Query Parser」の標準的な書式です。</p>
+<ul>
+<li><strong>AND</strong>: <code>A AND B</code> または <code>A &amp;&amp; B</code></li>
+<li><strong>OR</strong>: <code>A OR B</code> または <code>A || B</code></li>
+<li><strong>カッコ</strong>: <code>(A OR B) AND C</code></li>
+<li><strong>完全一致</strong>: <code>"Exact Match"</code></li>
+</ul>
+<h3 id="sql_1">SQLへの変換イメージ</h3>
+<p>入力：<code>(Apple OR Google) AND "Stock Price"</code>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Apple&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Google&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Stock Price%&#39;</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="3">3. プログラミング言語ライク (厳密)</h2>
+<p>エンジニア向けのツールなどで使われる、より数理的な表現です。</p>
+<ul>
+<li><strong>AND</strong>: <code>and(A, B)</code> または <code>A &amp; B</code></li>
+<li><strong>OR</strong>: <code>or(A, B)</code> または <code>A | B</code></li>
+<li><strong>否定</strong>: <code>not(A)</code> または <code>!A</code></li>
 </ul>
 <hr />
-<h3 id="linux">Linuxとの決定的な違い</h3>
+<h2 id="_2">実装における比較表</h2>
 <table>
 <thead>
 <tr>
-<th>比較項目</th>
-<th>Linux (bash/zshなど)</th>
-<th>PowerShell</th>
+<th style="text-align: left;">書式タイプ</th>
+<th style="text-align: left;">メリット</th>
+<th style="text-align: left;">デメリット</th>
+<th style="text-align: left;">向いている用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>伝達手段</strong></td>
-<td><code>SIGPIPE</code> (OSシグナル)</td>
-<td><code>.NET Exception</code> (例外処理)</td>
+<td style="text-align: left;"><strong>Google風</strong></td>
+<td style="text-align: left;">入力が楽、誰でも使える</td>
+<td style="text-align: left;">複雑な優先順位が書きにくい</td>
+<td style="text-align: left;">一般公開サイト、EC検索</td>
 </tr>
 <tr>
-<td><strong>データの単位</strong></td>
-<td>バイト / テキスト</td>
-<td><strong>.NET オブジェクト</strong></td>
+<td style="text-align: left;"><strong>Lucene風</strong></td>
+<td style="text-align: left;">表現力が高い、標準的</td>
+<td style="text-align: left;"><code>AND</code>などの予約語を意識する必要がある</td>
+<td style="text-align: left;">社内ツール、高度な検索</td>
 </tr>
 <tr>
-<td><strong>制御の主体</strong></td>
-<td>カーネルがパイプを管理</td>
-<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
+<td style="text-align: left;"><strong>独自構文</strong></td>
+<td style="text-align: left;">柔軟に定義できる</td>
+<td style="text-align: left;">学習コストが高い</td>
+<td style="text-align: left;">特定の専門職用ツール</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_2">まとめ</h3>
-<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
-<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
-<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
+<hr />
+<h2 id="sql_2">SQLへ落とし込む際の注意点</h2>
+<p>SQLに変換する際は、単なる文字列置換ではなく、一度<strong>抽象構文木（AST）</strong>にパースすることをお勧めします。</p>
+<ol>
+<li><strong>字句解析 (Lexing)</strong>: 文字列を <code>TERM</code>, <code>AND</code>, <code>OR</code>, <code>LPAREN</code>, <code>RPAREN</code> に分解。</li>
+<li><strong>構文解析 (Parsing)</strong>: トークンの並びをツリー構造にする。</li>
+<li><strong>SQL生成</strong>: ツリーを再帰的に走査して <code>AND</code> や <code>OR</code> を含むSQL文字列を組み立てる。</li>
+</ol>
+<blockquote>
+<p><strong>セキュリティのヒント:</strong> &gt; ユーザー入力をそのまま <code>LIKE</code> 句などに入れると、SQLインジェクションの脆弱性や、<code>%</code> などの特殊文字による意図しない挙動が発生します。必ずプリペアドステートメント（バインド変数）を使用するか、特殊文字を適切にエスケープしてください。</p>
+</blockquote>
+<p>これらの中で、どのパターンがあなたのプロジェクトのイメージに近いでしょうか？もし具体的なプログラミング言語（Python, JavaScriptなど）が決まっていましたら、パース用のライブラリを紹介することも可能です。</p>
+<h2 id="_3">★続き</h2>
+<blockquote>
+<p>Pythonで、Lucene風の書式をパースするライブラリを教えてください</p>
+</blockquote>
+<p>PythonでLucene風のクエリ（<code>AND</code>, <code>OR</code>, <code>NOT</code>, <code>()</code>）をパースしてSQLに落とし込むなら、以下の3つのアプローチがメジャーです。</p>
+<p>特に<strong>「最終的にSQLにしたい」</strong>という目的であれば、2番目か3番目の方法が近道です。</p>
+<hr />
+<h2 id="1-luqum-lucene-query-mapper">1. luqum (Lucene Query Mapper)</h2>
+<p>Luceneクエリ専用のパーサーとして最も有名です。クエリを解析して<strong>抽象構文木（AST）</strong>を生成してくれるため、そのツリーを巡回（Visitorパターン）してSQLを組み立てるのに適しています。</p>
+<ul>
+<li><strong>特徴</strong>: Lucene構文に忠実。フィールド指定（<code>name:john</code>）や範囲検索（<code>age:[10 TO 20]</code>）も扱える。</li>
+<li><strong>用途</strong>: 本格的な検索エンジンに近い挙動を自前で実装したい場合。</li>
+</ul>
+<h2 id="2-pyparsing">2. pyparsing (汎用パーサー構築)</h2>
+<p>特定のライブラリというより「パーサーを作るための道具」ですが、検索クエリ用のサンプルコードが豊富に転がっています。</p>
+<ul>
+<li><strong>特徴</strong>: 自分で「<code>AND</code> はこう定義する」と決められるため、SQLの <code>WHERE</code> 句への変換ルールを直接組み込みやすい。</li>
+<li><strong>用途</strong>: Lucene風だけど、少し独自のルール（例：<code>#</code>でタグ検索など）を混ぜたい場合。</li>
+</ul>
+<h2 id="3-whoosh">3. Whoosh (全文検索ライブラリ内のパーサー)</h2>
+<p>Python製の全文検索エンジン「Whoosh」に含まれるパーサーのみを利用する方法です。</p>
+<ul>
+<li><strong>特徴</strong>: 非常に安定しており、多機能。</li>
+<li><strong>欠点</strong>: 検索エンジン本体の機能も付いてくるため、少しオーバーヘッドがある。</li>
+</ul>
+<hr />
+<h3 id="luqum">実装のヒント：luqum を使ったイメージ</h3>
+<p>もし <code>luqum</code> を使う場合、以下のような流れでSQLを組み立てることになります。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">luqum.parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">parser</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">luqum.visitor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Visitor</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 1. ユーザー入力をパース</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">query_str</span> <span class="o">=</span> <span class="s2">&quot;(A OR B) AND C&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">tree</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">query_str</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># 2. ツリーを走査して SQL の断片を作るクラスを作る</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">SQLVisitor</span><span class="p">(</span><span class="n">Visitor</span><span class="p">):</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">visit_and_operation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="c1"># 左右の要素を &#39; AND &#39; で結合する処理</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">pass</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">visit_word</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="c1"># &#39;column LIKE %value%&#39; に変換する処理</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="k">pass</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># このようにして再帰的に SQL を生成します</span>
+</span></code></pre></div>
+<hr />
+<h3 id="_4">どれを選ぶべき？</h3>
+<ul>
+<li><strong>「とにかく標準的なLucene構文を速く実装したい」</strong>
+    👉 <strong><code>luqum</code></strong> がベストです。</li>
+<li><strong>「SQLへの変換ロジックを細かく制御したい、あるいは学習コストをかけても応用力をつけたい」</strong>
+    👉 <strong><code>pyparsing</code></strong> で「Search Query Parser」のレシピを探すのがおすすめです。</li>
+</ul>
+<p>まずは <code>luqum</code> を <code>pip install</code> して、自分の入力したいクエリがどういう構造（Tree）に分解されるか見てみるのが一番手っ取り早いですよ。</p>
+<p>具体的なSQL変換コードのサンプルが必要であれば、作成をお手伝いしましょうか？</p>
 
 
 
@@ -2277,7 +2583,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2287,20 +2593,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                PowerShellの配列サブ式について
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
+          <a href="../0065-poython-port-scan/" class="md-footer__link md-footer__link--next" aria-label="次: Pythonで使えるポート番号を探す方法">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                ffmpegをPythonで制御したい
+                Pythonで使えるポート番号を探す方法
               </div>
             </div>
             <div class="md-footer__button md-icon">

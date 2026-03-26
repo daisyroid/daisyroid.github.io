@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0046-powershell-array-subexpression/">
+        <link rel="prev" href="../0065-poython-port-scan/">
       
       
-        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
+        <link rel="next" href="../0063-python-session/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
+        <title>cgi.FieldStorage()に代わるもの - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#powershell" class="md-skip">
+        <a href="#cgifieldstorage" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShellでパイプラインが中断するとき何がおこるか
+              cgi.FieldStorage()に代わるもの
             
           </span>
         </div>
@@ -276,10 +276,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0064-replacement-for-cgi-fieldstorage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cgi.FieldStorage()に代わるもの
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -295,6 +322,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 主要フレームワークでの処理方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 内部で動いている「解析の主役」
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 内部で動いている「解析の主役」">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#werkzeug-flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Werkzeug (Flaskの基盤)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-multipart-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        python-multipart (FastAPI等の基盤)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urllibparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        urllib.parse (標準ライブラリ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CGI時代との決定的な違い
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -789,37 +908,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShellでパイプラインが中断するとき何がおこるか
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
         
   
   
@@ -835,70 +927,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2118,10 +2146,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
+        1. 主要フレームワークでの処理方法
       
     </span>
   </a>
@@ -2129,32 +2157,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実験：上流が止まったことを証明する
+        2. 内部で動いている「解析の主役」
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 内部で動いている「解析の主役」">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#werkzeug-flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Werkzeug (Flaskの基盤)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#python-multipart-fastapi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linuxとの決定的な違い
+        python-multipart (FastAPI等の基盤)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#urllibparse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        urllib.parse (標準ライブラリ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cgi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CGI時代との決定的な違い
       
     </span>
   </a>
@@ -2178,76 +2234,77 @@
 
 
 
-<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
+<h1 id="cgifieldstorage">cgi.FieldStorage()に代わるもの</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
+<p>昔PythonでCGIを扱っていたころ、cgi.FieldStorage()がフォームから受信したデータを解析してくれました。現代のモダンなWeb技術では、フォームから送られるデータをどんなモジュールやメソッドが処理していますか。</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
-<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
+<p>CGIの時代に <code>cgi.FieldStorage()</code> が担っていた役割は、現代のPython Web開発では<strong>Webフレームワーク</strong>（Flask, FastAPI, Djangoなど）の内部機能や、それらが利用している<strong>WSGI/ASGIサーバー</strong>、および専用の<strong>パースライブラリ</strong>に置き換わっています。</p>
+<p>特筆すべき点として、標準ライブラリの <code>cgi</code> モジュールは <strong>Python 3.13 で完全に削除されました。</strong> そのため、現代では以下のいずれかの方法でフォームデータを処理するのが一般的です。</p>
 <hr />
-<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
-<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
-<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
-<ol>
-<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
-<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
-<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
-<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
-</ol>
-<hr />
-<h3 id="_1">実験：上流が止まったことを証明する</h3>
-<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
-</span></code></pre></div>
-<p><strong>実行結果:</strong></p>
-<ul>
-<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
-<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
-</ul>
-<hr />
-<h3 id="linux">Linuxとの決定的な違い</h3>
+<h2 id="1">1. 主要フレームワークでの処理方法</h2>
+<p>モダンなフレームワークでは、開発者が生のバイト列を解析する必要はなく、<code>request</code> オブジェクトを介して辞書形式でデータを取り出せます。</p>
 <table>
 <thead>
 <tr>
-<th>比較項目</th>
-<th>Linux (bash/zshなど)</th>
-<th>PowerShell</th>
+<th style="text-align: left;">フレームワーク</th>
+<th style="text-align: left;">使用されるメソッド / プロパティ</th>
+<th style="text-align: left;">特徴</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>伝達手段</strong></td>
-<td><code>SIGPIPE</code> (OSシグナル)</td>
-<td><code>.NET Exception</code> (例外処理)</td>
+<td style="text-align: left;"><strong>Flask</strong></td>
+<td style="text-align: left;"><code>request.form</code></td>
+<td style="text-align: left;"><code>ImmutableMultiDict</code>型でデータを保持。ファイルは <code>request.files</code>。</td>
 </tr>
 <tr>
-<td><strong>データの単位</strong></td>
-<td>バイト / テキスト</td>
-<td><strong>.NET オブジェクト</strong></td>
+<td style="text-align: left;"><strong>FastAPI</strong></td>
+<td style="text-align: left;"><code>Form(...)</code>, <code>File(...)</code></td>
+<td style="text-align: left;">Pydanticによる型定義と自動バリデーションが強力。</td>
 </tr>
 <tr>
-<td><strong>制御の主体</strong></td>
-<td>カーネルがパイプを管理</td>
-<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
+<td style="text-align: left;"><strong>Django</strong></td>
+<td style="text-align: left;"><code>request.POST</code></td>
+<td style="text-align: left;">フォームクラス（<code>forms.Form</code>）と連携し、クリーンアップまで行う。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_2">まとめ</h3>
-<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
-<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
-<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
+<hr />
+<h2 id="2">2. 内部で動いている「解析の主役」</h2>
+<p><code>cgi.FieldStorage()</code> の直接の後継となる、低レイヤーのライブラリやメソッドは以下の通りです。</p>
+<h3 id="werkzeug-flask"><strong>Werkzeug (Flaskの基盤)</strong></h3>
+<p>Flaskなどのバックエンドで動いているライブラリです。</p>
+<ul>
+<li><strong><code>werkzeug.formparser.FormDataParser</code></strong>: マルチパート（ファイルアップロード）やURLエンコードされたフォームデータを解析する実体です。</li>
+</ul>
+<h3 id="python-multipart-fastapi"><strong>python-multipart (FastAPI等の基盤)</strong></h3>
+<p>FastAPIやStarletteが採用している、非常に高速なストリーミングパーサーです。</p>
+<ul>
+<li>大きなファイルをアップロードする際、メモリを節約しながら逐次処理する能力に長けています。</li>
+</ul>
+<h3 id="urllibparse"><strong>urllib.parse (標準ライブラリ)</strong></h3>
+<p>GETリクエストのクエリパラメータなど、シンプルなURLエンコードデータの解析には現在もこれが使われます。</p>
+<ul>
+<li><code>urllib.parse.parse_qs()</code>: クエリ文字列を辞書に変換します。</li>
+</ul>
+<hr />
+<h2 id="3-cgi">3. CGI時代との決定的な違い</h2>
+<p>現代の技術では、単にデータを「受け取る」だけでなく、以下の処理をセットで行うのが「モダン」とされます。</p>
+<ol>
+<li><strong>バリデーション</strong>: データが数値か、メールアドレス形式かなどを自動チェック。</li>
+<li><strong>型変換</strong>: 受信した文字列を自動で <code>int</code> や <code>datetime</code> オブジェクトに変換（特にFastAPI）。</li>
+<li><strong>セキュリティ</strong>: CSRF（サイト間リクエスト偽造）対策がフレームワークレベルで組み込まれている。</li>
+</ol>
+<blockquote>
+<p><strong>注意:</strong>
+もし現在も古いCGIスクリプトを保守しており、<code>cgi</code> モジュール削除への対策が必要な場合は、PyPIで公開されている <a href="https://www.google.com/search?q=%5Bhttps://pypi.org/project/multipart/%5D(https://pypi.org/project/multipart/)"><strong><code>multipart</code></strong></a> ライブラリが <code>cgi.FieldStorage</code> の代替として公式ドキュメント等でも推奨されています。</p>
+</blockquote>
+<hr />
+<p><strong>次の一歩として、具体的なフレームワーク（FlaskやFastAPIなど）での実装例を作成しましょうか？</strong></p>
+<p><a href="https://www.youtube.com/watch?v=nP23R37lMxc">Flaskでフォームデータを受け取る基本コード</a>
+この動画では、Flaskを使ってHTMLフォームからデータを受け取り、サーバー側で処理する具体的な流れを解説しています。</p>
 
 
 
@@ -2277,7 +2334,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
+          <a href="../0065-poython-port-scan/" class="md-footer__link md-footer__link--prev" aria-label="前: Pythonで使えるポート番号を探す方法">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2287,20 +2344,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                PowerShellの配列サブ式について
+                Pythonで使えるポート番号を探す方法
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
+          <a href="../0063-python-session/" class="md-footer__link md-footer__link--next" aria-label="次: Pythonでセッション管理">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                ffmpegをPythonで制御したい
+                Pythonでセッション管理
               </div>
             </div>
             <div class="md-footer__button md-icon">

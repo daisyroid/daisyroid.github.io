@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0046-powershell-array-subexpression/">
+        <link rel="prev" href="../0062-when-browser-send-cookies/">
       
       
-        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
+        <link rel="next" href="../0060-http-server-threading-mixin/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
+        <title>curlでクッキーを送受信する方法 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#powershell" class="md-skip">
+        <a href="#curl" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShellでパイプラインが中断するとき何がおこるか
+              curlでクッキーを送受信する方法
             
           </span>
         </div>
@@ -357,10 +357,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0061-curl-cookie-send-recieve/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    curlでクッキーを送受信する方法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -376,6 +403,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 文字列で直接クッキーを指定する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cookie-jar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. クッキーファイル（Cookie Jar）を利用する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. クッキーファイル（Cookie Jar）を利用する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップA：サーバーからのクッキーを保存する (-c)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップB：保存したクッキーを使ってリクエストする (-b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ブラウザの挙動を完全に再現する（推奨）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        補足：デバッグに役立つテクニック
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -789,37 +908,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShellでパイプラインが中断するとき何がおこるか
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
         
   
   
@@ -835,70 +927,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2118,10 +2146,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
+        1. 文字列で直接クッキーを指定する
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cookie-jar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. クッキーファイル（Cookie Jar）を利用する
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. クッキーファイル（Cookie Jar）を利用する">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップA：サーバーからのクッキーを保存する (-c)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ステップB：保存したクッキーを使ってリクエストする (-b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ブラウザの挙動を完全に再現する（推奨）
       
     </span>
   </a>
@@ -2132,29 +2210,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
+        補足：デバッグに役立つテクニック
       
     </span>
   </a>
@@ -2178,76 +2234,46 @@
 
 
 
-<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
+<h1 id="curl">curlでクッキーを送受信する方法</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
+<p>curlでクッキーの送信をエミュレートできますか</p>
 <p><strong>[回答] Gemini</strong></p>
 </blockquote>
-<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
-<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
+<p>はい、<code>curl</code>を使ってクッキーの送信をエミュレートすることは非常に簡単です。ブラウザが自動で行っている処理を、コマンドラインで手動で再現するイメージですね。</p>
+<p>主に<strong>「直接指定して送る」</strong>方法と、<strong>「ファイル（クッキーファイル）を使って送る」</strong>方法の2パターンがあります。</p>
 <hr />
-<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
-<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
-<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
-<ol>
-<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
-<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
-<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
-<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
-</ol>
-<hr />
-<h3 id="_1">実験：上流が止まったことを証明する</h3>
-<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
+<h3 id="1">1. 文字列で直接クッキーを指定する</h3>
+<p>一時的なテストや、クッキーの値がわかっている場合は <code>-b</code>（または <code>--cookie</code>）フラグを使います。</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;session_id=12345; user_mode=dark&quot;</span><span class="w"> </span>https://example.com
 </span></code></pre></div>
-<p><strong>実行結果:</strong></p>
+* <strong>形式:</strong> <code>"名前1=値1; 名前2=値2"</code> のようにセミコロンで区切ります。</p>
+<hr />
+<h3 id="2-cookie-jar">2. クッキーファイル（Cookie Jar）を利用する</h3>
+<p>ログイン状態を維持する場合など、サーバーから送られてきたクッキーを保存し、次のリクエストでそれを使いたい場合に便利です。</p>
+<h4 id="a-c">ステップA：サーバーからのクッキーを保存する (<code>-c</code>)</h4>
+<p><code>-c</code>（または <code>--cookie-jar</code>）オプションを使うと、サーバーから発行されたクッキーを指定したファイルに書き出します。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-c<span class="w"> </span>cookies.txt<span class="w"> </span>https://example.com/login
+</span></code></pre></div>
+<h4 id="b-b">ステップB：保存したクッキーを使ってリクエストする (<code>-b</code>)</h4>
+<p>保存したファイルを使ってアクセスするには、再度 <code>-b</code> オプションにファイル名を指定します。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-b<span class="w"> </span>cookies.txt<span class="w"> </span>https://example.com/dashboard
+</span></code></pre></div>
+<hr />
+<h3 id="3">3. ブラウザの挙動を完全に再現する（推奨）</h3>
+<p>実務でよく使うのは、<strong>「保存」と「読み込み」を同時に指定する</strong>方法です。これにより、受け取ったクッキーを更新しながら、次のリクエストへ引き継ぐことができます。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-b<span class="w"> </span>cookies.txt<span class="w"> </span>-c<span class="w"> </span>cookies.txt<span class="w"> </span>https://example.com/api/data
+</span></code></pre></div>
+<hr />
+<h3 id="_1">補足：デバッグに役立つテクニック</h3>
+<p>正しくクッキーが送受信されているか確認したいときは、<code>-v</code> (verbose) オプションを追加してください。</p>
 <ul>
-<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
-<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
+<li><strong>送信時:</strong> <code>&gt; Cookie: ...</code> という行が表示されます。</li>
+<li><strong>受信時:</strong> <code>&lt; Set-Cookie: ...</code> という行が表示されます。</li>
 </ul>
 <hr />
-<h3 id="linux">Linuxとの決定的な違い</h3>
-<table>
-<thead>
-<tr>
-<th>比較項目</th>
-<th>Linux (bash/zshなど)</th>
-<th>PowerShell</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>伝達手段</strong></td>
-<td><code>SIGPIPE</code> (OSシグナル)</td>
-<td><code>.NET Exception</code> (例外処理)</td>
-</tr>
-<tr>
-<td><strong>データの単位</strong></td>
-<td>バイト / テキスト</td>
-<td><strong>.NET オブジェクト</strong></td>
-</tr>
-<tr>
-<td><strong>制御の主体</strong></td>
-<td>カーネルがパイプを管理</td>
-<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">まとめ</h3>
-<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
-<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
-<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
+<p><strong>次にお手伝いできることはありますか？</strong>
+例えば、「特定のサイトのログイン処理をcurlで自動化したい」といった具体的なシナリオがあれば、コマンドの構成案を作成しますよ！</p>
 
 
 
@@ -2277,7 +2303,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
+          <a href="../0062-when-browser-send-cookies/" class="md-footer__link md-footer__link--prev" aria-label="前: ブラウザがクッキーを送信する条件">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2287,20 +2313,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                PowerShellの配列サブ式について
+                ブラウザがクッキーを送信する条件
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
+          <a href="../0060-http-server-threading-mixin/" class="md-footer__link md-footer__link--next" aria-label="次: http.serverをchromeが独占する問題と解決策">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                ffmpegをPythonで制御したい
+                http.serverをchromeが独占する問題と解決策
               </div>
             </div>
             <div class="md-footer__button md-icon">
