@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../0046-powershell-array-subexpression/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../0044-ffmpeg-oneliner-to-script/">
+        <link rel="next" href="../0068-dbkey-uuidv7-and-nanoid/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>PowerShellでパイプラインが中断するとき何がおこるか - AI質問箱</title>
+        <title>WindowsのタスクトレイでPythonスクリプトを実行 - AI質問箱</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#powershell" class="md-skip">
+        <a href="#windowspython" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PowerShellでパイプラインが中断するとき何がおこるか
+              WindowsのタスクトレイでPythonスクリプトを実行
             
           </span>
         </div>
@@ -222,10 +222,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0069-python-run-in-tasktray/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WindowsのタスクトレイでPythonスクリプトを実行
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -241,6 +268,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        必要なライブラリ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpserver-pystray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本的な実装例（http.server + pystray）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ポイントとTips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        他の選択肢
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -870,37 +961,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShellでパイプラインが中断するとき何がおこるか
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0045-powershell-howto-detect-pipebreak/" class="md-nav__link">
         
   
   
@@ -916,70 +980,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        実験：上流が止まったことを証明する
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Linuxとの決定的な違い
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        まとめ
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2199,21 +2199,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stopping-exception" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        実験：上流が止まったことを証明する
+        必要なライブラリ
       
     </span>
   </a>
@@ -2221,10 +2210,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
+  <a href="#httpserver-pystray" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Linuxとの決定的な違い
+        基本的な実装例（http.server + pystray）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ポイントとTips
       
     </span>
   </a>
@@ -2235,7 +2235,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        まとめ
+        他の選択肢
       
     </span>
   </a>
@@ -2259,76 +2259,98 @@
 
 
 
-<h1 id="powershell">PowerShellでパイプラインが中断するとき何がおこるか</h1>
+<h1 id="windowspython">WindowsのタスクトレイでPythonスクリプトを実行</h1>
 <blockquote>
 <p><strong>[質問]</strong></p>
-<p>たとえばLinuxのシェルのコマンドラインで、プロセスをパイプでつなぐ場合、下流のプロセスが終了すると上流プロセスにシグナルで「パイプが中断した」という情報が伝わります。PowerShellのパイプラインでは、上流はどのようにしてパイプラインが閉じたことを知るのですか。</p>
-<p><strong>[回答] Gemini</strong></p>
+<p>WindowsのPythonでローカルWebサーバーを動かすとき、アイコンをタスクトレイに入れられますか</p>
+<p><strong>[回答] Grok</strong></p>
 </blockquote>
-<p>非常に鋭い視点ですね。Linux（POSIX）の世界では、パイプの下流が死ぬと上流プロセスに <code>SIGPIPE</code> シグナルが送られ、<code>EPIPE</code> エラーで書き込みが失敗するという「OSレイヤーの仕組み」があります。</p>
-<p>一方、PowerShellのパイプラインは「プロセス間のバイトストリーム」ではなく、<strong>.NETオブジェクトのメソッド呼び出しの連鎖</strong>として実装されています。</p>
-<hr />
-<h3 id="stopping-exception">上流が「閉じたこと」を知る仕組み：停止例外（Stopping Exception）</h3>
-<p>PowerShellでは、下流のコマンドレット（例：<code>Select-Object -First 5</code>）が「もうデータはいらない」と判断すると、内部的に <strong><code>PipelineStoppedException</code></strong> という特殊な例外（または停止通知）を上流に投げます。</p>
-<p>具体的に上流が停止を知るプロセスは以下の通りです。</p>
-<ol>
-<li><strong>下流の判断:</strong> <code>Select-Object -First 5</code> が5つ目のデータを受け取ると、自身の処理を完了させ、パイプラインを「停止状態」にします。</li>
-<li><strong>上流への通知:</strong> 下流コマンドレットが <code>PipelineStoppedException</code> をスロー（またはそれに準ずるフラグをセット）します。</li>
-<li><strong>上流の検知:</strong> 上流のループ（<code>for</code> や <code>ForEach-Object</code>）が次のオブジェクトを <code>WriteObject()</code> メソッドで出力しようとした瞬間、その例外をキャッチします。</li>
-<li><strong>クリーンアップ:</strong> 上流コマンドレットは例外を受けて、自身の <code>EndProcessing</code> ブロック（または <code>finally</code> ブロック）を実行し、安全に終了します。</li>
-</ol>
-<hr />
-<h3 id="_1">実験：上流が止まったことを証明する</h3>
-<p>以下のコードを実行すると、<code>Select-Object</code> が止めた瞬間に上流の <code>for</code> ループも停止することが確認できます。</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&amp;</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            <span class="nb">Write-Host</span> <span class="s2">&quot;上流: $i を送信中...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Gray</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="nv">$i</span>  <span class="c"># パイプラインに流す</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">finally</span> <span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="nb">Write-Host</span> <span class="s2">&quot;上流: パイプラインの切断を検知して終了します。&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">3</span>
-</span></code></pre></div>
-<p><strong>実行結果:</strong></p>
+<p>はい、<strong>WindowsのPythonでローカルWebサーバーを動かしながら、タスクトレイ（システムトレイ）にアイコンを表示</strong>することは可能です。</p>
+<p>主なおすすめ方法は、<strong>pystray</strong> ライブラリを使うことです。軽量でクロスプラットフォーム対応（Windows含む）で、メニュー（停止・ブラウザで開くなど）も簡単に追加できます。</p>
+<h3 id="_1">必要なライブラリ</h3>
 <ul>
-<li><code>3</code> を送信した直後、<code>Select-Object</code> が「完了」を宣言。</li>
-<li>上流の <code>finally</code> ブロックが走り、無限ループが止まる。</li>
+<li><code>pystray</code>：タスクトレイアイコン用</li>
+<li><code>Pillow</code>（PIL）：アイコン画像を作成・扱うため</li>
+<li>Webサーバー部分は標準ライブラリの <code>http.server</code> や <code>Flask</code>/<code>FastAPI</code> などを使います。</li>
 </ul>
-<hr />
-<h3 id="linux">Linuxとの決定的な違い</h3>
-<table>
-<thead>
-<tr>
-<th>比較項目</th>
-<th>Linux (bash/zshなど)</th>
-<th>PowerShell</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>伝達手段</strong></td>
-<td><code>SIGPIPE</code> (OSシグナル)</td>
-<td><code>.NET Exception</code> (例外処理)</td>
-</tr>
-<tr>
-<td><strong>データの単位</strong></td>
-<td>バイト / テキスト</td>
-<td><strong>.NET オブジェクト</strong></td>
-</tr>
-<tr>
-<td><strong>制御の主体</strong></td>
-<td>カーネルがパイプを管理</td>
-<td>PowerShellエンジンが列挙子(Enumerator)を管理</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_2">まとめ</h3>
-<p>PowerShellの上流プロセスは、<strong>「次にオブジェクトを渡そうとした時（WriteObject実行時）に、下流が受け取りを拒否したこと（例外）」</strong>をもって、パイプラインが閉じたことを知ります。</p>
-<p>これにより、無限ループを書いても <code>Select-Object -First</code> などと組み合わせるだけで、リソースを無駄にせず安全に停止できる設計になっています。</p>
-<p>この「オブジェクトベースのパイプライン」の挙動について、さらに深掘りしたい部分はありますか？</p>
+<p>インストール：
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pystray<span class="w"> </span>pillow
+</span></code></pre></div></p>
+<h3 id="httpserver-pystray">基本的な実装例（http.server + pystray）</h3>
+<p>Webサーバーを<strong>別スレッド</strong>で起動し、タスクトレイアイコンを表示する例です。<code>icon.run()</code> がブロッキングなので、スレッドを組み合わせます。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">http.server</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">socketserver</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pystray</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># ------------------- Webサーバー部分 -------------------</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">PORT</span> <span class="o">=</span> <span class="mi">8000</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">Handler</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span>  <span class="c1"># カレントディレクトリをサーブ</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_server</span><span class="p">():</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="k">with</span> <span class="n">socketserver</span><span class="o">.</span><span class="n">TCPServer</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PORT</span><span class="p">),</span> <span class="n">Handler</span><span class="p">)</span> <span class="k">as</span> <span class="n">httpd</span><span class="p">:</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;サーバー起動: http://localhost:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># ------------------- タスクトレイアイコン部分 -------------------</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_image</span><span class="p">():</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;シンプルなアイコン画像を作成（64x64）&quot;&quot;&quot;</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">215</span><span class="p">))</span>  <span class="c1"># 青背景</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="n">dc</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="n">dc</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>  <span class="c1"># &quot;WS&quot; = Web Server</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="k">return</span> <span class="n">image</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">on_open</span><span class="p">(</span><span class="n">icon</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;メニューから「開く」を選んだとき&quot;&quot;&quot;</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">on_quit</span><span class="p">(</span><span class="n">icon</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;終了&quot;&quot;&quot;</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="n">icon</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="c1"># メニュー定義</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="n">menu</span> <span class="o">=</span> <span class="n">pystray</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="n">pystray</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">(</span><span class="s2">&quot;ブラウザで開く&quot;</span><span class="p">,</span> <span class="n">on_open</span><span class="p">),</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    <span class="n">pystray</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">(</span><span class="s2">&quot;終了&quot;</span><span class="p">,</span> <span class="n">on_quit</span><span class="p">)</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="p">)</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="c1"># アイコン作成</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="n">icon</span> <span class="o">=</span> <span class="n">pystray</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    <span class="s2">&quot;local_web_server&quot;</span><span class="p">,</span>          <span class="c1"># 内部名</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>    <span class="n">icon</span><span class="o">=</span><span class="n">create_image</span><span class="p">(),</span>         <span class="c1"># アイコン画像</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Local Server (port </span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>  <span class="c1"># ホバー時のツールチップ</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    <span class="n">menu</span><span class="o">=</span><span class="n">menu</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="p">)</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="c1"># ------------------- メイン処理 -------------------</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    <span class="c1"># Webサーバーを別スレッドで起動</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    <span class="n">server_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_server</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>    <span class="n">server_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>    <span class="c1"># タスクトレイアイコンを表示（ブロッキング）</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    <span class="n">icon</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span></code></pre></div>
+<h3 id="tips">ポイントとTips</h3>
+<ul>
+<li><strong>サーバーとトレイの同時動作</strong>：<code>http.server.serve_forever()</code> はブロッキングなので、必ず <code>threading.Thread</code>（または <code>concurrent.futures</code>）で別スレッドにします。<code>daemon=True</code> にするとメイン終了時に自動停止しやすくなります。</li>
+<li><strong>FlaskやFastAPIを使う場合</strong>：同様にサーバー起動をスレッド（または <code>app.run(threaded=True)</code>）にすればOKです。</li>
+<li><strong>カスタムアイコン</strong>：<code>create_image()</code> の代わりに <code>.ico</code> や <code>.png</code> ファイルを <code>Image.open("icon.png")</code> で読み込めます。</li>
+<li><strong>右クリックメニュー</strong>：停止、再起動、ポート変更、ログ表示などを追加しやすいです。</li>
+<li><strong>コンソール非表示で起動</strong>：<code>.pyw</code> 拡張子で保存するか、PyInstallerなどでexe化するときに <code>--noconsole</code> オプションを使います。</li>
+<li><strong>PyInstallerでexe化</strong>：<code>pystray</code> + <code>pillow</code> を含めてexeにすると、単独実行可能になります（アイコンファイルも一緒にバンドル）。</li>
+</ul>
+<h3 id="_2">他の選択肢</h3>
+<ul>
+<li><strong>Qt/PySide6やPyQt6</strong>：<code>QSystemTrayIcon</code> を使うとよりリッチな通知やメニューが作れますが、重めです。</li>
+<li><strong>古い方法</strong>：<code>pywin32</code> + 自前Win32 API呼び出し（SysTrayIcon.pyなど）もありますが、pystrayの方が現代的で簡単です。</li>
+</ul>
+<p>この方法で、Webサーバーがバックグラウンドで動きつつ、タスクトレイに常駐アイコンが表示され、右クリックで操作できるアプリになります。</p>
+<p>実際に試してみて、メニューを拡張したい場合やFlask版が欲しい場合は、追加で教えてください！</p>
 
 
 
@@ -2358,7 +2380,7 @@
       <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../0046-powershell-array-subexpression/" class="md-footer__link md-footer__link--prev" aria-label="前: PowerShellの配列サブ式について">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="前: AI質問箱トップページ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2368,20 +2390,20 @@
                 前
               </span>
               <div class="md-ellipsis">
-                PowerShellの配列サブ式について
+                AI質問箱トップページ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../0044-ffmpeg-oneliner-to-script/" class="md-footer__link md-footer__link--next" aria-label="次: ffmpegをPythonで制御したい">
+          <a href="../0068-dbkey-uuidv7-and-nanoid/" class="md-footer__link md-footer__link--next" aria-label="次: DBでUUIDv7とNanoIDを併用する手法">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 次
               </span>
               <div class="md-ellipsis">
-                ffmpegをPythonで制御したい
+                DBでUUIDv7とNanoIDを併用する手法
               </div>
             </div>
             <div class="md-footer__button md-icon">
